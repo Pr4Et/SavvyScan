@@ -1,0 +1,13 @@
+This package will install imod_4.10.32_osx64_10.8_CUDA4.1
+
+IMOD will be installed in /Applications/IMOD
+
+Ignore the option to Change Install Location.
+
+If the installation fails, a log of the output will be left in a file named IMOD-install.log in your home directory.
+
+----------------------------------------------------------------
+
+IMOD is a suite of image processing, modeling and display programs used for tomographic reconstruction and for 3D reconstruction of EM serial sections and optical sections.
+For more information see http://bio3d.colorado.edu/imod
+

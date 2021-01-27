@@ -1,0 +1,24 @@
+; libifft.def : Declares the module parameters for the DLL.
+
+LIBRARY      "libifft"
+
+EXPORTS
+	diprp
+	thrdfftc
+	r4cftk
+	r8cftk
+	r2cftk
+	hermft
+	USINGFFTW
+	rpcftk
+	mdftkd
+	srfp
+	THRDFFT
+	cmplft
+	NICEFFTLIMIT
+	r5cftk
+	r3cftk
+	realft
+	ODFFT
+	TODFFT
+	todfftc

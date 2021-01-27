@@ -1,0 +1,202 @@
+#!/bin/csh -f
+# A script to make links in /usr/lib so that 3dmod will run by clicking on it
+# on the Mac
+#
+#  $Id$
+#
+#  Log at end of file
+#
+
+if ($#argv == 0) then
+cat <<EOF
+This script will install or uninstall links in the system to the IMOD and Qt
+libraries in IMOD so that you can run 3dmod by clicking on it.
+You must run it as root with sudo.  Enter
+    linklibs-mac -i [PATH_TO_IMOD]   to make the links, or
+    linklibs-mac -u [PATH_TO_IMOD]   to remove the links
+The PATH_TO_IMOD (e.g., /Applications/IMOD) must be entered.
+Optionally, -t can be added before -i or -u on OS X 10.10 and below to make 
+the links in /usr/local/lib and /Library/Frameworks; these locations will be
+used on 10.11 and above.
+EOF
+exit
+endif
+
+set test = 0
+if ("$argv[1]" == '-t') then
+    set test = 1
+    shift
+endif
+
+if ($#argv > 1) then
+    setenv IMOD_DIR "$argv[2]"
+endif
+
+if (! $?IMOD_DIR) then
+    cat <<EOF
+The location of IMOD is not defined.  On OS X 10.5 and higher, you must supply
+the location as a second argument to this script, after -i or -u, e.g., if
+IMOD_DIR is already defined, use
+   sudo \$IMOD_DIR/linklibs-mac $argv[1] \$IMOD_DIR
+
+If IMOD_DIR is not defined, use
+   sudo PATH_TO_IMOD/linklibs-mac $argv[1] PATH_TO_IMOD
+where PATH_TO_IMOD is usually /Applications/IMOD
+EOF
+    exit 1
+endif
+
+if ("$argv[1]" != '-i' && "$argv[1]" != '-u') then
+    echo "Illegal argument $argv[1] - you must enter -i or -u as the first argument"
+    exit 1
+endif
+
+set syslib = /System/Library/Frameworks
+set usrlib = /usr/lib
+set testwrite = /usr/lib
+set version = `uname -r | sed '/\./s// /g'`
+if ($#version > 1 || $test == 1) then
+    @ major = $version[1]
+    if ($major > 14 || $test == 1) then
+        set syslib = /Library/Frameworks
+        set usrlib = /usr/local/lib
+        if (! -e $usrlib) mkdir -p $usrlib
+        set testwrite = /usr/local
+    endif
+endif
+
+if (! -w $testwrite) then
+    echo "You do not have permission to write to $testwrite"
+    echo "You must run this command with sudo or as root"
+    exit 1
+endif
+
+if (! -d $IMOD_DIR/qtlib) then
+    echo "The directory $IMOD_DIR/qtlib does not exist"
+    echo "Are you sure $IMOD_DIR is the location of IMOD?"
+    exit 1
+endif
+
+
+set exist = 0
+set imodlibs = (libdiaqt.dylib libimod.dylib libiimod.dylib libdtrigs.dylib \
+libtrack.dylib libifft.dylib libb3dcmpt.dylib libimesh.dylib libcfshr.dylib \
+libimxml.dylib libgfortran.dylib libgfortran.2.dylib libgfortran.2.0.0.dylib)
+set intellibs = (libsvml.dylib libifport.dylib libifcore.dylib libimf.dylib \
+libirc.dylib libifcoremt.dylib libifportmt.dylib libintlc.dylib libirng.dylib \
+libiomp5.dylib libguide.dylib)
+if (-e $IMOD_DIR/lib/$intellibs[1]) set imodlibs = ($imodlibs $intellibs)
+
+# Look for imod libs in $usrlib
+#
+foreach i ($imodlibs)
+    if (-e $usrlib/$i) then
+        set otherDir = `ls -l $usrlib/$i | sed -e '/\/usr\/lib\//s///g' -e '/[^/]/s///g'`
+        if ("$otherDir" != "") then
+            set exist = 1
+            ls -l $usrlib/$i | awk '{print $9, $10, $11}'
+        endif
+    endif
+end
+
+# Look for Qt libs in $usrlib or /System/Library/Frameworks
+#
+cd $IMOD_DIR/qtlib
+foreach dir ($usrlib $syslib)
+    set escdir = `echo $dir | sed '/\//s//\\\//g'` 
+    foreach i (*)
+        if (-e $dir/$i) then
+            set otherDir = `ls -l $dir/$i | sed -e "/$escdir\//s///g" -e '/[^/]/s///g'`
+            if ("$otherDir" != "") then
+                set exist = 1
+                ls -l $dir/$i | awk '{print $9, $10, $11}'
+            endif
+        endif
+    end
+end
+
+echo " "
+
+# confirm removal of existing links
+#
+if ("$argv[1]" == '-u') then
+    if ($exist == 1) then
+        echo "The above files and/or links will be removed."
+        echo -n "Enter Y if you are sure you want to proceed: "
+        set answer = $<
+        if ($answer != 'Y' && $answer != 'y') exit 0
+    else
+        echo "There are no files or links to remove from $usrlib or $syslib"
+        exit 0
+    endif
+
+else
+    if ($exist == 1) then
+        echo "The above files and/or links already exist in $usrlib and/or"
+        echo "  $syslib and need to be removed."
+        echo -n "Enter Y if you are sure you want to proceed: "
+        set answer = $<
+        if ($answer != 'Y' && $answer != 'y') exit 0
+    endif
+endif
+
+# now remove the links
+#
+if ($exist == 1) then
+    foreach i ($imodlibs)
+        if (-e $usrlib/$i) then
+            set otherDir = `ls -l $usrlib/$i | sed -e '/\/usr\/lib\//s///g' -e '/[^/]/s///g'`
+            if ("$otherDir" != "") \rm -rf $usrlib/$i
+        endif
+    end
+    foreach dir ($usrlib $syslib)
+        set escdir = `echo $dir | sed '/\//s//\\\//g'` 
+        foreach i (*)
+            if (-e $dir/$i) then
+                set otherDir = `ls -l $dir/$i | sed -e "/$escdir\//s///g" -e '/[^/]/s///g'`
+                if ("$otherDir" != "") \rm -rf $dir/$i
+            endif
+        end
+    end
+endif
+
+if ("$argv[1]" == '-u') then
+    echo "The links and/or files have been removed"
+    exit 0
+endif
+
+# now make the links
+#
+@ numimod = 0
+foreach i ($imodlibs)
+    if (-e $IMOD_DIR/lib/$i && ! -e $usrlib/$i) then
+        ln -s $IMOD_DIR/lib/$i $usrlib/$i
+        @ numimod++
+    endif
+end
+if (! $numimod) then
+    echo "Something is wrong: no IMOD libraries were found"
+    exit 1
+endif
+
+set qtdylibs = `\find . -maxdepth 1 -name '[^.]*.dylib' -print`
+set qtframes = `\find . -maxdepth 1 -name '[^.]*.framework' -print`
+if ("$qtdylibs" == "" && "$qtframes" == "") then
+    echo "Something is wrong: no Qt libraries were found"
+    exit 1
+endif
+set allqt = ($qtdylibs $qtframes)
+
+if ("$qtdylibs" != "") then
+    foreach i ($qtdylibs)
+        if (! -e $usrlib/$i:t) ln -s $IMOD_DIR/qtlib/$i:t $usrlib/$i:t
+    end
+endif
+if ("$qtframes" != "") then
+    foreach i ($qtframes)
+         if (! -e $syslib/$i:t) ln -s $IMOD_DIR/qtlib/$i:t $syslib/$i:t
+    end
+endif
+
+echo "The appropriate links have been made in $usrlib and/or $syslib"
+exit 0

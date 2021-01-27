@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f6320591-e854-4bf2-847d-f7500cabc8a1}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{243cfb64-bb49-4aa0-acd6-20850f853353}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="adoc_fwrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="amat_to_rotmagstr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="amoeba.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="autodoc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="b3dutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="beadutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="circlefit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="colormap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="convexbound.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubinterp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dsyevc3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dsyevh3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dsyevq3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dsytrd3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extraheader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filtxcorr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="find_piece_shifts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gaussj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gcvspl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="histogram.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ilist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="insidecontour.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="islice.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="linearxforms.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lsqr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lsqrblas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="minimize1D.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="montagexcorr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multibinstat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mxmlwrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_params.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parselist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pctstretch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="percentile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="piecefuncs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pip_fwrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reduce_by_binning.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="regression.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="robuststat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rotateflip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="samplemeansd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scaledsobel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sdsearch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simplestat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sparselsqr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrumscaled.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="statfuncs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="surfacesort.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="taperatfill.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="taperpad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zoomdown.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

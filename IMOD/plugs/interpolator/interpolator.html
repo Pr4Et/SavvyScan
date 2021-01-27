@@ -1,0 +1,138 @@
+<head>
+<title>Interpolator Plugin Help</title>
+</head>
+<body>
+<a name="TOP"></a>
+<h3>Interpolator Plugin Help - TEST FOR MECURIAL....</h3><br>
+--------------------------<br><br>
+This plugin allows for rapid segmentation of surfaces
+by automatically generating <b>"interpolated"</b> contours between
+the <b>"key"</b> contours which you have manually drawn. 
+Each time you add a new contour, press <i>[Enter]</i> (instead of [n])
+and the program will generate interpolated contours between 
+any connected key contours either side of the contour you have
+just added or modified.<br>
+Contours are <b>"connected"</b> if they are within <b>"Z Bridge"</b> slices
+of each other and the computer believes they are part of the same surface
+as according to the selected <b>"surface method"</b>.
+The shape of interpolated contours depends on which
+<b>"interpolation type"</b> you have selected.<br>
+<br>
+<br><i>Click here to see the <b><a href='https://www.youtube.com/watch?v=BsNSVLIQ-cE'>
+video tutorial</a></b></i>
+<br><i>Click here to see <b><a href='http://www.andrewnoske.com/student/imod.php'>
+Andrew Noske's IMOD page</a></b></i>
+<br>
+<br>
+<br>
+<b>List of Interpolation Types</b><br>
+--------------------------<br><br>
+<ol>
+<li><b>None</b> - lets you use normal contour drawing behavior.</li>
+<li><b>Linear</b> - generates interpolated contours with straight
+lines between key contours.</li>
+<li><b>Spherical</b> - generates interpolated contours in the profile
+of sphere, and does not deal with branching.</li>
+<li><b>Smooth</b> - generates interpolated contours such they 
+form a smooth, curved surfaces. </li>
+<li><b>Smooth Pts</b> - as previous, but more sensitive to changes
+on different sides of the contour. </li>
+</ol>
+<br>
+<br>
+<b>Hot Key Summary</b><br>
+---------------------<br>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tr>
+    <td width="10%"><b>[Enter] </b></td>
+    <td width="90%">Interpolate selected contour and start new contour</td>
+  </tr>
+  <tr>
+    <td><b>[n]</b></td>
+    <td>Start new contour (without interpolating current contour)</td>
+  </tr>
+  <tr>
+    <td><b>[u]</b></td>
+    <td>Toggle current contour between key/interpolated</td>
+  </tr>
+  <tr>
+    <td><b>[;]</b></td>
+    <td>Open dialog to change the marking of contours in a selected range
+    from interpolated to key, or vice-versa.  The way to get
+    contours drawn with solid lines is to mark them as key.</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><b>[g]</b></td>
+    <td>Find next gap or isolated contour (NOTE: to toggle ghosting, 
+  press [ctrl+shift+g])</td>
+  </tr>
+  <tr>
+    <td><b>[h]</b></td>
+    <td>Find next large hole between key contours (ie. a large region of 
+  consecutive interpolated contours)</td>
+  </tr>
+</table>
+<p><br>
+  <br>
+  <br>
+  <b>Tips</b><br>
+  ---------------------<br>
+  <br>
+  If you are not happy with the shape of interpolated contours you can 
+  either undo [Ctrl+Z], add/modify more contours, or change the 
+  interpolation options and type.
+  Select <b>'Clear all Interp'</b> to delete all interpolated contours
+  and 'Regenerate Interp' to regenerate all key contours.<br>
+  <br>
+  All of these interpolation types are intended for use with closed 
+  contours and so may give undesirable results for open or 
+  scattered point objects which span multiple slices.<br>
+  <br>
+  Interpolation can become sluggish for objects with numerous contours. 
+  To improve performance you should consider adding an extra object and 
+  then use <i>'edit > object > move'</i> to merge the contours into the 
+  desired object periodically.<br> 
+  <br>
+  To segment compartments even faster, try using this "Interpolator" 
+  plugin in unison with the "Drawing Tools" plugin.<br>
+  <br>
+  The best settings to use depend on the size, shape and complexity of the
+  surfaces you are segmenting. For relatively round/simple medium-to-large
+  surfaces I suggest 'Spherical' interpolation with a Z Bridge of maybe 40.
+  If your surfaces are highly branched you may want to change the surface
+  method to 'touching', branching to 'merge conts', reduce Z Bridge and
+  use either 'Linear' or 'Smooth' interpolation.
+  In the end, trial and error is the only way to find the best settings -
+  don't forget you can fine-tune some of these settings by clicking
+  the <strong>'More Settings'</strong> button. Note also you can force
+  linear interpolation between the current contour and the last contour you
+  interpolated with [shift+enter], regardless of Z Bridge.<br>
+  <br>
+  For more information on what each button/option does hover your
+  mouse over it.<br>
+  <br>
+  ---------------------<br>
+  <br>
+  This plugin was created by <b>Andrew Noske </b>(<u>andrew.noske&lt;at&gt;gmail&lt;dot&gt;com</u>).<br>
+  If you encounter bugs please e-mail me before e-mailing the
+  IMOD group (to reduce traffic). <br>
+  In your e-mail please tell me exactly how and when the problem
+  occurred and attach the model file you were using with
+  enough information that I can replicate the error/crash.</p>
+<p><i>NOTE: Maintaining this plugin is part of the
+  "<a href="http://www.slashsegmentation.com/">SLASH segmententation</a>"
+  initiative. Please contact me for citation information.</i><br>
+<hr>
+<p><font size="2"> <b>Acknowledgements:</b> <i>Brad Marsh</i> at the
+Institute for Molecular Bioscience (www.imb.uq.edu.au) for helping 
+encourage this work - without this nor any of my other plugins would exist.
+<em>Mark Ellisman</em> and the The National Center for Microscopy and
+Imaging Research (www.ncmir.ucsd.edu) for ongoing support and funding 
+of these expedited segmentation tools.
+<i> David Mastronarde</i> and the team at The Boulder Lab for 3-D Electron 
+Microscopy (bio3d.colorado.edu) for their wonderful support of all my
+plugins.</font></body>

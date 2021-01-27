@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{bede86ef-c23d-4081-a5b6-775a7a3b435d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{dbf8311f-59e9-4d6a-8e67-518f631b690f}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="icont.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ilabel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imesh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imodel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imodel_files.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imodel_from.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imodel_fwrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imodel_to.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iobj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iplane.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ipoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="istore.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iview.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objgroup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
