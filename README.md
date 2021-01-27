@@ -4,8 +4,8 @@
 Savvyscan software source files. Jan 2021.
 Editted/ written by Shahar Seifer, Elbaum lab, Weizmann Institute of Science, Israel.
 
-Details can be found in: Shahar Seifer, Lothar Houben, Michael Elbaum, "Savvyscan: a flexibility upgrade for multi-channel 
-scanning transmission electron microscopy", Microscopy & Microanalysis, 2021.
+Details in: Shahar Seifer, Lothar Houben, Michael Elbaum, "Savvyscan: a flexibility upgrade for multi-channel 
+scanning transmission electron microscopy", Submitted for publication.
 
 Compilation and installation:
 The main project file is \ServerCamera\SERVER-SEMCamServer.vcxproj.
