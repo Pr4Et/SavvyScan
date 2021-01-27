@@ -1,0 +1,37 @@
+This version of the octomap library has been modified from its original source. 
+This notices describes all changes and lists the affected files.
+
+Added definitions for allowing consistent multi-platform export of shared library symbols
+    include/octomap/octomap_decl.h
+    include/octomap/octomap_shared_decl.h
+    include/octomap/math/octomath_decl.h
+    
+Added shared library export define for all public classes in octomap and octomath
+    include/octomap/AbstractOcTree.h
+    include/octomap/AbstractOccupancyOcTree.h
+    include/octomap/ColorOcTree.h
+    include/octomap/CountingOcTree.h
+    include/octomap/OcTree.h
+    include/octomap/OcTreeBase.h
+    include/octomap/OcTreeKey.h
+    include/octomap/OcTreeNode.h
+    include/octomap/OcTreeStamped.h
+    include/octomap/Pointcloud.h
+    include/octomap/ScanGraph.h
+    include/octomap/math/Pose6D.h
+    include/octomap/math/Quaternion.h
+    include/octomap/math/Vector3.h
+    
+Worked around missing std::min declaration in Visual Studio
+    include/octomap/OcTreeBaseImpl.hxx
+    
+Avoid compilation of CountingOcTree
+    src/AbstractOcTree.cpp
+    
+Consistent CMake build infrastructure for shared libraries
+    CMakeLists.txt
+    src/CMakeLists.txt
+    src/math/CMakeLists.txt
+
+Install all library and runtime artifacts in a common folder
+    CMakeLists.txt

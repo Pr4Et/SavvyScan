@@ -1,0 +1,8 @@
+This version of the ROS cpp_common library has been modified from its original source. 
+This notices describes all changes and lists the affected files.
+
+Adjusted CMake build file to compile on all platforms and removed unnecessary targets:
+    CMakeLists.txt
+    
+Adjusted library name to roscpp_common
+    include/ros/cpp_common_decl.h

@@ -1,0 +1,43 @@
+This version of AMCL (https://github.com/ros-planning/navigation/tree/jade-devel/amcl) has been modified
+from its original source. This notice describes all changes and lists the 
+affected files.
+
+To support compilation on Windows platform using Visual Studio compiler, the following source files have been modified:
+	src/amcl/map/map_cspace.cpp
+	src/amcl/pf/eig3.c	
+	src/amcl/pf/pf_pdf.c
+	src/amcl/pf/pf_vector.c
+	src/amcl/pf/pf.c
+	src/amcl/sensors/amcl_laser.cpp	
+	CMakeLists.txt	
+
+To support library export on Windows platform, following files have been modified:
+	include/amcl/map/map.h
+	include/amcl/pf/pf.h
+	include/amcl/pf/pf_kdtree.h
+	include/amcl/pf/pf_pdf.h 
+	include/amcl/pf/pf_vector.h 
+	include/amcl/sensors/amcl_laser.h 
+	include/amcl/sensors/amcl_sensor.h
+	include/amcl/sensors/amcl_odom.h
+	CMakeLists.txt	
+	
+	and added a new file:
+	include/amcl/amcl/exports.h 
+	
+To overcome Visual Studio compiler bug, following files have been modified,
+	src/amcl/sensors/amcl_laser.cpp
+	
+To support repeatability in random numbers following files have been modified,
+	include/amcl/pf/pf.h 
+	include/amcl/pf/pf_pdf.h
+	src/amcl/pf/pf.c 
+	src/amcl/pf/pf_pdf.c
+	
+Added following files for random number generation
+	include/amcl/random_generator.h
+	src/amcl/random_generator.cpp
+	
+Added a new function to update particle filter cluster statistics without resampling.
+    include/amcl/pf/pf.h
+	src/amcl/pf/pf.c

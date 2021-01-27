@@ -1,0 +1,11 @@
+This version of the lz4 library has been modified from its original source. 
+This notices describes all changes and lists the affected files.
+
+Adjusted CMake build file to compile on all platforms and removed unnecessary targets:
+    contrib/cmake_unofficial/CMakeLists.txt
+
+Used modified DLL name for Windows platforms
+    lib/dll/liblz4.def
+    
+Ensure that LZ4 library builds on Mac with C++14.
+    lib/lz4.h

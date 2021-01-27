@@ -1,0 +1,16 @@
+This version of the rostime library has been modified from its original source. This notices describes all changes and lists the affected files.
+
+Adjusted CMake build file to compile on all platforms and removed unnecessary targets:
+    CMakeLists.txt
+    
+Reflected MathWorks Boost namespace changes
+    include/ros/duration.h
+    include/ros/time.h
+    
+Exported symbols for << operator on Duration class and made MIN/MAX constants simply static
+    include/ros/time.h
+    include/ros/duration.h
+    src/time.cpp
+    
+Adjusted unit test, so it runs on all platforms
+    test/time.cpp

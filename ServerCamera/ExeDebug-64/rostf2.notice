@@ -1,0 +1,35 @@
+This version of the tf2 library (https://github.com/ros/geometry_experimental/tree/ros2_alpha/tf2) has been modified
+from its original source. This notices describes all changes and lists the 
+affected files.
+
+
+Unused utility files have been removed:
+    tf2/include/tf2/utils.h
+    tf2/impl/utils.h
+   
+To enable compilation on Windows and to use the correct geometry_msgs headers. Replace tf2::TF2Error::NO_ERROR enumeration
+with tf2::TF2Error::NO_ERRORS:
+    tf2/include/tf2/buffer_core.h
+    tf2/include/tf2/exceptions.h
+    tf2/include/tf2/time_cache.h
+    tf2/src/buffer_core.cpp
+
+Fixed quaternion initialization bug and data type overflow in nanosecond calculation:
+    tf2/src/buffer_core.cpp
+    
+Removed unnecessary tests that are not related to tf2 core library:
+    test_tf2/test/buffer_client_tester.launch
+    test_tf2/test/static_publisher.launch
+    test_tf2/test/test_buffer_client.cpp
+    test_tf2/test/test_buffer_client.py
+    test_tf2/test/test_buffer_server.cpp
+    test_tf2/test/test_convert.cpp
+    test_tf2/test/test_convert.py
+    test_tf2/test/test_message_filter.cpp
+    test_tf2/test/test_static_publisher.cpp
+    test_tf2/test/test_tf2_bullet.cpp
+    test_tf2/test/test_tf2_bullet.launch
+    test_tf2/test/test_utils.cpp    
+
+Fixed incorrect calculation of time_point to nanoseconds in lookupTransform with only target time:
+    tf2/src/buffer_core.cpp
