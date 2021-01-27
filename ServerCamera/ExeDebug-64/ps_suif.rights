@@ -1,0 +1,263 @@
+This is the README file for the Stanford SUIF compiler system.
+
+
+TABLE OF CONTENTS:
+
+	Copyright notice
+	WHAT SUIF IS / WHAT SUIF IS NOT
+        HOW SUIF IS DISTRIBUTED
+        CURRENT PACKAGES
+	OTHER SOFTWARE THAT YOU WILL NEED
+	SUIF SUPPORT / MAILING LISTS
+	GETTING STARTED WITH SUIF
+
+**********************************************************************
+
+This software is Copyright (C) 1994,95 Stanford University
+
+    All rights reserved.
+
+    NOTICE:  This software is provided ``as is'', without any
+    warranty, including any implied warranty for merchantability or
+    fitness for a particular purpose.  Under no circumstances shall
+    Stanford University or its agents be liable for any use of, misuse
+    of, or inability to use this software, including incidental and
+    consequential damages.
+
+    License is hereby given to use, modify, and redistribute this
+    software, in whole or in part, for any purpose, commercial or
+    non-commercial, provided that the user agrees to the terms of this
+    copyright notice, including disclaimer of warranty, and provided
+    that this copyright notice, including disclaimer of warranty, is
+    preserved in the source code and documentation of anything derived
+    from this software.  Any redistributor of this software or
+    anything derived from this software assumes responsibility for
+    ensuring that any parties to whom such a redistribution is made
+    are fully aware of the terms of this license and disclaimer.
+
+    "SUIF" is a trademark of Stanford University.
+
+**********************************************************************
+
+WHAT SUIF IS
+
+SUIF is a collection of programs and libraries, mostly written in C++,
+that allow researchers to investigate issues in scalar and parallel
+optimization.  The SUIF distribution contains all the pieces necessary
+for a working compiler that will translate C or FORTRAN into either a
+MIPS (R3000) executable or back into C code (suitable for compiling
+with a native compiler).  It contains passes to do a variety of
+transformations including parallel loop detection, parallel code
+generation, cache-based loop transformations, and scalar
+optimizations.  The SUIF system will correctly compile most major
+benchmark suites.  SUIF also provides a set of core libraries that (we
+hope) allow people to easily write new SUIF passes to investigate
+their favorite compiler research topic.
+
+
+WHAT SUIF IS NOT
+
+SUIF is not a production compiler.  It is not suitable for replacing
+your native compiler.  Don't even attempt to compile a kernel with it.
+SUIF does not have many code generators.  SUIF will not generate
+scalar code that's as good as your native compiler (unless you use the
+"C" backend and actually compile with your native compiler...)  If you
+are running a machine that is not MIPS-based, you will have to use the
+"C" backend and feed the result into your native C compiler (SUIF will
+do this automatically).  SUIF is not supported software.  It is
+distributed without warranty.  We will do what we can to help you with
+problems, but in the end you're on your own.  See the end of this file
+for information on mailing lists about SUIF.
+
+**********************************************************************
+
+HOW SUIF IS DISTRIBUTED
+
+The SUIF system is now distributed in several different pieces.  Some
+pieces are more stable and others less so.  For example, the basic
+parallelization system is separated from the base SUIF system, so
+those who are interested in only the basic compiler infrastructure
+don't have to deal with all the overhead and greater instability of
+the parallelizer.  This allows frequently changing releases of the
+more experimental parts without affecting the continuity of the more
+stable parts of the system.  It also allows researchers at other sites
+to maintain and release their own pieces without having to coordinate
+with Stanford.
+
+**********************************************************************
+
+CURRENT PACKAGES
+
+Here are the packages currently available (note that if you got this
+file from the basesuif package, the list here may not be the most
+recent one, since the basesuif package is not changed for every
+release of another SUIF package -- the current version of this
+README.suif file is available by anonymous ftp from
+suif.stanford.edu:/pub/suif/README.suif):
+
+        basesuif      1.1.2
+            The base SUIF system, required before any of the other
+            packages can be used.
+
+        simplesuif    1.0.0.beta.1
+            A simplified interface for SUIF for teaching compiler
+            courses; requires basesuif.
+
+        suifbuilder   1.0.0.beta.1
+            A library built on top of SUIF providing another interface
+            for building SUIF code; requires basesuif.
+
+        baseparsuif   1.0.0.beta.1
+            The basic SUIF parallelization system; requires basesuif
+            and suifbuilder.
+
+        fortback      1.0.0.beta.1
+            A SUIF-to-Fortran converter, to convert to a combination
+            of Fortran and C to improve performance over conversion to
+            C alone; requires basesuif.
+
+        suifcookbook  1.0.0.beta.1
+            An introduction to construction of SUIF passes in
+            ``cookbook'' form, going through several examples;
+            requires basesuif, suifbuilder, and baseparsuif.
+
+        suifcallgraph 1.0.0.beta.1
+            A call-graph library for SUIF; requires baseparsuif and
+            basesuif.
+
+        suifvbrowser  1.0.0.beta.1
+            The SUIF Visual Browser: a graphical user interface to
+            view SUIF files and their relations to input and output
+            source code; requires suifcallgraph, baseparsuif, and
+            basesuif, and also requires TCL/TK, a pair of packages
+            that are available independently of SUIF.
+
+        oldsuif       6.0.0.beta.2
+            Some remenants of an obsolete old SUIF system, with
+            converters between ``old SUIF'' and modern SUIF, to
+            provide some functionality that exists in the old system
+            but not yet in modern SUIF in quite the same way; requires
+            basesuif.
+
+NOTE: the versions that include ``beta'' in the version label are
+``beta test'' quality, i.e. less stable and probably more buggy than
+regular releases.
+
+These packages are available by anonymous ftp from
+suif.stanford.edu:/pub/suif.  The filename is in the form
+<package-name>-<version>.tar.{gz|Z}.  Signed pgp certificates for all
+packages are also available in the same directory with the suffix .asc
+appended to the compressed tar file name.
+
+**********************************************************************
+
+OTHER SOFTWARE THAT YOU WILL NEED
+
+The SUIF system uses a lot of software from the GNU project.  Although
+you may be able to adapt it to work with other compilers, you'll save
+yourself a lot of trouble by using the programs specified below.
+These programs are available by anonymous ftp from one of the GNU ftp
+servers, such as prep.ai.mit.edu or gatekeeper.dec.com.  Note that
+most of these packages have been compressed with the gzip program; you
+will have to compile and install gzip before you can uncompress the
+others.  This is explained in greater detail in the README files on
+the ftp servers.  The version numbers below reflect the versions that
+we are currently using.
+
+        gzip                            1.2.4
+
+        bison                           1.22
+        gmake                           3.73
+
+You'll also need a C/C++ compiler to compiler SUIF.  SUIF should
+compile without too much difficulty on any modern C++ compiler.
+Unfortunately, all too many C++ compilers are still based on cfront
+and do not use modern C++ syntax, so they will not work with SUIF.
+The following three compilers are known to work with SUIF:
+
+    A. On any system:
+
+        gcc/g++                         2.7.2
+        libg++                          2.7.1
+
+    B. On Silicon Graphics Irix systems:
+
+        SGI IRIX 5.3 C/C++ compiler
+
+    C. On SPARC or x86 Solaris systems:
+
+        SunSoft ProCompiler C++         4.0
+        SunSoft ProCompiler C           3.0
+
+Also a debugger will be helpful if you design your own SUIF
+applications.  On most systems, the GNU debugger is useful:
+
+        gdb                             4.15.1
+
+IMPORTANT NOTE: Recently, new releases of gcc/g++ have NOT been
+backward compatible with immediately preceeding releases.  When a new
+release of gcc/g++ has come out, existing SUIF code has generally not
+worked on that release and has had to be ported to the new gcc/g++.
+Please make sure you get the version of gcc/g++ specified above or
+check with the SUIF group that your version of gcc/g++ will actually
+work with this particular release of SUIF.
+
+Note on gcc/g++ 2.7.2: At the time of this release, the basesuif,
+simplesuif, suifbuilder, suifcallgraph, suifvbrowser, and oldsuif
+packages compile under 2.7.2.  baseparsuif version 1.0.0.beta.1,
+fortback version 1.0.0.beta.1, and suifcookbook version 1.0.0.beta.1
+do not compile unchanged under 2.7.2; instead they compile under g++
+2.6.3.  Any later versions of these packages should compile with g++
+2.7.2.
+
+**********************************************************************
+
+SUIF SUPPORT / MAILING LISTS
+
+The SUIF compiler system is released without warranty or promise of
+support.  Essentially you are on your own.  However, there are a
+number of mailing lists devoted to SUIF that you may join.  We
+recommend that you join at least the suif-announce mailing list, as
+notices of patch releases or new versions will be sent to this list.
+
+suif-talk@suif.stanford.edu is for the discussion of anything related
+to SUIF.  It is for the use of SUIF users to talk amongst themselves.
+
+suif-bugs@suif.stanford.edu is for the submission of bugs to the SUIF
+development team.  There is no guarantee that submitting a bug will
+cause that bug to be fixed.  Users may add themselves to the suif-bugs
+list if they wish to monitor other users' bug reports.
+
+suif-announce@suif.stanford.edu is for the announcement of new
+versions of SUIF.
+
+To join any of these lists, send mail to "majordomo@suif.stanford.edu"
+with the body:
+
+subscribe list-name
+
+Sending a message with the body:
+
+help
+
+will send info on other commands you may use.
+
+
+The SUIF team also maintains a World Wide Web server that includes
+information about SUIF, hypertext versions of the SUIF documentation,
+and published papers written by members of the SUIF team.  If you have
+access to a Web browser, such as NCSA Mosaic, you can use the URL:
+
+http://suif.stanford.edu
+
+**********************************************************************
+
+GETTING STARTED WITH SUIF
+
+If you haven't already, you should obtain the basesuif package and
+untar it.  Then look in the src/basesuif diretory for the
+README.basesuif file and follow the instructions found therein.
+
+**********************************************************************
+
+			The Stanford Compiler Group

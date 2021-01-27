@@ -1,0 +1,9 @@
+This version of the roslz4 library has been modified from its original source. 
+This notices describes all changes and lists the affected files.
+
+Adjusted CMake build file to compile on all platforms and removed unnecessary targets:
+    CMakeLists.txt
+
+Declared shared library exports to enable compilation on all platforms 
+    include/roslz4/lz4s.h
+    src/lz4s.c

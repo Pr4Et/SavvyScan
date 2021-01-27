@@ -1,0 +1,7 @@
+MathWorks specific changes have been made to AMCL library. These changes are permitted within the terms of the LGPL 2.1 license.
+You can find the modified AMCL source files at the following location
+
+$MATLABROOT/toolbox/shared/robotics/external/amcl-localization/amcl-localization_src.zip
+
+where, $MATLABROOT is the location where MATLAB is installed. You can find this location by typing "matlabroot" command in MATLAB.
+

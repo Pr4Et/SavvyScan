@@ -1,0 +1,42 @@
+This version of the matlab_rosbag library has been modified from its original source. 
+This notices describes all changes and lists the affected files.
+
+Adjusted CMake build file to compile on all platforms and removed unnecessary targets:
+    CMakeLists.txt
+    
+Removed Eigen library dependency and make calculations with rostf2.
+Convert struct field names to comply to MathWorks naming standards. Adapted test accordingly.
+    src/parser.cpp
+    src/parser_test.cpp
+    
+Export all classes to shared library on Windows. Added DLL export/import declarations.
+    src/parser.hpp
+    
+Allow extraction of all message times, message types, and file offsets
+    src/parser.cpp
+    src/parser.hpp    
+    src/parser_test.cpp
+    src/rosbag_wrapper.cpp
+    src/rosbag_wrapper.hpp
+
+Allow compilation in MathWorks environment
+    src/mex_windows_compile.m
+    
+Updated MATLAB interface to unify coding standards
+    src/+ros/Bag.m
+    src/+ros/TFTree.m
+    
+Fix compiler warnings for type casting
+    src/parser.hpp
+    src/matlab_util.hpp
+    
+Allow fine-grained extraction of bag file information
+    src/parser.cpp
+    src/parser.hpp     
+
+Make functions inline to allow multiple inclusions
+    src/matlab_util.hpp 
+    
+Allow check for tf buffer validity and availability of transformation
+    src/parser.hpp 
+    src/parser.cpp 

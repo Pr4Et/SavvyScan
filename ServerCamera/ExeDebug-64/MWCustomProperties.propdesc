@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+Copyright 2012 The MathWorks, Inc.
+
+    This propdesc file contains the descriptions of MathWorks custom properties.
+
+The formatID GUID is specific to custom MathWorks properties. 
+Note: Increment propeID for each new property starting at 2.
+
+When a new custom property is added to this file, a statement similar to the following needs to be added to PropertyMap.hpp:
+const PROPERTYKEY PKEY_MathWorks_Core_MATLABRelease = { { 0x491c1066, 0xcecb, 0x499a, { 0x94, 0xdb, 0x92, 0x4a, 0xc6, 0x2d, 0xe3, 0xa5 }}, 2 };
+
+WARNING:
+If the schema for a property is modified from that of a previous release, the old propdesc file must be used to unregister the property before the modified property schema is registered. Otherwise, Wsearch will not recognize the modified property even though Explorer does recognize it. You may need to restart Windows or even rebuild the index after registering the modified property.
+
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://schemas.microsoft.com/windows/2006/propertydescription"
+        schemaVersion="1.0">
+  <propertyDescriptionList publisher="MathWorks" product="MATLAB">
+    <propertyDescription name="MathWorks.Core.MATLABRelease" formatID="{491C1066-CECB-499A-94DB-924AC62DE3A5}" propID="2">
+      <description>This property specifies the MATLAB release used to produce a file's contents.</description>
+      <searchInfo inInvertedIndex="true" isColumn="true" columnIndexType="OnDisk" maxSize="64" mnemonics="matlab|matlabrelease" />
+      <labelInfo label="Release" sortDescription="OldestNewest"/>
+      <typeInfo type="String" multipleValues="false" isViewable="true" isQueryable="true"/>
+      <aliasInfo additionalSortByAliases="prop:System.ItemNameDisplay;System.FileExtension"/>
+      <displayInfo defaultColumnWidth="9" relativeDescriptionType="Revision" alignment="Center" defaultSortDirection="Descending" >
+      </displayInfo>
+    </propertyDescription>
+  </propertyDescriptionList>
+</schema>
+ 

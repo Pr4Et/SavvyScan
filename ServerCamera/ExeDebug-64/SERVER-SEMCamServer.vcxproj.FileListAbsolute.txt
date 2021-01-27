@@ -1,0 +1,2 @@
+D:\Savvyscan-source\ServerCamera\ExeDebug-64\SERVER-SEMCamServer.exe
+D:\Savvyscan-source\ServerCamera\ExeDebug-64\SERVER-SEMCamServer.pdb
