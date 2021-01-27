@@ -1,0 +1,24 @@
+COMPILER =   g++
+EXECUTABLE = rec_std_gate
+LIBS += -lspcm_linux -lrt -lpthread
+
+OBJECTS = \
+    rec_std_gate.o\
+	../common/spcm_lib_card.o\
+	../common/spcm_lib_data.o\
+	../common/ostools/spcm_ostools_linux.o
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE):	$(OBJECTS)
+		$(COMPILER) $(CFLAGS) -o $(EXECUTABLE) $(OBJECTS) $(LIBS)
+
+%.o:		%.cpp
+		$(COMPILER) $(CFLAGS) -o $*.o -c $*.cpp
+
+install:
+
+clean:
+	rm -f $(EXECUTABLE)
+	rm -f $(OBJECTS)
+

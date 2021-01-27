@@ -1,0 +1,23 @@
+COMPILER =   g++
+EXECUTABLE = rec_std_sync
+LIBS += -lspcm_linux -lrt
+
+OBJECTS = \
+    rec_std_sync.o\
+	../common/spcm_lib_card.o\
+	../common/spcm_lib_data.o
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE):	$(OBJECTS)
+		$(COMPILER) $(CFLAGS) -o $(EXECUTABLE) $(OBJECTS) $(LIBS)
+
+%.o:		%.cpp
+		$(COMPILER) $(CFLAGS) -o $*.o -c $*.cpp
+
+install:
+
+clean:
+	rm -f $(EXECUTABLE)
+	rm -f $(OBJECTS)
+
