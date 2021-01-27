@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{3067f7d1-58fb-41f6-8066-0a1f6728979d}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{0f51138b-8c8f-4d49-9b4c-002daa3e7fee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\c_header\dlltyp.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\regs.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcerr.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcm_drv.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\spcm_lib_card.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\spcm_lib_data.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\ostools\spcm_ostools.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\spcm_lib_card.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\spcm_lib_data.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\ostools\spcm_ostools_win.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="rep_fifo_multi.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="..\c_header\spcm_win32_msvcpp.lib">
+      <Filter>common</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\c_header\spcm_win64_msvcpp.lib">
+      <Filter>common</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>
