@@ -1,0 +1,48 @@
+﻿Build started 7/5/2020 7:44:13 PM.
+     1>Project "H:\JeolCameraStripped\IMOD\libiimod\libiimod.vcxproj" on node 2 (build target(s)).
+       Project file contains ToolsVersion="14.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>InitializeBuildStatus:
+         Touching ".\Debug\libiimod.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\include /ZI /nologo /W1 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_DEPRECATE /D WIN32_BIGFILE /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt diffusion.c iijpeg.c iilikemrc.c iimage.c iimrc.c iitif.c mrcfiles.c mrcsec.c mrcslice.c parallelwrite.c plist.c sliceproc.c
+         diffusion.c
+         iijpeg.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         iilikemrc.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         iimage.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         iimrc.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         iitif.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+     1>h:\jeolcamerastripped\imod\libiimod\iitif.c(48): fatal error C1083: Cannot open include file: 'tiffio.h': No such file or directory
+         mrcfiles.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         mrcsec.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         mrcslice.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         parallelwrite.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         plist.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         sliceproc.c
+     1>h:\jeolcamerastripped\imod\include\imodconfig.h(13): warning C4005: 'WIN32_BIGFILE' : macro redefinition
+                 command-line arguments :  see previous definition of 'WIN32_BIGFILE'
+         Generating Code...
+     1>Done Building Project "H:\JeolCameraStripped\IMOD\libiimod\libiimod.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:01:20.45

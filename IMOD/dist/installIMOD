@@ -1,0 +1,1066 @@
+#!/usr/bin/python -u
+# installIMOD: multiplatform install script for IMOD
+
+# Functions
+
+def usage():
+   sys.stdout.write("""Usage: installIMOD [options] [package file name]
+  Installs IMOD using a package in the current directory if there is only one,
+    or using the specified package file.  It will look only for a .tar.gz 
+    package, but if a package name is entered ending in .csh or .sh, it will
+    extract the .tar.gz from that.
+  Options (may be abbreviated):
+    -dir dir     Directory in which to install IMOD
+    -name dir    Name to give the IMOD directory itself
+    -script dir  Directory in which to place the IMOD startup scripts
+    -skip        Skip copying startup scripts or modifying system startup files
+    -debian      Modify """ + ubscripts[0] + " and " + ubscripts[1] + """
+                   instead of copying startup scripts to /etc/profile.d
+                   - this option is set automatically for Ubuntu versions < 10
+    -yes         Remove older versions without asking for confirmation
+    -h, --help   Print this help
+""")
+   sys.exit(0)
+
+
+# Remove an extracted package if one was createed
+def doCleanup():
+   try:
+      if removeLater:
+         os.chdir(installdir)
+         if restoreOldCopy:
+            os.rename(removeLater, version)
+         else:
+            shutil.rmtree(removeLater)
+      if cleanupPackage:
+         sys.stdout.write('\nRemoving compressed tar file\n')
+         os.chdir(startingDir)
+         if tgzfile:
+            tgzfile.close()
+         os.remove(realPackage)
+   except Exception:
+      pass
+
+
+# print commands to replace echo statements in tcsh script
+def echo(message):
+   sys.stdout.write(message + '\n')
+   sys.stdout.flush()
+
+def echoerr(message):
+   sys.stdout.write(message + '\n')
+   doCleanup()
+   sys.exit(1)
+
+
+# Test whether a directory is writable in windows even if the permission seem wrong
+def testUnwritable(testdir, suggestSkip):
+   if ostype == WINDOWS:
+      try:
+         testfile = open(testdir + '/testfile')
+         testfile.write('gibberish\n')
+      except Exception:
+         echo("There is an error writing files to " + testdir)
+         echoerr("Make sure the /etc/passwd and /etc/group files are up to date")
+
+      try:
+         testfile.close()
+         os.remove(testdir + '/testfile')
+      except Exception:
+         pass
+
+   else:
+      echo("You do not have permission to write to " + testdir)
+      mess = "Run this command with sudo or as root";
+      if suggestSkip:
+         mess = "Run this command with the -skip option, or run it with sudo or as root"
+      echoerr(mess)
+
+      
+# Function to read in a text file and strip line endings, returns None for error
+def readFile(filename, descrip = None):
+   textfile = None
+   if not descrip:
+      descrip = " "
+   try:
+      errString = "opening"
+      textfile = open(filename, 'r')
+      errString = "reading"
+      lines = textfile.readlines()
+   except IOError:
+      echo(fmtstr("WARNING: Error {} {} {}: {}", errString, descrip, filename, \
+                       str(sys.exc_info()[1])))
+      if textfile:
+         textfile.close()
+      return None
+   
+   # Strip endings but leave any trailing spaces to avoid perturbing system files
+   textfile.close()
+   for i in range(len(lines)):
+      lines[i] = lines[i].rstrip('\r\n')
+   return lines
+
+
+# Function to write a text file with lines that have no endings, return 1 for error
+def writeFile(filename, strings):
+   comf = None
+   try:
+      action = 'opening'
+      comf = open(filename, 'w')
+      action = 'writing to'
+      for line in strings:
+         prnstr(line, file=comf)
+      comf.close()
+      return 0
+   except IOError:
+      echo("WARNING: Error" + action + " file: " + filename + "  - " + \
+              str(sys.exc_info()[1]))
+      if comf:
+         comf.close()
+      return 1
+
+
+# Function to run "file" on a file and return 2 for 32-bit, 4 for 64-bit, 0 unknown
+def testFileType(filnam):
+   filelines = runcmd('file ' + filnam)
+   if len(filelines) and '32-bit' in filelines[0]:
+      return 2
+   if len(filelines) and '64-bit' in filelines[0]:
+      return 4
+   return 0
+
+
+# Find lines with source command and setting IMOD_DIR in a startup script file or fragment
+# Also detect multiple commands or multiline conditionals
+def findIMODLines(lines):
+   testSourceLine = -1
+   dirLine = -1
+   sourceLine = -1
+   testLine = -1
+   multiline = False
+   for ind in range(len(lines)):
+      if re.search('IMOD.*sh.*source.*IMOD.*sh', lines[ind]):
+         testSourceLine = ind
+         if sourceLine >= 0 or testLine >= 0:
+            multiline = True
+      if re.search('source.*IMOD.*sh', lines[ind]):
+         sourceLine = ind
+         if sourceLine != testSourceLine:
+            multiline = True
+      if re.search('-[er].*IMOD.*sh', lines[ind]):
+         testLine = ind
+         if testLine != testSourceLine:
+            multiline = True
+      if re.search('setenv.*IMOD_DIR', lines[ind]) or\
+             re.search('export.*IMOD_DIR', lines[ind]):
+         dirLine = ind
+   return (testSourceLine, dirLine, multiline)
+
+
+# Function to save Plugins dir in old IMOD by copying or renaming
+def saveUserPlugins(olddir, copyTree):
+   if os.path.exists(olddir + '/Plugins'):
+      echo ('Saving the Plugins directory in the existing installation')
+
+      # Get a unique name
+      baseName = 'IMOD-Plugins' + '.tmp.' + str(os.getpid())
+      savedName = baseName
+      for ind in range(100):
+         if not os.path.exists(savedName):
+            break
+         savedName = baseName + '-' + str(ind)
+      else:     # ELSE ON FOR
+         echoerr('Cannot save Plugins dir, too many copies named ' + baseName)
+         
+      # Do the rename or copy
+      try:
+         if copyTree:
+            action = 'copying '
+            shutil.copytree(olddir + '/Plugins', savedName)
+         else:
+            action = 'moving '
+            os.rename(olddir + '/Plugins', savedName)
+      except Exception:
+         echoerr('Error ' + action + olddir + '/Plugins to ' + savedName + ': ' +
+                 str(sys.exc_info()[1]))
+      return savedName
+
+
+# Function to rename an existing IMOD that will definitely be removed
+def saveForLaterRemoval(oldName):
+   tempName = oldName + '.tmp.' + str(os.getpid())
+   if not os.path.exists(tempName):
+      try:
+         os.rename(oldName, tempName)
+         return tempName
+      except Exception:
+          pass
+   try:
+      shutil.rmtree(oldName)
+      return ''
+   except Exception:
+      echoerr("An error occurred removing an old IMOD")
+      
+
+# For pretty output on download
+def urlHook(numBlocksDone, blockSize, totSize):
+   global nextNum
+   nextFrac = 1. - nextNum / 10.
+   if float(numBlocksDone * blockSize) / totSize > nextFrac:
+      sys.stdout.write(str(nextNum))
+      sys.stdout.flush()
+      nextNum -= 1
+
+
+# MAIN PROGRAM
+import sys, os, glob, re, shutil, tarfile, time
+
+installdir = ""
+scriptdir = ""
+custom = 0
+namedir = "IMOD"
+custname = 0
+skipcopy = 0
+dirEntered = False
+keepg2c = 0
+yesopt = 0
+ubuntu = 0
+ubscripts = ('/etc/csh.cshrc', '/etc/bash.bashrc')
+scripts = ()
+fixUbScripts = False
+noCygwin = 0
+sysnames = ('Linux', 'Windows', 'Mac OSX')
+cleanupPackage = False
+realPackage = ''
+tgzfile = None
+startingDir = os.path.abspath('.')
+pyVersion = 100 * sys.version_info[0] + 10 * sys.version_info[1]
+qtlibDir = 'qtlib'
+removeLater = ''
+restoreOldCopy = False
+libsNeedName = 'LibsNeeded'
+libsPackName = 'PackageLibs'
+
+# Constants for testing os and package type against - capitalize to avoid testing on them
+LINUX = 0
+WINDOWS = 1
+OSX = 2
+
+# Look for recognized arguments
+argind = 1
+while argind < len(sys.argv):
+   arg = sys.argv[argind]
+   if arg.startswith('-di'):
+      argind += 1
+      installdir = os.path.abspath(sys.argv[argind])
+      dirEntered = True
+      
+   elif arg.startswith('-na'):
+      argind += 1
+      namedir = sys.argv[argind]
+      if ' ' in namedir:
+         echoerr("The entry for -name must be a single directory name\n" + \
+                 "with no spaces or directory separators")
+              
+   elif arg.startswith('-sc'):
+      argind += 1
+      scriptdir = os.path.abspath(sys.argv[argind])
+      
+   elif arg.startswith('-sk'):
+      skipcopy = 1
+   elif arg.startswith('-y'):
+      yesopt = 1
+   elif arg.startswith('-de'):
+      ubuntu = 1
+   elif arg.startswith('-h') or arg == '--help':
+      usage()
+   else:
+      break
+   argind += 1
+
+if namedir != 'IMOD':
+   custname = 1
+
+# Set the package name from the argument and check it if there is one
+if argind < len(sys.argv):
+   package = sys.argv[argind]
+   if not os.access(package, os.R_OK):
+      echoerr("The file " + package + " does not exist or is not readable")
+
+# Or look for the package in the current directory
+else:
+   packlist = glob.glob('imod_[0-9]*.tar.gz')
+   if len(packlist) == 0:
+      echoerr("No IMOD package found in current directory; specify package as " +\
+                 "an argument")
+   if len(packlist) > 1:
+      echo("Cannot identify IMOD package; there is more than one in this directory")
+      echoerr("Specify package as an argument")
+   package = packlist[0]
+
+# Save the directory where the package really is before it might get replaced
+dirWithPackage = os.path.abspath(os.path.dirname(package))
+
+# Does package name end in .sh?  Then need to extract the tar.gz
+if package.endswith('.csh') or package.endswith('.sh'):
+   ext = 'csh'
+   if package.endswith('.sh'):
+      ext = 'sh'
+   realPackage = package.replace('.' + ext, '.tar.gz')
+   try:
+      action = 'opening ' + package
+      cshfile = open(package, 'rb')
+      action = 'finding end of stub in ' + package
+      echo('Extracting compressed tar from ' + ext + ' file...')
+      line = cshfile.readline()
+      stubTest = 'END OF STUB'
+      if pyVersion >= 300:
+         stubTest = stubTest.encode()
+      while True:
+         line = cshfile.readline()
+         if line.startswith(stubTest):
+            break
+         if not line:
+            echoerr('Cannot find END OF STUB in ' + ext + ' file')
+
+      action = 'opening ' + realPackage
+      tgzfile = open(realPackage, 'wb')
+      cleanupPackage = True
+      action = 'copying from ' + package + ' to ' + realPackage
+      while True:
+         data = cshfile.read(1000000)
+         if not data:
+            break
+         tgzfile.write(data)
+
+      action = 'closing files after copy'
+      cshfile.close()
+      tgzfile.close()
+      tgzfile = None
+      package = realPackage
+
+   except IOError:
+      echoerr('An error occurred ' + action + ': ' + str(sys.exc_info()[1]))
+
+# Get name that unpacked directory will have
+version = re.sub('.*(imod_[0-9.]*).*', r'\1', os.path.basename(package))
+if version.endswith('.'):
+   version = version[:len(version) - 1]
+
+echo("Checking system and package types")
+
+# Set up system-dependent scripts, etc
+defaultdir = '/usr/local'
+if 'linux' in sys.platform:
+   ostype = LINUX
+   scripts = ('IMOD-linux.csh', 'IMOD-linux.sh')
+
+   # Try to identify ubuntu
+   release = -1
+   if not ubuntu:
+      relfiles = glob.glob('/etc/*release')
+      for relFil in relfiles:
+         try:
+            relf = open(relFil, 'r')
+            rellines = relf.readlines()
+            relf.close()
+            for l in rellines:
+               if 'ubuntu' in l.lower() or 'linuxmint' in l.lower():
+                  ubuntu = 1
+               if 'RELEASE=' in l:
+                  lspl = l.split('=')
+                  try:
+                     verSpl = lspl[1].split('.')
+                     release = int(verSpl[0])
+                  except Exception:
+                     pass
+            
+         except Exception:
+            pass
+
+   # Do not mark as "Ubuntu" for release 10 or higher, /etc/profile.d works
+   if ubuntu and release > 9:
+      ubuntu = 0
+      fixUbScripts = True
+      
+   if ubuntu:
+      sysfiles = ubscripts
+      scripts = ('ubuntu.cshrc', 'ubuntu.bashrc', 'IMOD-linux.csh', 'IMOD-linux.sh')
+
+elif 'darwin' in sys.platform:
+   ostype = OSX
+   defaultdir = '/Applications'
+   scripts = ('mac.cshrc', 'mac.profile', 'mac.profile', 'IMOD-mac.csh', 
+              'IMOD-mac.sh', 'IMOD-mac.sh')
+   sysfiles = ['/etc/csh.login', '/etc/profile', '/etc/zprofile']
+
+elif 'cygwin' in sys.platform:
+   ostype = WINDOWS
+   scripts = ('IMOD-cygwin.csh', 'IMOD-cygwin.sh')
+   qtlibDir = 'bin'
+
+elif 'win32' in sys.platform:
+   ostype = WINDOWS
+   defaultdir = 'C:/Program Files'
+   noCygwin = 1
+   qtlibDir = 'bin'
+   if not skipcopy:
+      echoerr("You must run the install script with Cygwin python unless -skip is given")
+
+else:
+   echoerr("IMOD will not run on this system (" + sys.platform + ")")
+
+if installdir == "":
+   installdir = defaultdir
+if installdir != defaultdir:
+   custom = 1
+
+# Get the package type from its name
+if 'win' in package:
+   packos = WINDOWS
+elif 'osx' in package:
+   packos = OSX
+else:
+   packos = LINUX
+
+if ostype != packos:
+   echoerr("The system type (" + sysnames[ostype] + ") does not match the IMOD package" +\
+              " type (" + sysnames[packos] + ")")
+
+sysdir = '/etc'
+if (ostype == LINUX and not ubuntu) or ostype == WINDOWS:
+   sysdir = '/etc/profile.d'
+if scriptdir:
+   sysdir = scriptdir
+
+# If there is a custom name, make the install directory
+if custname and not (os.path.exists(installdir) and os.path.isdir(installdir)):
+   try:
+      os.mkdir(installdir)
+   except Exception:
+      echo("An error occurred creating the install directory " + installdir)
+      echoerr("Is the name correct?  Do you need to run as sudo or root?")
+
+if not os.path.isdir(installdir):
+   echoerr("The install directory " + installdir + \
+              " does not exist or is not a directory")
+
+if not skipcopy and not os.path.isdir(sysdir):
+   echoerr("The directory to copy scripts to, " + sysdir + \
+              ", does not exist or is not a directory")
+
+if not os.access(installdir, os.W_OK):
+   testUnwritable(installdir, False)
+   
+if not skipcopy and not os.access(sysdir, os.W_OK):
+   testUnwritable(sysdir, dirEntered)
+      
+# Get an absolute path to package, then cd to the install dir
+packabs = os.path.abspath(package)
+os.chdir(installdir)
+
+oldversion = ''
+
+# Save the Plugins directory if exists, by moving it if it is going to be removed next
+savedPlugDir = ''
+if os.path.exists(namedir):
+   savedPlugDir = saveUserPlugins(namedir,
+                                  not (custname and not os.path.islink(namedir)))
+
+# If file exists as a link, just remove it
+if os.path.islink(namedir):
+   echo("Removing link to previous version but leaving previous version")
+   try:
+      oldversion = os.readlink(namedir)
+      os.remove(namedir)
+   except Exception:
+      echoerr("Error removing link to previous version")
+
+# If custom name, and that exists, remove it
+if custname and os.path.exists(namedir):
+   echo("Removing an existing directory " + namedir + "...")
+   removeLater = saveForLaterRemoval(namedir)
+   oldversion = removeLater
+
+# Remove existing files by this name
+if os.path.exists(version):
+   if custname:
+      restoreOldCopy = True
+   else:
+      echo("Removing an existing copy of the same version...")
+   removeLater = saveForLaterRemoval(version)
+   oldversion = removeLater
+
+# extractall is better because it preserves dates; use it if possible
+# Extraction of either kind with Python 3.2.0 gives error on cuda files with chained links
+echo("Unpacking IMOD in " + installdir + " ...")
+tf = None
+try:
+   tf = tarfile.open(packabs, 'r:gz')
+   if pyVersion >= 250:
+      tf.extractall()
+   else:
+      for tfi in tf:
+         tf.extract(tfi)
+
+except tarfile.ReadError:
+   echoerr("An error occurred opening tar file " + packabs)
+except tarfile.TarError:
+   echoerr("An error occurred unpacking the IMOD tar file")
+except OSError:
+   echoerr("An error occurred unpacking the IMOD tar file: " + str(sys.exc_info()[1]))
+if tf:
+      tf.close()
+
+# If there is an existing file, first see if there is a version inside
+if not custname and os.path.exists('IMOD'):
+   oldversion = ''
+   if os.path.exists('IMOD/VERSION'):
+      versfile = None
+      try:
+         versfile = open('IMOD/VERSION', 'r')
+         versline = versfile.readline()
+         oldversion = 'imod_' + versline.rstrip()
+         if oldversion == version:
+            oldversion = ''
+            echo("The existing IMOD appears to be the same version as the new one")
+         elif os.path.exists(oldversion):
+            echo("The existing IMOD appears to be " + oldversion)
+            echo("Removing another copy of " + oldversion + " ...")
+            try:
+               shutil.rmtree(oldversion)
+            except Exception:
+               echoerr("An error occurred removing " + oldversion)
+
+      except Exception:
+         echo("An error occurring reading the old IMOD/VERSION file; just removing " +\
+                 "that old IMOD")
+      if versfile:
+         versfile.close()
+
+   # Don't bother renaming ancient IMOD's with no VERSION file!
+   # Rename to the old version name or just remove if couldn't get one
+   if oldversion == '':
+      echo("Removing previous version ...")
+      removeLater = saveForLaterRemoval('IMOD')
+      oldversion = removeLater
+
+   else:
+      echo("Renaming previous version to " + oldversion)
+      try:
+         os.rename('IMOD', oldversion)
+      except Exception:
+         echoerr("An error occurred renaming the old IMOD - " + str(sys.exc_info()[1]))
+
+# Make link or rename
+if ostype == WINDOWS or ostype == OSX or custname:
+   echo("Renaming " + version + " to " + namedir)
+   for trial in range(5):
+      try:
+         os.rename(version, namedir)
+      except Exception:
+         echo("Retrying after a few seconds...")
+         time.sleep(3.0)
+         continue
+      break
+   else:
+      echo("Failed to rename " + version + " to " + namedir)
+      if ostype == WINDOWS:
+          echo("You should try again but may have to do installation steps manually.")
+      doCleanup()
+      sys.exit(1)
+
+else:
+   echo("Linking " + version + " to IMOD")
+   try:
+      os.symlink(version, 'IMOD')
+   except Exception:
+      echoerr("Failed to make link from " + version + " to IMOD")
+
+# If a plugin directory was saved, move the contents into Plugins
+if savedPlugDir:
+   newPlugDir = namedir + '/Plugins'
+   echo('Restoring the Plugins directory')
+   if not os.path.exists(newPlugDir):
+
+      # The easy case where we didn't ship a Plugins: just rename the saved directory in
+      try:
+         os.rename(savedPlugDir, namedir + '/Plugins')
+      except Exception:
+         echoerr('Failed to move ' + savedPlugDir + ' to ' + newPlugDir)
+   else:
+
+      # Otherwise, look at each item in saved directory and if it doesn't exist
+      # copy it in either as a file or a tree
+      oldContents = glob.glob(savedPlugDir + '/*')
+      for item in oldContents:
+         newItem = newPlugDir + '/' + os.path.basename(item)
+         if not os.path.exists(newItem):
+            try:
+               if os.path.isdir(item):
+                  shutil.copytree(item, newItem)
+               else:
+                  shutil.copyfile(item, newItem)
+            except Exception:
+               echoerr('Failed to copy ' + item + ' to ' + newItem)
+
+      try:
+         shutil.rmtree(savedPlugDir)
+      except Exception:
+         echo('WARNING: Could not remove ' + savedPlugDir + ' after copying contents ' +\
+                 'into ' + newPlugDir)
+         
+os.chdir(namedir)
+      
+# At last we can add pylib to the path and import imodpy
+sys.path.insert(0, './pylib')
+from imodpy import *
+from pysed import *
+defaultstr = defaultdir + '/IMOD'
+installstr = installdir + '/' + namedir
+
+# Determine if it is an upgrade package and handle that
+if os.path.exists(libsNeedName) and not os.path.exists(qtlibDir + '/' + libsPackName):
+   needLibLines = readFile(libsNeedName, ' to determine needed library package')
+   if not needLibLines:
+      echoerr('You must install a full package instead of an upgrade package')
+   numNeedLines = len(needLibLines)
+
+   # If there is an old version, make sure it has package file, read it, see if it matches
+   if oldversion:
+      oldPack = os.path.join('..', oldversion, qtlibDir, libsPackName)
+      if os.path.exists(oldPack):
+         oldPackLines = readFile(oldPack)
+         if oldPackLines and len(oldPackLines) == numNeedLines:
+            for ind in range(numNeedLines):
+               if needLibLines[ind] != oldPackLines[ind]:
+                  break
+            else:    # ELSE ON FOR if all lines match: move the files
+               try:
+                  echo('Moving required libraries from old package to new one')
+                  if ostype == WINDOWS:
+                     for ind in range(1, numNeedLines):
+                        os.rename(os.path.join('..', oldversion, 'bin', needLibLines[ind])
+                                  , 'bin/' + needLibLines[ind])
+                     os.rename(os.path.join('..', oldversion, 'bin', libsPackName)
+                               , 'bin/' + libsPackName)
+                  else:
+                     os.rename(os.path.join('..', oldversion, 'qtlib'), 'qtlib')
+
+                  needLibLines = ''
+               except Exception:
+                  echo('WARNING: Could not move files correctly from old package')
+
+   # If lines were not cleared out, get the package name
+   if needLibLines:
+      packURL = needLibLines[0]
+      packName = os.path.basename(packURL)
+      packPath = os.path.join(dirWithPackage, packName)
+
+      # Check for the file package directory or above it
+      nextNum = 9
+      if os.path.exists(os.path.join(dirWithPackage, '..', packName)):
+         packPath = os.path.join(dirWithPackage, '..', packName)
+      elif not os.path.exists(os.path.join(dirWithPackage, packName)):
+
+         # Try to download the package
+         try:
+            sys.stdout.write('Downloading ' + packName + ': ')
+            sys.stdout.flush()
+            # This "may be deprecated" in the future, for replacement see
+            # https://stackoverflow.com/questions/44072230/how-to-implement-the-equivalent-of-urllib-urlretrieve-in-python-3
+            if pyVersion >= 300:
+               from urllib.request import urlretrieve
+            else:
+               from urllib import urlretrieve
+            urlretrieve(packURL, packPath, urlHook)
+            sys.stdout.write('\n')
+            sys.stdout.flush()
+
+         except Exception:
+            echo('\nAn error occurred downloading the required libraries')
+            try:
+               cleanupFiles([packPath])
+            except Exception:
+               pass
+            echoerr('You must install a full package instead of an upgrade package')
+
+      # The package is there one way or another, extract it
+      try:
+         failed = 0
+         echo('Extracting required libraries from ' + packName)
+         mess = 'opening ' + packName + ' as a tar file'
+         tf = tarfile.open(packPath, 'r')
+         mess = 'extracting the files from ' + packName
+         if pyVersion >= 250:
+            tf.extractall()
+         else:
+            for tfi in tf:
+               tf.extract(tfi)
+         tf.close()
+
+      except Exception:
+         echo('An error occurred ' + mess + ' (' + str(sys.exc_info()[1]) + ')\n')
+         echo('You must install a full package instead of an upgrade package')
+         failed = 1
+         if mess.startswith('extract'):
+            tf.close()
+
+      # Clean up the package if it was downloaded
+      if nextNum < 0:
+         cleanupFiles([packPath])
+         if os.path.exists(packPath):
+            echo('WARNING: Failed to remove downloaded package ' + packPath)
+
+      if failed:
+         sys.exit(1)
+
+# Now that any previous package is unneeded, lets get rid of it
+if removeLater:
+   try:
+      if restoreOldCopy:
+         mess = 'restore other copy of this version'
+         os.rename(installdir + '/' + removeLater, installdir + '/' + version)
+      else:
+         mess = 'remove old version'
+         shutil.rmtree(installdir + '/' + removeLater)
+   except Exception:
+      echo('WARNING: Failed to ' + mess + ', now in ' + installdir + '/' + removeLater)
+
+
+# Make the ubuntu scripts for old ubuntu
+if ubuntu:
+   uberr = writeFile(scripts[0], [fmtstr('if (-e {0}/{1}/{2}) source {0}/{1}/{2}',
+                                          defaultdir, namedir, scripts[2])])
+   uberr += writeFile(scripts[1], [fmtstr('[ -r {0}/{1}/{2} ] && source {0}/{1}/{2}',
+                                          defaultdir, namedir, scripts[3])])
+   if not skipcopy:
+      for scrip in (scripts[2], scripts[3]):
+         epscript = '/etc/profile.d/' + scrip
+         if os.path.exists(epscript):
+            echo('Removing ' + epscript)
+            try:
+               os.remove(epscript)
+            except Exception:
+               echo('Error removing ' + epscript + \
+                       '; You should remove that file manually')
+
+# Move Windows .dlls up for pre-XP version
+if ostype == WINDOWS and not noCygwin:
+   uname = (os.uname()[0]).split('-')
+   try:
+      unamespl = uname[1].split('.')
+      major = int(unamespl[0])
+      minor = 0
+      if len(unamespl) > 1:
+         minor = int(unamespl[1])
+      if major < 5 or (major == 5 and minor < 1):
+         msdlls = glob.glob('bin/Microsoft*/*.dll')
+         try:
+            for dll in msdlls:
+               shutil.move(dll, 'bin')
+         except Exception:
+            echo("Failed to move one or more DLLs from bin/Microsoft* directory into bin")
+   except:
+      echo("WARNING: Could not determine Windows version and whether to move")
+      echo("   Microsoft DLLs from bin subdirectory up to bin.")
+
+# Test for 64 versus 32-bit
+mismatch = ''
+try:
+   if ostype != WINDOWS:
+      uname = os.uname()
+   if ostype == LINUX:
+      bit3264 = testFileType('lib/libimod.so')
+      if bit3264 == 2 and uname[4] == 'x86_64':
+         mismatch = "WARNING: THIS IS A 32-bit PACKAGE ON A 64-BIT SYSTEM AND MAY NOT RUN"
+         if ubuntu:
+            mismatch = \
+                "WARNING: THIS IS A 32-bit PACKAGE ON 64-BIT UBUNTU AND WILL NOT RUN"
+      if bit3264 == 4 and uname[4] != 'x86_64':
+         mismatch = \
+             "WARNING: THIS IS A 64-bit PACKAGE ON A 32-BIT SYSTEM AND WILL NOT RUN"
+            
+   elif ostype == OSX:
+      bit3264 = testFileType('lib/libimod.dylib')
+      archlines = runcmd('sysctl hw')
+      arch64 = 0
+      for l in archlines:
+         if 'x86_64' in l or '64bitops' in l:
+            l = l.rstrip()
+            try:
+               arch64 = int(l[len(l)-1])
+            except:
+               pass
+            break
+
+      unsplit = uname[2].split('.')
+      try:
+         osxvers = int(unsplit[0])
+         if osxvers < 9:
+            arch64 = 0
+      except:
+         pass
+      if bit3264 == 4 and arch64 != 1:
+         mismatch = \
+             "WARNING: THIS IS A 64-bit PACKAGE ON A 32-BIT SYSTEM AND WILL NOT RUN"
+      
+except Exception:
+   echo('Errors occurred testing whether the package fits the system type')
+
+# Edit scripts in place before copying
+if custom or custname:
+   echo("Editing startup scripts for custom install location")
+   for scrip in scripts:
+      scriplines = readFile(scrip)
+      if scriplines == None:
+         echo('WARNING: An error occurred reading ' + scrip)
+      else:
+         editlines = pysed(['|' + defaultstr + '|s||' + installstr + '|g'], scriplines,
+                           delim = '|')
+         if writeFile(scrip, editlines):
+            echo('WARNING: An error occurred writing ' + scrip)
+
+# Copy scripts to /etc/profile.d or designated place
+if (ostype == WINDOWS or (ostype == LINUX and not ubuntu) or scriptdir) and not skipcopy:
+   indst = 2 * ubuntu
+   sys.stdout.write("Copying startup scripts to " + sysdir + ":")
+   for scrip in scripts[indst:]:
+      sys.stdout.write(' ' + scrip)
+   sys.stdout.write('\n')
+   for scrip in scripts[indst:]:
+      try:
+         shutil.copy(scrip, sysdir)
+      except Exception:
+         echo('WARNING: Failed to copy ' + scrip + ' to ' + sysdir)
+
+# Or add the source commands to the system files
+elif not skipcopy:
+   for ind in range(len(sysfiles)):
+      sysfil = sysfiles[ind]
+      if os.path.exists(scripts[ind]) and os.path.exists(sysfil):
+         scriptlines = readFile(scripts[ind])
+         syslines = readFile(sysfil)
+         if syslines == None or scriptlines == None:
+            continue
+         (sysSource, sysIMODdir, multiExists) = findIMODLines(syslines)
+         (scriptSource, scriptIMODdir, junk) = findIMODLines(scriptlines)
+         if scriptSource < 0:
+            echo('WARNING: Failed to find line for sourcing startup in ' + scripts[ind])
+            continue
+
+         # Issue complaint about multi-line entries in the file
+         if multiExists:
+            startup = ''
+            if len(scripts) > len(sysfiles):
+               startup = ' (' + scripts[ind + len(sysfiles)] + ')'
+            echo("\nWARNING: " + sysfil + " appears to contain several lines for testing")
+            echo("         then sourcing the IMOD startup script" + startup)
+            echo("         You need to remove these lines manually,")
+            echo("         leaving just one line that tests and sources.\n")
+
+         # Three cases: it already matches, adding from scratch, or fixing what's there
+         if sysSource >= 0 and syslines[sysSource] == scriptlines[scriptSource] and \
+                (sysIMODdir < 0 or (scriptIMODdir >= 0 and \
+                    syslines[sysIMODdir] == scriptlines[scriptIMODdir])):
+            echo("Source command already exists in " + sysfil)
+            continue
+         if sysSource < 0:
+            echo("Adding source of startup script " + scripts[ind] + " to " + sysfil)
+            syslines += ["", "# Set environment for IMOD"]
+            if scriptIMODdir >= 0:
+               syslines.append(scriptlines[scriptIMODdir])
+            syslines.append(scriptlines[scriptSource])
+         else:
+            echo("Correcting source of startup script " + scripts[ind] + " in " + sysfil)
+            syslines[sysSource] = scriptlines[scriptSource]
+
+            # If the IMOD_DIR line exists, replace from the script file if possible,
+            # otherwise replace the install dir on that line (in fact it is an
+            # abberation to have the IMOD_DIR line and it is not in the script)
+            if sysIMODdir >= 0:
+               if scriptIMODdir >= 0:
+                  syslines[sysIMODdir] = scriptlines[scriptIMODdir]
+               else:
+                  ind = syslines[sysIMODdir].find('/')
+                  syslines[sysIMODdir] = syslines[sysIMODdir][:ind] + installstr
+
+         mode = None
+         if not os.access(sysfil, os.W_OK):
+            echo("Temporarily making " + sysfil + " writable to do this")
+            mode = stat.S_IMODE(os.stat(sysfil)[stat.ST_MODE])
+            try:
+               os.chmod(sysfil, mode | stat.S_IWUSR)
+            except Exception:
+               echo('Failed to make ' + sysfil + 'writable')
+               mode = None
+               
+         writeFile(sysfil, syslines)
+         if mode:
+            try:
+               os.chmod(sysfil, mode)
+            except Exception:
+               pass
+
+# Fix scripts from old Ubuntu installs
+if fixUbScripts and not skipcopy:
+   for ind in range(len(ubscripts)):
+      sysfil = ubscripts[ind]
+      if os.path.exists(scripts[ind]) and os.path.exists(sysfil):
+         syslines = readFile(sysfil)
+         if syslines == None:
+            continue
+         (sysSource, sysIMODdir, multiExists) = findIMODLines(syslines)
+         if sysSource < 0 and sysIMODdir < 0:
+            continue
+
+         # Remove the line(s) in inverse order, then get rid of the comment line
+         syslines.pop(max(sysSource, sysIMODdir))
+         if min(sysSource, sysIMODdir) >= 0:
+            syslines.pop(min(sysSource, sysIMODdir))
+         for lineInd in range(len(syslines)):
+            if 'Set environment for IMOD' in syslines[lineInd]:
+               syslines.pop(lineInd)
+               break
+            
+         writeFile(sysfil, syslines)   
+         echo('Removed source of startup script ' + scripts[ind] + ' from ' + sysfil)
+         if multiExists:
+            echo('\nWARNING: ' + sysfil + 'appeared to contain several lines for testing')
+            echo('         then sourcing the IMOD startup script.')
+            echo('         You need to remove any remaining lines manually.')
+         
+
+# Try to take care of SELinux problems in recommended fashion
+if ostype == LINUX and os.path.exists('/usr/sbin/sestatus'):
+   try:
+      selines = runcmd('/usr/sbin/sestatus')
+      enabled = 0
+      targeted = 0
+      for l in selines:
+         if 'enabled' in l:
+            enabled = 1
+         if re.search('Policy from .*targeted', l):
+            targeted = 1
+      if enabled:
+         echo("\nSELinux is enabled - Trying to change security context of libraries.")
+         
+         # Try in order of the first one that was supposed to be used, the one
+         # that works in targeted mode, and the other one that Nvidia lists
+         for con in ('texrel_shlib_t', 'shlib_t', 'textrel_shlib_t'):
+            try:
+               concom = 'chcon -t ' + con + ' lib/*.so'
+               if os.path.exists('qtlib'):
+                  concom += ' qtlib/*.so'
+               runcmd(concom)
+               break
+            except ImodpyError:
+               pass
+
+         else:
+            echo("  Errors occurred changing the security context.")
+            if targeted:
+               echo("  This is probably OK since your policy is targeted.")
+            echo("  Disable SELinux if you have permission problems running IMOD " +\
+                    "programs.")
+
+   except ImodpyError:
+      echo("WARNING: could not run /usr/sbin/sestatus - " + str(sys.exc_info()[1]))
+
+# Manage the libtiff links if necessary (why???)
+if ostype == LINUX:
+   hastiff = glob.glob('qtlib/libtiff.so*')
+   libdir = '/usr/lib'
+   if bit3264 == 4:
+      libdir = '/usr/lib64'
+   libtiff = libdir + '/libtiff.so'
+   alttiff = libdir + '/x86_64-linux-gnu/libtiff.so'
+   if len(hastiff) == 0 and not os.path.exists(libtiff + '.3') \
+          and not os.path.exists(alttiff + '.3'):
+      try:
+         if os.path.exists(libtiff + '.4'):
+            lntiff = libtiff + '.4'
+            os.symlink(libtiff + '.4', 'lib/libtiff.so.3')
+         elif os.path.exists(alttiff + '.4'):
+            lntiff = alttiff + '.4'
+            os.symlink(alttiff + '.4', 'lib/libtiff.so.3')
+         else:
+            echo("WARNING: cannot find libtiff in this IMOD package or \n   " +\
+                    "libtiff.so.3 or libtiff.so.4 on the system")
+            echo("You should install a regular IMOD package that includes tiff libraries")
+            
+      except Exception:
+         echo("WARNING: An error occurred trying to link " + lntiff + \
+                 ' to lib/libtiff.so.3')
+         echo("You should install a regular IMOD package that includes tiff libraries")
+
+# Do a quick and dirty test for whether they need to install libjpeg 6 on Ubuntu
+if ubuntu:
+   jpeglib = '/usr/lib/x86_64-linux-gnu/libjpeg.so.'
+   if os.path.exists(jpeglib + '8') and not os.path.exists(jpeglib + '62'):
+      echo('WARNING: You need version 6.2 of the JPEG libraries and you only have\n' +\
+              '         version 8.  Install version 6 with:\n' + \
+              '         sudo apt-get install libjpeg62')
+         
+# List files and offer to clean up
+vernum = version[version.find('_') + 1:]
+echo("")
+echo("The installation of IMOD " + vernum + " is complete.")
+if ubuntu or fixUbScripts:
+   echo("You may need to log out and log back in for changes to take effect")
+else:
+   echo("You may need to start a new terminal window for changes to take effect")
+echo("")
+if not custname:
+   os.chdir('..')
+   alllist = glob.glob('imod_*.*[0-9]')
+   oldlist = []
+   oldstr = ''
+   for fil in alllist:
+      if os.path.isdir(fil) and fil != version:
+         oldlist.append(fil)
+         oldstr += '   ' + fil
+   if len(oldlist):
+      if yesopt:
+         echo("Removing these other versions:")
+         echo("  " + oldstr)
+      else:
+         echo("Do you want to remove these other versions?")
+         echo("  " + oldstr)
+         if pyVersion < 300:
+            yesno = raw_input("Enter Y to remove them: ")
+         else:
+            yesno = input("Enter Y to remove them: ")
+         yesopt = yesno.lower() == 'y'
+
+      if yesopt:
+         for fil in oldlist:
+            try:
+               shutil.rmtree(fil)
+            except:
+               echo("An error occurred removing " + fil)
+      
+      echo("")
+         
+# Final remarks
+echo("If there are version-specific IMOD startup commands in individual user")
+echo(" startup files (.cshrc, .bashrc, .bash_profile) they should be changed")
+echo(" or removed.")
+if mismatch:
+   echo("")
+   echo(mismatch)
+
+if noCygwin:
+   winpath = installstr.replace('/', '\\')
+   echo("\nIn Windows environment variables, set IMOD_DIR to " + winpath)
+   echo("    and add " + winpath + "\\bin to PATH")
+elif ostype == WINDOWS and custom:
+   try:
+      winpath = runcmd('cygpath -w "' + installstr + '"')
+      if len(winpath):
+         echo("\nIn Windows environment variables, set IMOD_DIR to " + winpath[0])
+   except ImodpyError:
+      pass
+
+doCleanup()   
+sys.exit(0)

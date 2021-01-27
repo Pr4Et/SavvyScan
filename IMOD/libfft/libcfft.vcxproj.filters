@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e47b4c74-ae3f-4508-9e92-b8e994a0f96a}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{bd4d006c-cbf9-4dcd-874a-8e9a259ca0b6}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cmplft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diprp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw_wrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hermft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mdftkd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="odfft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="realft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="srfp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thrdfft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="todfft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

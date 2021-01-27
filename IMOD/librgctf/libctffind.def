@@ -1,0 +1,9 @@
+; libctffind.def : Declares the module parameters for the DLL.
+
+LIBRARY      "libctffind"
+
+EXPORTS
+        ctffind
+        ctffindSetSliceWriteFunc
+        ctffindSetPrintFunc
+

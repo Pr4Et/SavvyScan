@@ -1,0 +1,21 @@
+; libimesh.def : Declares the module parameters for the DLL.
+
+LIBRARY      "libimesh"
+
+EXPORTS
+	imeshPrepContours
+	imeshContoursCost
+	imeshNormal
+	imeshSetNewPolyNorm
+	makeTubeCont
+	analyzePrepSkinObj
+	joinTubeCont
+	imeshSetSkinFlags
+	skin_report_time
+	imeshReMeshNormal
+	imeshSkinObject
+	chunkMeshAddIndex
+	imeshDupMarkedConts
+	imodMeshesDeleteRes
+	makeCapMesh
+	imeshSetMinMax

@@ -1,0 +1,9 @@
+; libctffind-VCOMP.def : Declares the module parameters for the DLL.
+
+LIBRARY      "libctffind-VCOMP"
+
+EXPORTS
+        ctffind
+        ctffindSetSliceWriteFunc
+        ctffindSetPrintFunc
+

@@ -1,0 +1,74 @@
+#!/usr/bin/python -u
+# editfiles - to modify files for installer to match current version
+#           - must be run from the project directory
+#
+# Author: David Mastronarde
+#
+# $Id$
+
+prefix = 'ERROR: editfiles - '
+packMatch = 'imod_4.10.32_osx64_10.8_CUDA4.1'
+fillStartMatch = '------------------'
+skipEndMatch = 'Contact:'
+
+### MAIN
+# Very simple startup here
+import sys, os, os.path, glob, shutil
+
+sys.path.insert(0, '../../pysrc')
+from imodpy import *
+from pysed import *
+from pip import exitError, setExitPrefix
+setExitPrefix(prefix)
+
+packFiles = glob.glob('../../imod_*.sh')
+package = ''
+for pack in packFiles:
+   if 'nolibs' not in pack:
+      if package:
+         exitError('More than one package file is present')
+      package = os.path.basename(pack[:-3])
+
+if not package:
+   exitError('No package file is present')
+
+sedcom = ['/' + packMatch + '/s//' + package + '/']
+pysed(sedcom, 'Intro-ref.txt', 'Intro.txt')
+pysed(sedcom, 'Installer-ref.pkgproj', 'Installer.pkgproj')
+pysed(sedcom, 'pre-install-ref.sh', 'pre-install.sh')
+
+crLines = readTextFile('../COPYRIGHT')
+outLines = []
+paragraph = ''
+gotFill = False
+for line in crLines:
+   line = line.strip()
+   if not gotFill:
+      outLines.append(line)
+      gotFill = line.startswith(fillStartMatch)
+      continue
+
+   if line.startswith(skipEndMatch):
+      if paragraph:
+         outLines.append(paragraph)
+         paragraph = ''
+      break
+      
+   if not line:
+      if paragraph:
+         outLines.append(paragraph)
+         paragraph = ''
+      outLines.append('')
+      continue
+
+   if line.endswith('.'):
+      line += '  '
+   else:
+      line += ' '
+   paragraph += line
+
+if paragraph:
+   outLines.append(paragraph)
+
+writeTextFile('COPYRIGHT.txt', outLines)
+sys.exit(0)

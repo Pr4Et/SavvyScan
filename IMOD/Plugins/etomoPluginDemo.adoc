@@ -1,0 +1,23 @@
+Version = 1.0
+Pip = 1
+
+[Field = Message]
+short = message
+type = CH
+usage = Message to print upon completion
+tooltip = 
+manpage = 
+
+[Field = SleepTime]
+short = sleep
+type = F
+usage = Time to sleep in seconds (required)
+tooltip = 
+manpage = 
+
+[Field = usage]
+short = help
+type = B
+usage = Print help output
+tooltip = 
+manpage = 
