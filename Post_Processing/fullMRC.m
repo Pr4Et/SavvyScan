@@ -17,18 +17,12 @@ savename=['F' filename];
 savename(length(savename)-2:length(savename))='mrc';
 newFilename=[path savename];
 
-mRCImage = MRCImage;%Initiate MRCImage object
+mRCImage = MRCImage;%Instentiate MRCImage object
 mRCImage.filename=newFilename;
 nY=header0.netYsize;
 nX=header0.netXsize;
 pixelx_Angstrom=header0.pixelXnm*10;
 pixely_Angstrom=header0.pixelYnm*10;
-mRCImage.header.mX=1;
-mRCImage.header.mY=1;
-mRCImage.header.mZ=1;
-mRCImage.header.nX=nX;
-mRCImage.header.nY=nY;
-mRCImage.header.mode=1; %signed 16 bits
 for index=0:1000
     name=sprintf('series%d',index);
     if ~exist(name, 'var')
@@ -36,39 +30,18 @@ for index=0:1000
     end %if exist
 end %for index
 nZ=index;
-mRCImage.header.nZ=nZ;
-mRCImage.header.cellDimensionX = nX * pixelx_Angstrom;
-mRCImage.header.cellDimensionY = nY * pixely_Angstrom;
-mRCImage.header.cellDimensionZ = nZ * pixelx_Angstrom;
-mRCImage.flgVolume=true;
-mRCImage.header.nXStart=0;
-mRCImage.header.nYStart=0;
-mRCImage.header.nZStart=0;
-mRCImage.header.nBytesExtended=0;
-mRCImage.header.cellAngleX=90;
-mRCImage.header.cellAngleY=90;
-mRCImage.header.cellAngleZ=90;
 
-mRCImage.header.densityRMS=-1;
-mRCImage.header.spaceGroup=0;
-mRCImage.header.nSymmetryBytes=0;
-mRCImage.header.nBytesExtended=0;
-mRCImage.header.creatorID=0;
+vol=zeros(nX,nY,nZ,'int16');
 
-mRCImage.header.xOrigin=0;
-mRCImage.header.yOrigin=0;
-mRCImage.header.zOrigin=0;
-mRCImage.header.imodStamp = 0;%1146047817
-mRCImage.header.imodFlags=0;%13
-mRCImage.header.map='MAP';
+mRCImage.header.nBytesExtended=0;
 mRCImage.header.machineStamp=[68 68 0 0]; %for FEI machine, change otherwise 
 mRCImage.header.nLabels=0; %no labels included
 mRCImage.header.serialEMType=0;
 mRCImage.header.nBytesPerSection=0; %extended per section
 
-min_density=0;
-max_density=0;
-sum_density=0;
+%min_density=0;
+%max_density=0;
+%sum_density=0;
 for index=0:nZ-1
     name=sprintf('series%d',index);
     series=eval(name);
@@ -77,22 +50,14 @@ for index=0:nZ-1
     else
         img=savvyscan_decipher_mat(series,header0,keyload_flag,locationsX,locationsY);
     end
-    mRCImage.volume(:,:, index+1) = img';
-    maxd=max(max(img));
-    mind=min(min(img));
-    if mind<min_density || index==0
-        min_density=mind;
-    end
-    if maxd>max_density || index==0
-        max_density=maxd;
-    end
-    sum_density=sum_density+mean(mean(img));
-    %[nX,nY] = size(img);
-    %putImage(mRCImage, img, index+1) % NOGO: Only suitable for replacing exisiting file
+    vol(:,:, index+1) = img;
 end %for index
-mRCImage.header.meanDensity=sum_density/nZ;
-mRCImage.header.minDensity=min_density;
-mRCImage.header.maxDensity=max_density;
+
+mRCImage = setVolume(mRCImage, vol); %enter to mRCImage, do statistics, and fill many details to the header
+
+mRCImage.header.cellDimensionX = nX * pixelx_Angstrom;
+mRCImage.header.cellDimensionY = nY * pixely_Angstrom;
+mRCImage.header.cellDimensionZ = nZ * pixelx_Angstrom;
 
 oversampling=header0.samples_per_pixel;
 pixeltime_us=header0.time_resolution_us*oversampling;
@@ -104,5 +69,5 @@ mRCImage.header.labels(1,1:length(ScanLabel)) =ScanLabel;
 
 save(mRCImage, newFilename)
 close(mRCImage);
-disp(sprintf('Saved to file: %s',newFilename);
+disp(sprintf('Saved to file: %s',newFilename));
 
