@@ -22,6 +22,6 @@ sumH=sum(BinValues);
     end
     normpic(normpic>highedge)=highedge; %remove white dots
     normpic(normpic<lowedge)=lowedge; %remove black dots
-    normpic2=(normpic-lowedge)*Nshades/(highedge-lowedge);
+    normpic2=double(normpic-lowedge)*double(Nshades)/(highedge-lowedge);
 return 
     
