@@ -4,6 +4,7 @@
 global N dr dk x y kx ky mx my nx ny;
 lambda=0.0025;%nm
 defocus_vect=-2000:25:2000;
+show_all_iDPC_CTFs=false;
 CS=2000000; %our spherical aberration nm
 %CS=2.7*10^6; %in lazic's example, nm
 C2=30;%um
@@ -75,14 +76,20 @@ for focus_ind=1:length(defocus_vect)
     CTFphi2_profile=radialAverage((CTFphi2),Nc,Nc,Nc);
     CTFphi3_profile=radialAverage((CTFphi3),Nc,Nc,Nc);
     k_profile=(dk*(0:Nc-1))/kBF;
-    figure(1);
-    plot([k_profile' k_profile' k_profile'],[real(CTFiS_profile') real(CTFphi2_profile') real(CTFphi3_profile')],'-');
-    xlabel('k / k_{BF}');
-    ylabel('CTF');
-    legend('CTFiS','CTF\phi^{2}','CTF\phi^{3}');
-
-    pointsv=[2 4 6 10];%[7 28 28*4];
+    if show_all_iDPC_CTFs
+        figure(10);
+        plot([k_profile' k_profile' k_profile'],[real(CTFiS_profile') real(CTFphi2_profile') real(CTFphi3_profile')],'-');
+        xlabel('k / k_{BF}');
+        ylabel('CTF');
+        legend('CTFiS','CTF\phi^{2}','CTF\phi^{3}');
+        title(sprintf('defocus=%d',defocus));
+        pause(0.1);
+    end
+    pointsv=[7 28 28*4];%To add k->0 line use[7 28 28*4 3];
     kprof=k_profile(pointsv);
+    %if abs(defocus)>400
+    %   CTFphi2_profile(pointsv(4))=NaN; 
+    %end
     if focus_ind==1
         CTF1=real(CTFiS_profile(pointsv)');
         CTF2=real(CTFphi2_profile(pointsv)');
@@ -104,11 +111,20 @@ for focus_ind=1:length(defocus_vect)
         CTF_ADF=[CTF_ADF real(CTF_ADF_profile(pointsv)')];
     end
     
+    figure(1);
+    plot([k_profile' k_profile' ],[real(CTFiS_profile') real(CTF_ADF_profile')],'-');
+    xlabel('k / k_{BF}');
+    ylabel('CTF');
+    legend('CTF_{iS}','CTF_{ADF}');
+    title(sprintf('defocus=%d',defocus));
+    pause(0.1);
+
     
 end %for focus_ind
 text{1}=sprintf('k/k_{BF}=%g',0.001*round(1000*kprof(1)/kBF));
 text{2}=sprintf('k/k_{BF}=%g',0.001*round(1000*kprof(2)/kBF));
 text{3}=sprintf('k/k_{BF}=%g',0.001*round(1000*kprof(3)/kBF));
+%text{4}='k/k_{BF}\rightarrow0';
 close all;
 
 figure(2)
@@ -129,7 +145,7 @@ xlabel('defocus [nm]');
 ylabel('CTF\phi^{3}');
 legend(text);
 
-figure(4)
+figure(5)
 plot(defocus_vect,CTF_ADF,'-');
 xlabel('defocus [nm]');
 ylabel('CTF-ADF');
