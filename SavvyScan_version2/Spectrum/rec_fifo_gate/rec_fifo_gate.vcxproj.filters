@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{41b57a3c-1aa5-4139-856e-e11c6a932e51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{2a68a8ef-7931-4eb2-a308-8edd8dc53f55}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\spcm_lib_card.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\spcm_lib_data.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\spcm_lib_thread.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\ostools\spcm_ostools_win.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="rec_fifo_gate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\c_header\dlltyp.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\regs.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sb5_file\sb5_file.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcerr.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcm_drv.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\spcm_lib_card.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\spcm_lib_data.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\spcm_lib_thread.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\ostools\spcm_ostools.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\ostools\spcm_oswrap.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\c_header\spcm_win32_msvcpp.lib">
+      <Filter>common</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\c_header\spcm_win64_msvcpp.lib">
+      <Filter>common</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

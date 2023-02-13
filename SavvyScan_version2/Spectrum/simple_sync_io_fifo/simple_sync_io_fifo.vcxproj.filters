@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\common\ostools\spcm_ostools_win.cpp" />
+    <ClCompile Include="simple_sync_io_fifo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\c_header\dlltyp.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\regs.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcerr.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcm_drv.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\ostools\spcm_ostools.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\ostools\spcm_oswrap.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\c_header\spcm_win32_msvcpp.lib" />
+    <Library Include="..\c_header\spcm_win64_msvcpp.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{bf578d6c-ab53-47b4-8ae9-071cf05640c7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

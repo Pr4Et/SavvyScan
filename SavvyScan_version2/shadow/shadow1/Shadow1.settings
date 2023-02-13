@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="shadow1" GeneratedClassName="Shadow1">
+  <Profiles />
+  <Settings>
+    <Setting Name="serverIP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tcp://localhost</Value>
+    </Setting>
+    <Setting Name="defaultscanmode" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="defaultinputamp" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="defaultoutputamp" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="p0x" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">7.0754</Value>
+    </Setting>
+    <Setting Name="p0y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-3.582783</Value>
+    </Setting>
+    <Setting Name="p1x" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-151.042664</Value>
+    </Setting>
+    <Setting Name="p1y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">90.190744</Value>
+    </Setting>
+    <Setting Name="p2x" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-151.042664</Value>
+    </Setting>
+    <Setting Name="p2y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">90.190744</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,26 @@
+COMPILER =   g++
+EXECUTABLE = rec_single_binaryfile
+LIBS += -lspcm_linux -lpthread -lrt
+
+OBJECTS = \
+    rec_single_binaryfile.o\
+	../common/spcm_lib_card.o\
+	../common/spcm_lib_data.o\
+	../common/spcm_lib_thread.o\
+	../sb5_file/sb5_file.o\
+	../common/ostools/spcm_ostools_linux.o
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE):	$(OBJECTS)
+		$(COMPILER) $(CFLAGS) -o $(EXECUTABLE) $(OBJECTS) $(LIBS)
+
+%.o:		%.cpp
+		$(COMPILER) $(CFLAGS) -o $*.o -c $*.cpp
+
+install:
+
+clean:
+	rm -f $(EXECUTABLE)
+	rm -f $(OBJECTS)
+
