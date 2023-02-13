@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{445f897b-5351-43bd-916c-329bef077411}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{956ad952-7dd1-4013-a395-9d0ca4261a66}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\c_header\dlltyp.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\regs.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcerr.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcm_drv.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\spcm_lib_card.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\spcm_lib_data.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\spcm_lib_card.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\spcm_lib_data.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="shdirect.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\c_header\spcm_win32_msvcpp.lib">
+      <Filter>common</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\c_header\spcm_win64_msvcpp.lib">
+      <Filter>common</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\ostools">
+      <UniqueIdentifier>{3586b202-ef20-402b-aa66-63cb2034f068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\c_header">
+      <UniqueIdentifier>{d248ee42-f4b6-4ff8-a4c0-a1d791034597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ostools">
+      <UniqueIdentifier>{a785b83e-6d32-49d0-b7c5-951f3da491c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\ostools\spcm_ostools_win.cpp">
+      <Filter>Source Files\ostools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\m2i_drv\ostools\spcm_ostools.h">
+      <Filter>Header Files\ostools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_header\dlltyp.h">
+      <Filter>Header Files\c_header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_header\regs.h">
+      <Filter>Header Files\c_header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_header\spcerr.h">
+      <Filter>Header Files\c_header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_header\spcm_drv.h">
+      <Filter>Header Files\c_header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\c_header\spcm_win32_msvcpp.lib" />
+    <Library Include="..\..\c_header\spcm_win64_msvcpp.lib" />
+  </ItemGroup>
+</Project>

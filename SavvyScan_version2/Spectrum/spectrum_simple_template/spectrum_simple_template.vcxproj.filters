@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{bf104e1d-06e1-4c35-8340-89c3b22319b3}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\c_header\dlltyp.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\regs.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcerr.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c_header\spcm_drv.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\ostools\spcm_ostools.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\ostools\spcm_oswrap.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\ostools\spcm_ostools_win.cpp" />
+    <ClCompile Include="spectrum_simple_template.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\c_header\spcm_win32_msvcpp.lib" />
+    <CustomBuild Include="..\c_header\spcm_win64_msvcpp.lib" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\c_header\dlltyp.h">
+      <Filter>Headers\c_header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_header\regs.h">
+      <Filter>Headers\c_header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_header\spcerr.h">
+      <Filter>Headers\c_header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_header\spcm_drv.h">
+      <Filter>Headers\c_header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\ostools\spcm_ostools.h">
+      <Filter>Headers\ostools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\ostools\spcm_oswrap.h">
+      <Filter>Headers\ostools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\c_header\spcm_win32_msvcpp.lib" />
+    <Library Include="..\..\c_header\spcm_win64_msvcpp.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{ab225bbd-3e54-4ce5-bea0-ad0114a5d105}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\c_header">
+      <UniqueIdentifier>{3b3b011c-874e-4610-9ae3-23c375634160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\ostools">
+      <UniqueIdentifier>{89c3b204-455c-493a-adb3-fabd1e01bdc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{96b44a4f-afef-4b3e-811b-1367540a78c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\ostools">
+      <UniqueIdentifier>{9d80a65f-099c-4923-a3a5-e66732683f58}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\common\ostools\spcm_ostools_win.cpp">
+      <Filter>Sources\ostools</Filter>
+    </ClCompile>
+    <ClCompile Include="closed_loop_ad_da.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
