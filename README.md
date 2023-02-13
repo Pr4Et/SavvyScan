@@ -17,7 +17,7 @@ MAT files can be displayed with Matlab programs found in directory Post_Processi
 
 Version 2: Copy and overwrite the appropriate folders with the incremental project found in folder SavvyScan_version2.
 
-What's new in SavvyScan version 2 (Feb 2023).
+## What's new in SavvyScan version 2 (Feb 2023)
 The software has been extensively upgraded based on hundreds of hours of practice in cryo-STEM tasks.
 * Supports OPAL detector as well as Dectris Arina ultrafast camera for 4DSTEM.
 * Spectrum cards run in FIFO mode, with latest firmware as for end of 2022.
