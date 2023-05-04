@@ -3,8 +3,8 @@ conda activate libertem  <br>
 ./LiberTEM_passive.py  <br>
 
 How to set SavvyScan ver2b to transfer images from LiberTEM server to SerialEM: <br>
-Click on LiberTEM dropdown menu: CONNECT, click <SEND>, then choose one of the process types and click <SEND>. <br>
-Select <Channel sent to SerialEM>: 8   <br>
+Click on LiberTEM dropdown menu: CONNECT, click SEND, then choose one of the process types and click SEND. <br>
+Select "Channel sent to SerialEM": 8   <br>
 
 How to install on Linux (assuming anaconda pre-installed): <br>
 conda activate <br>
