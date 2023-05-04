@@ -19,7 +19,7 @@ Version 2: Copy and overwrite the appropriate folders with the incremental proje
 
 ## What's new in SavvyScan version 2 (Feb 2023)
 The software has been extensively upgraded based on hundreds of hours of practice in cryo-STEM tasks.
-* Supports OPAL detector as well as Dectris Arina ultrafast camera for 4DSTEM.
+* Supports OPAL detector as well as DECTRIS ARINA ultrafast camera for 4D-STEM.
 * Spectrum cards run in FIFO mode, with latest firmware as for end of 2022.
 * Spectrum cards synchronization is chosen either via STAR-HUB or cables.
 * STEM camera extended to 8K x 8k pixels.
@@ -29,3 +29,5 @@ The software has been extensively upgraded based on hundreds of hours of practic
 * Full support of SeiralEM tilt series acquisition function. Scans longer than threshold time set in the GUI are considered record scans and stored in final MRC stack.
 * Many bug fixes and robust performance.
 
+##Version 2b (3 May 2023):
+Connection with LiberTEM-live software for live processing of DECTRIS pixelated detector data (see folder LiberTEM_server).
