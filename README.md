@@ -29,5 +29,5 @@ The software has been extensively upgraded based on hundreds of hours of practic
 * Full support of SeiralEM tilt series acquisition function. Scans longer than threshold time set in the GUI are considered record scans and stored in final MRC stack.
 * Many bug fixes and robust performance.
 
-##Version 2b (3 May 2023):
+## Version 2b (3 May 2023)
 Connection with LiberTEM-live software for live processing of DECTRIS pixelated detector data (see folder LiberTEM_server).
