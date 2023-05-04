@@ -1269,6 +1269,7 @@ void retrieve_images(const int width, const int height, short * pData)
 		//{
 		//	Sleep(90000);
 		//}
+		int timeoutms[1] = { 20000 }; //20 sec timeout to receive data
 		Sleep(1000);
 		sprintf(zmq_msg_buffer3b, "DATA?");
 		zmq_send(requester3, zmq_msg_buffer3b, strlen(zmq_msg_buffer3b), ZMQ_DONTWAIT);
@@ -1276,6 +1277,7 @@ void retrieve_images(const int width, const int height, short * pData)
 		char zmq_msg_long[25000];
 		BYTE long_out[20000];
 		int expected_len = 4*std::ceil((2*(int)width+2) / 3.0);
+		zmq_setsockopt(requester3, ZMQ_RCVTIMEO, (char*)timeoutms, (int)sizeof(int));
 		for (int yind = 0; yind < height; yind++)
 		{
 			returnsizeb = zmq_recv(requester3, zmq_msg_long, expected_len,0 );//0=blocking, not  ZMQ_DONTWAIT);
@@ -1294,6 +1296,8 @@ void retrieve_images(const int width, const int height, short * pData)
 
 		}
 		fclose(outFile);
+		timeoutms[0] = { -1 }; //back to no timeout
+		zmq_setsockopt(requester3, ZMQ_RCVTIMEO, (char*)timeoutms, (int)sizeof(int));
 		returnsizeb = zmq_recv(requester3, zmq_msg_buffer3b, 2, ZMQ_DONTWAIT); //should get OK, image will be sent by FTP
 		if (returnsizeb > 0)
 		{
@@ -1963,40 +1967,6 @@ bool whoiswho (int & cardnoREC, int & cardnoREP, long & lStarHubCarrierIdx)
 	return true; //finished OK
 }
 
-
-/*
-**************************************************************************
-Connect with FTP site and download image file
-**************************************************************************
-credit: https://cpp.hotexamples.com/examples/-/CFtpConnection/GetFile/cpp-cftpconnection-getfile-method-examples.html
-*/
-
-/*bool vmd_ftpclient(const char* remotefile, const char* localfile) {
-	try {
-		CInternetSession SFTP((LPCTSTR)CString("LiberTEM FTP"));
-		CFtpConnection* fFTP = SFTP.GetFtpConnection((LPCTSTR)CString("192.168.100.80"), (LPCTSTR)CString("ftpuser"),
-			(LPCTSTR)CString("stem"),
-			21,
-			TRUE); //TRUE=passive mode
-		//fFTP->SetCurrentDirectory("/");
-		fFTP->GetFile((LPCTSTR)CString(remotefile), (LPCTSTR)CString(localfile),
-			FALSE,
-			FILE_ATTRIBUTE_NORMAL,
-			FTP_TRANSFER_TYPE_BINARY,
-			1);
-		fFTP->Close();
-		delete fFTP;
-		SFTP.Close();
-
-		return FTP_SUCCESS;
-	}
-	catch (...)
-	{
-		printf("FTP Error\n");
-		return !FTP_SUCCESS;
-	}
-}
-*/
 
 
 
