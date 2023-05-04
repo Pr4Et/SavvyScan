@@ -1,12 +1,16 @@
-How to run the LiberTEM server: <br>
+## How to run the LiberTEM server: <br>
+Start the DECTRIS server and pixelated detector. Type in a terminal of the LiberTEM server computer: <br>
 conda activate libertem  <br>
 ./LiberTEM_passive.py  <br>
 
-How to set SavvyScan ver2b to transfer images from LiberTEM server to SerialEM: <br>
-Click on LiberTEM dropdown menu: CONNECT, click SEND, then choose one of the process types and click SEND. <br>
+## Setting SavvyScan ver2b to transfer images from LiberTEM server to SerialEM: <br>
+Choose in the LiberTEM dropdown menu: CONNECT, click SEND. Then choose one of the process types, edit the parameters, and click SEND. <br>
 Select "Channel sent to SerialEM": 8   <br>
+Click "Arm 4D STEM" before the scan (optionally: set multislice for a sequence of record scans).<br>
+Only scans with duration larger than the chosen "threshold" time will activate the pixelated detector. <br>
 
-How to install on Linux (assuming anaconda pre-installed): <br>
+
+## How to install on LiberTEM server on a Linux computer (with anaconda pre-installed): <br>
 conda activate <br>
 conda install gh --channel conda-forge <br>
 gh auth login <br>
