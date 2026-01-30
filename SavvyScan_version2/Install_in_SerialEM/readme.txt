@@ -1,0 +1,2 @@
+This plugin file can be used with SerialEM version 3.8, or with later version only on some specific OS envirnoments.
+A new version of the plugin that is independent of the SerialEM components is provided in the upper folder.
