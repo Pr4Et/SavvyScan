@@ -9,6 +9,7 @@ Details in: Shahar Seifer, Lothar Houben, Michael Elbaum, "Flexible STEM with Si
 Compilation and installation:
 The main project file is \ServerCamera\SERVER-SEMCamServer.vcxproj.
 Project can be built in VisualStudio community 2019 with full V142 platform toolset (including MFC), in 64 bits environment.
+The plugin requires also installtion Microsoft Visual C++ Redistributable (v14, x64) for VS 2015–2022.
 Edit files \ServerCamera\BaseServer.cpp and \Spectrum\shahar\RecRepMulti.cpp to change the directory "d:\SavvyscanData" into which is your output data directory.
 Install SeiralEM interface using the settings suggested in directory Install_in_SerialEM.
 The system runs by starting the camera server, then the shadow GUI and SerialEM.
