@@ -1,0 +1,1783 @@
+SerialEMSettings
+SystemPath	C:\Users\seifer\Desktop\Start_SerialEM
+ScriptPackagePath	C:\Users\seifer\Desktop\Start_SerialEM\SerialEMsettings-scripts.txt
+LastDPI	96
+CameraControlSet  0  0
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	16
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	2.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  1  0
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	2048
+Left	2048
+Right	6144
+Bottom	6144
+ExposureTime	1.678000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  2  0
+AcquisitionMode	1
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	8
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	2.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  3  0
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	8
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	5.243000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  4  0
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	16
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	0.419000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  5  0
+AcquisitionMode	1
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	8
+ShutteringMode	0
+Top	3072
+Left	3072
+Right	5120
+Bottom	5120
+ExposureTime	0.500000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  6  0
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	16
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	2.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  0  1
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.025000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  1  1
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	2
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.500000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  2  1
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.050000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  3  1
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.250000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  4  1
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.100000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  5  1
+AcquisitionMode	1
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.050000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  6  1
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  0  2
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	16
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	0.524000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  1  2
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	3072
+Left	2048
+Right	6144
+Bottom	5120
+ExposureTime	0.500000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  2  2
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	16
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	1.049000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  3  2
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  4  2
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	16
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	0.131000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	1
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 1 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  5  2
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	16
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	0.131000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  6  2
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	2.097000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  0  3
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.050000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  1  3
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	1536
+Left	1024
+Right	3072
+Bottom	2560
+ExposureTime	0.500000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  2  3
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	3
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.050000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  3  3
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  4  3
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	3
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.010000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  5  3
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	3
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	0.050000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  6  3
+AcquisitionMode	0
+Processing	2
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	0
+Left	0
+Right	4096
+Bottom	4096
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  0  4
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	8
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	6.711000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  1  4
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	3072
+Left	3072
+Right	5120
+Bottom	5120
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  2  4
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	8
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	6.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  3  4
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	90.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	1
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  4  4
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	8
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	6.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  5  4
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	8
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	2.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  6  4
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	8
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	4.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  0  5
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	2
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  1  5
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	2048
+Left	2048
+Right	6144
+Bottom	6144
+ExposureTime	0.500000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  2  5
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	2
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	2.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  3  5
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  4  5
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	4
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	0.249000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  5  5
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	4
+RemoveXrays	0
+Binning	2
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+CameraControlSet  6  5
+AcquisitionMode	0
+Processing	0
+DarkReferenceEveryTime	0
+AverageDarkReference	0
+TimesToAverageDarkRef	10
+RemoveXrays	0
+Binning	1
+ShutteringMode	0
+Top	0
+Left	0
+Right	8192
+Bottom	8192
+ExposureTime	1.000000
+DriftSettling	0.000000
+LineSync	0
+DynamicFocus	0
+CorrectDrift	-1
+K2ReadMode	0
+SumK2Frames	0
+DoseFracMode	0
+FrameTime	0.040000
+AlignFrames	0
+SaveFrames	0
+UseFrameAlign	1
+FAParamSetInd	0
+FilterType	0
+ChannelIndex 0 -1 -1 -1 -1 -1 -1 -1
+BoostMag 0 0
+EndControlSet
+FrameNameData 384 0 -1 -1 3
+DirForK2Frames X:\Nadav
+DirForFalconFrames NotSetByUser
+FrameBaseName junk
+NumberedFrameFolder X:\Nadav
+NumberedFramePrefix junk
+PercentDisplayTruncationLo	0.200000
+PercentDisplayTruncationHi	0.200000
+ProtectRecordImages	0
+MontageUseContinuous 0 0.500000
+MontageNoDriftCorr 1 0
+MontageFilterOptions 0 0 0 0
+TIFFcompression	1
+HDFcompression	1
+FileOptionsPctTruncLo	0.200000
+FileOptionsPctTruncHi	0.200000
+SingleFileOptions 0 1 0.200000 0.500000
+AutofocusEucenAbsParams 0.000000 0.000000 -20.000000 20.000000 0 1
+AreaFractionForScaling	0.750000
+FFTTruncDiameter	0.004000
+FFTBackgroundGray	32
+UseViewForSearch	0
+UseRecordForMontage	0
+SettingsFixedForIACal	0
+IdleScriptInterval	60
+BasicMode	0
+ReverseWheelZoom	0
+OneK2FramePerFile	0
+SkipK2FrameRotFlip	0
+SaveK2FramesAsTiff	0
+SaveRawPacked	0
+SaveTimes100	0
+SaveUnnormedFrames	0
+Use4BitMRCMode	0
+SaveSuperResReduced	0
+TakeK3SuperResBinned	0
+UseK3CDS	0
+NameFramesAsMRCS	0
+SaveFrameStackMdoc	0
+AntialiasBinning	1
+NumFrameAliLogLines	2
+SaveInEERformat	0
+BuffersToRollOnAcquire	2
+BufferToReadInto	4
+FifthCopyToBuf	4
+Antialias	1
+FixedZoomSteps	1
+DrawScaleBar	1
+DrawCrosshairs	1
+DrawTiltAxis	1
+MontageCorrectDrift	0
+MontageAdjustFocus	0
+MontageFocusAfterStage	0
+MontageShowOverview	1
+MontageAlignPieces	1
+MontageVerySloppy	1
+MontageEvalPeaks	0
+MontageMinimumCounts	0
+MontGridMapCutoffInvUm	0.250000
+MontGridMapMinSizeMm	0.650000
+MontageUseMontMap	1
+MontageUseViewInLD	1
+MontageUseSearchInLD	0
+MontageUseMultishot	0
+MontageUseHQparams	0
+MontageFocusInBlocks	0
+MontageImShiftInBlocks	0
+MontBlockShiftLimit	7.000000
+MontBlockLMShiftLimit	35.000000
+MontageRepeatFocus	0
+MontageDriftLimit	2.000000
+MontageRealign	0
+MontageISRealign	0
+MontageMaxRealignIS	10.000000
+MontageUseAnchor	0
+MontageAnchorMagInd	26
+MontageSkipCorrelations	0
+MontageSkipReblanks	0
+MontageFocusBlockSize	3
+MontageRealignInterval	64
+MontageMinOverlapFactor	0.100000
+MontageMinMicronsOverlap	0.500000
+MontageHQdelayTime	5.000000
+MontageMaxAlignFrac	0.250000
+MontageCloseFile	0
+SelectedCameraParameterSet	2
+MonospacedLog	0
+AutoPruneLogLines	500
+TargetDefocus	-2.000000
+AutofocusOffset	0.000000
+RefocusThreshold	8.000000
+AbortThreshold	1.000000
+AutofocusBeamTilt	1.600000
+BeamTiltDirection	0
+MinDDDfocusBinning	1
+DriftProtection	1
+FocusVerbose	0
+TiltIncrement	1.000000
+CosineTilting	0
+ShiftToTiltAxis	1
+ApplyISoffset	0
+UsePiezoForLDAxis	0
+AdjustFocusForProbe	0
+NormalizeAllOnMagChange	0
+IdleTimeToCloseValves	0
+NormAutofocusViaView	0
+SkipBlankingInLowDose	0
+TrimBordersInAutoalign	0
+ErasePeriodicPeaks	0
+DisableAutoTrim	0
+MoveStageOnBigMouseShift	0
+BacklashMouseAndISR	1
+MouseStageThreshold	0.000000
+MouseStageAbsoluteThreshold	3.000000
+TiltDelay	2.000000
+MacroLimitRuns	0
+MacroLimitScaleMax	0
+MacroLimitTiltUp	1
+MacroLimitTiltDown	1
+MacroLimitMontError	1
+MacroLimitIS	0
+MacroRunLimit	30
+MacroScaleMaxLimit	200
+MacroTiltUpLimit	76.000000
+MacroTiltDownLimit	-76.000000
+MacroMontErrorLimit	7.000000
+MacroISLimit	4.000000
+NumCamMacRows	1
+NumStatusLines	0
+ScriptIndentSize	3
+ScriptUseMonoFont	0
+ShowIndentButtons	1
+RestoreMacroEditors	1
+MonospaceStatusLines	0
+KeepOneLineFocus	0
+ZbyGMaxTotalChange	100
+ZbyGIterThreshold	0.500000
+ZbyGUseViewInLD	0
+MultishotPatternType	2
+MultishotRunScript	0
+MultishotScriptToRun	0
+CircleOnLiveFFT	0
+SideBySideFFT	0
+AutoSingleFFT	1
+PhasePlateShift	0.000000
+ImageReductionFac	4.000000
+FixedRingDefocus	0.000000
+UserMaxCtfFitRes	0.000000
+MinCtfFitResIfPhase	0.000000
+ClickUseCtfplotter	0
+TuneUseCtfplotter	0
+CtfExpectedPhase	90
+AutosaveSettings	0
+AutosaveNavNew	1
+SaveAutosaveLog	0
+SkipFileDlg	0
+AutosaveLog	0
+AutosaveXYZ	0
+PostBidirReturnDelay	0
+StageMoveToolImage	0
+LoadMapsUnbinned	1
+WriteNavAsXML	0
+TryRealignScaling	1
+PlusMinusRIScaling	0
+PointLabelDrawThresh	15
+UseLabelInFilenames	0
+MultiShotEnable	0
+RotAlignDoSearch	1
+RotAlignRange	20.000000
+GridGroupSize	5.000000
+DivideGridIntoGroups	0
+RIuseCurrentLDparams	0
+SkipMontFitDlgs	1
+CurAcqParamIndex	0
+MarkShftSaveType	0
+MarkShftApplyWhich	0
+ReverseAutocontColors	0
+KeepColorsForPolygons	1
+RIErasePeriodicPeaks	0
+CameraDivide16BitBy2	1
+ExtraDivideBy2	0
+AcquireFloatImages	0
+InterpolateDarkRefs	0
+NoNormOfDSDoseFrac	0
+ComPathIsFramePath	0
+IgnoreHigherGainRefs	0
+UseOlderBinned2Ref	0
+DMgainRefAskPolicy	0
+GainRefCalibrateDose	1
+LowDoseBlankWhenDown	0
+LowDoseNormalizeBeam	0
+LowDoseViewDefocus	0.000000
+LowDoseSearchDefocus	0.000000
+LowDoseTieFocusTrial	0
+LowDoseRotateAxis	1
+TieFocusTrialPos	0
+LowDoseAxisAngle	1
+WalkUpTargetAngle	-60.000000
+WalkUpMaxInterval	8.000000
+WalkUpMinInterval	3.000000
+WalkSTEMfocusInterval	19.000000
+ResetRealignUseTrialInLowDose	0
+FineEucenUseTrialInLowDose	0
+RoughEucenUseSearchIfInLM	0
+WalkupUseViewInLowDose	0
+TasksUseViewNotSearch	0
+ComplexTasksVerbose	0
+UseEasyAutocen	0
+AutoCenIterate	0
+AutoCenIterThresh	0.100000
+AutoCenUseMagInd	0
+UsersAstigTilt	-1.000000
+MenuZemlinTilt	6.000000
+UsersComaTilt	-1.000000
+CtfExposure	0.100000
+CtfDriftSettling	0.000000
+CtfBinning	1
+CtfUseFullField	1
+CtfDoFullArray	0
+ComaIterationThresh	1.000000
+ComaVsISextent	3.000000
+ComaVsISrotation	0
+ComaVsISuseFullArray	0
+MinCtfBasedDefocus	-0.900000
+AddToMinForAstigCTF	-0.500000
+TiltSeriesLastStartingTilt	-10.000000
+TiltSeriesTrackLowMag	0
+TiltSeriesTrackAfterFocus	1
+TiltSeriesBeamControl	0
+TiltSeriesMeanCounts	5000
+TiltSeriesCosinePower	1.000000
+TiltSeriesTaperCounts	0
+TiltSeriesHighCounts	4000
+TiltSeriesTaperAngle	50.000000
+TiltSeriesLimitIntensity	0
+TiltSeriesRefineEucentricity	0
+TiltSeriesWalkLeaveAnchor	1
+TiltSeriesWalkAnchorTilt	40.000000
+TiltSeriesLeftAnchorBuffer	19
+TiltSeriesImageShiftLimit	3.000000
+TiltSeriesFocusCheckInterval	6.000000
+TiltSeriesRepeatRecord	1
+TiltSeriesConfirmLDRepeat	1
+TiltSeriesMaxRecordLoss	0.050000
+TiltSeriesStopOnBigShift	0
+TiltSeriesMaxAlignShift	30.000000
+TiltSeriesRepeatAutofocus	0
+TiltSeriesMaxFocusDiff	0.250000
+TiltSeriesAlwaysFocusAtHigh	0
+TiltSeriesAlwaysFocusAngle	50.000000
+TiltSeriesSkipAutofocus	1
+TiltSeriesCheckAutofocus	1
+TSLimitFocusChange	0
+TSFocusChangeLimit	20.000000
+TiltSeriesMinFocusAccuracy	0.250000
+TiltSeriesRefineZLP	0
+TiltSeriesZLPInterval	15
+TiltSeriesCenterBeam	0
+TiltSeriesCloseValvesAtEnd	0
+TiltSeriesAlignTrackOnly	0
+TiltSeriesPreviewBeforeNewRef	1
+TiltSeriesMaxRefDisagreement	0.020000
+TiltSeriesMaxPredictErrorXY	0.015000
+TiltSeriesMaxPredictErrorZ	0.200000
+TiltSeriesMaxPredictErrorZSN	0.200000
+TiltSeriesMaxPredictErrorZSM	1.000000
+TiltSeriesCenBeamPeriodically	0
+TiltSeriesCenBeamInterval	60
+TiltSeriesCenBeamAbove	0
+TiltSeriesCenBeamAngle	50.000000
+TiltSeriesStackRecords	0
+TSWaitForDrift	0
+TSOnlyWaitAboveBelow	0
+TSWaitAboveAngle	45.000000
+TSWaitBelowAngle	30.000000
+TSWaitAtReversals	0
+TSWaitDosymIgnore	0
+TSDoEarlyReturn	0
+TSNumEarlyFrames	1
+TiltSeriesStackBinSize	512
+TiltSeriesExtraSetExposure	0
+TiltSeriesExtraSetSpot	0
+TiltSeriesExtraSpotSize	5
+TiltSeriesExtraDeltaIntensity	1.000000
+TiltSeriesExtraDrift	0.000000
+TiltSeriesExtraSetBinning	0
+TiltSeriesExtraBinIndex	0
+TiltSeriesDoVariations	0
+TiltSeriesChangeRecExposure	0
+TiltSeriesChangeAllExposures	0
+TiltSeriesChangeSettling	0
+TSMakeLowTiltMap	0
+TSFilterLowTiltMap	0
+TSMapFilterRadius2	0.250000
+TSMapFilteSigma2	0.040000
+TSTiltDelay	2.000000
+TiltSeriesExposureStep	1.200000
+ExposureSeriesFixNumFrames	0
+TiltSeriesTiltFailPolicy	0
+TiltSeriesLDDimRecordPolicy	1
+TiltSeriesTermNotAskOnDim	0
+TiltSeriesLDRecordLossPolicy	1
+TiltSeriesAutoTerminatePolicy	1
+TSSeparateExtraRec	0
+TiltSeriesAutoSavePolicy	1
+TSCallPlugins	0
+TSFixedNumFrames	0
+TSSkipBeamShiftOnAlign	0
+TSAllowContinuous	0
+EmailAfterTiltSeries	0
+ReorderDoseSymFile	1
+FilterSlitWidth	10.000000
+FilterEnergyLoss	0.000000
+FilterZeroLoss	0
+FilterChangeMagWithScreen	1
+FilterMatchPixel	1
+FilterMatchIntensity	1
+FilterDoMagShifts	1
+RefineZLPWithTrial	0
+STEMmatchPixel	1
+ScreenSwitchSTEM	0
+InvertSTEMimages	0
+BlankBeamInSTEM	1
+RetractToUnblankSTEM	0
+KeepPixelTime	0
+RightBorderFrac	0.472404
+BottomBorderFrac	0.277462
+MainFFTsplitFrac	0.500000
+AutoBacklashNewMap 1 5.000000
+NavCollapseGroups	0
+MultiShotParams 0.200000 0.500000 6 1 0 0 0 2.000000 0 0 1 0 1.500000 1.000000 1.000000 1.000000 1.000000 2 2 0 0 0 0 3 0.250000 -999.000000 -999.000000 -999.000000
+MultiHexParams 0 1 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 0 -999.000000
+StepAdjustParams 2 0 -1 0 -10 0
+HoleAdjustXform 0 0 0 0 0 0.000000 0.000000 0.000000 0.000000
+HoleFinderParams 2.000000 1.000000 0 -100000000.000000 -100000000.000000 -100000000.000000 -100000000.000000 1 0 0 0 0.620000 0.300000 0.000000 0
+HoleFiltSigmas 1.500000 2.000000 3.000000 -3.000000
+HoleEdgeThresholds 2.400000 3.600000 4.800000
+HoleCombinerParams 0 0 1 0 2 0
+AutoContParams 1500 2.000000 1 30.000000 70.000000 0.750000 0.000000 0 5 0 -100000000.000000 -100000000.000000 0.000000 -100000000.000000 1.000000 0.000000
+DriftWaitParams 1 1.000000 0 10.000000 60.000000 1 0 0.200000 4 0 0 0.500000
+NavAcquireParams	0
+AcquireParams1 0 0 0 1 0 0 1 0 0 1 0 1 0 0 0 0 1 0 1 0 0
+AcquireParams2 0 -2.000000 -1.000000 10 0 0 0 0 0 0 0.000000 0 1 0 0 0 0 0 0 0 0 0
+NavAcqAction0 0 0 1 15 40.000000 
+NavAcqAction1 1 0 1 15 40.000000 
+NavAcqAction2 1153 0 1 15 40.000000 
+NavAcqAction3 129 0 1 15 40.000000 
+NavAcqAction4 0 0 1 15 40.000000 
+NavAcqAction5 1 0 1 15 40.000000 
+NavAcqAction6 1 0 1 15 40.000000 
+NavAcqAction7 1 0 1 15 40.000000 
+NavAcqAction8 1 0 1 15 40.000000 
+NavAcqAction9 3 0 1 15 40.000000 
+NavAcqAction10 512 0 1 15 40.000000 
+NavAcqAction11 129 0 1 15 40.000000 
+NavAcqAction12 385 0 1 15 40.000000 
+NavAcqAction13 2 0 1 15 40.000000 
+NavAcqAction14 128 0 1 15 40.000000 
+NavAcqAction15 16 0 1 15 40.000000 
+NavAcqAction16 514 0 1 15 40.000000 
+NavAcqAction17 771 0 1 15 40.000000 
+NavAcqAction18 1297 0 1 15 40.000000 
+ActionOrder 17 16 7 8 9 10 13 0 5 1 2 3 4 12 6 11 14 18 15
+EndNavAcquireParams
+NavAcquireParams	1
+AcquireParams1 0 0 0 1 0 0 1 0 0 1 0 1 0 0 0 0 1 0 1 0 0
+AcquireParams2 0 -2.000000 -1.000000 10 0 0 0 0 0 0 0.000000 0 1 0 0 0 0 0 0 0 0 0
+NavAcqAction0 0 0 1 15 40.000000 
+NavAcqAction1 1 0 1 15 40.000000 
+NavAcqAction2 1153 0 1 15 40.000000 
+NavAcqAction3 129 0 1 15 40.000000 
+NavAcqAction4 0 0 1 15 40.000000 
+NavAcqAction5 1 0 1 15 40.000000 
+NavAcqAction6 1 0 1 15 40.000000 
+NavAcqAction7 1 0 1 15 40.000000 
+NavAcqAction8 1 0 1 15 40.000000 
+NavAcqAction9 3 0 1 15 40.000000 
+NavAcqAction10 512 0 1 15 40.000000 
+NavAcqAction11 129 0 1 15 40.000000 
+NavAcqAction12 385 0 1 15 40.000000 
+NavAcqAction13 2 0 1 15 40.000000 
+NavAcqAction14 128 0 1 15 40.000000 
+NavAcqAction15 16 0 1 15 40.000000 
+NavAcqAction16 514 0 1 15 40.000000 
+NavAcqAction17 771 0 1 15 40.000000 
+NavAcqAction18 1297 0 1 15 40.000000 
+ActionOrder 17 16 7 8 9 10 13 0 5 1 2 3 4 12 6 11 14 18 15
+EndNavAcquireParams
+NavAlignParams 18 1.000000 0 0.200000 0
+NavAliMapLabel 
+DewarVacParams 1 0 60 0 60 0 4.000000 0 1.000000 0 15.000000 5.000000 1
+CookerParams -1 -1 -1.000000 2000 0 10.000000 1 0 60.000000 -999 -999
+VppConditionParams -1 3 0.500000 -999 1 100 50 0 0 0 0 15 -999 -999
+VppCondNavText VPPC
+SnapshotParams 0 2.000000 1 0.000000 0 1 80 0 -999 -999
+RangeFinderParams 0 0 0 0 0 50.000000 60.000000 2.000000 0 -999 -999
+RangeFinderParams 1 0 0 0 0 50.000000 60.000000 2.000000 0 -999 -999
+ImportOverlayChannels 121
+ProcessOverlayChannels ABA
+CtffindParams 0 0 0 0 2.500000 0 1 30 120
+ToolDialogStates2 3 1 3 0 0 0 1 2 1 2 0 0 0 0 0 0
+MacroButtonNumbers 2 0 2
+MoreScriptButtons  3 4 5 6 7 8 9 10 11
+RemoteControlParams 1 0.050000 0.500000 0 6 0 6
+WindowPlacement	3
+-1 -1 -32000 -32000 0 0 1022 720
+LogPlacement 1 1 -1 -1 0 979 973 655 1762 932
+NavigatorPlacement 0 1 -1 -1 -1 -1 1200 38 1889 981
+DosePlacement 0 1 -1 -1 -1 -1 0 40 161 122
+StatePlacement 0 1 -1 -1 -1 -1 983 57 1639 353
+RotAlignPlacement 0 1 -1 -1 -1 -1 0 43 345 202
+MultiShotPlacement 0 1 -1 -1 -1 -1 1304 142 1677 540
+ReadDlgPlacement 0 1 -1 -1 -1 -1 1424 390 1680 517
+StageToolPlacement 0 1 -1 -1 -1 -1 500 400 681 638
+AutocenPlacement 0 0 0 0 0 0 0 0 0 0
+VppCondPlacement 0 0 0 0 0 0 0 0 0 0
+ZbyGSetupPlacement 0 0 0 0 0 0 0 0 0 0
+NavAcqPlacement 0 0 0 0 0 0 0 0 0 0
+MacroToolPlacement 0 1 -1 -1 -1 -1 0 50 110 361
+OneLinePlacement 0 1 -1 -1 -1 -1 702 243 1063 651
+OneEditerPlacement 0 0 1 -1 -1 -1 -1 556 62 1744 1045
+OneEditerPlacement 1 0 1 -1 -1 -1 -1 603 403 1507 1050
+OneEditerPlacement 2 0 1 -1 -1 -1 -1 492 67 1680 1050
+OneEditerPlacement 3 0 1 -1 -1 -1 -1 399 403 1303 1050
+OneEditerPlacement 4 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 5 0 1 -1 -1 -1 -1 492 67 1680 1050
+OneEditerPlacement 6 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 7 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 8 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 9 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 10 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 11 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 12 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 13 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 14 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 15 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 16 0 1 -1 -1 -1 -1 0 50 1200 1016
+OneEditerPlacement 17 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 18 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 19 0 1 -1 -1 -1 -1 0 50 400 596
+OneEditerPlacement 21 0 1 -1 -1 -1 -1 98 63 1680 1050
+OneEditerPlacement 24 0 1 -1 -1 -1 -1 98 63 1680 1050
+OneEditerPlacement 26 0 1 -1 -1 -1 -1 822 400 1680 1050
+OneEditerPlacement 27 0 1 -1 -1 -1 -1 0 40 1054 650
+OneEditerPlacement 28 0 1 -1 -1 -1 -1 0 40 1054 650
+OneEditerPlacement 29 0 1 -1 -1 -1 -1 525 63 1680 1050
+OneEditerPlacement 33 0 1 -1 -1 -1 -1 626 165 1680 775
+OneEditerPlacement 34 0 1 -1 -1 -1 -1 0 40 1054 650
+OneEditerPlacement 35 0 1 -1 -1 -1 -1 0 39 1054 650
+OneEditerPlacement 36 0 1 -1 -1 -1 -1 749 51 1680 646
+OneEditerPlacement 39 0 1 -1 -1 -1 -1 778 120 1680 900
+MacroToolbarButtons 10 25
+StateParameters 0 0 7 9 0.444958 0 0.000000 10.000000 0 1 2048 2048 1.000000 0.000000 0 0 0 0.040000 0 0 0 0 1 0 0 0 0 0 0 0 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateName 0 LMSTEMSquareMap
+StateParameters 0 0 26 9 0.388257 0 0.000000 10.000000 0 1 2048 2048 1.000000 0.000000 0 0 0 0.040000 0 0 0 0 1 0 0 0 0 0 0 0 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateName 1 nPSTEM SquareMap
+StateParameters 0 4 31 9 0.388257 0 0.000000 10.000000 0 1 2048 2048 10.000000 0.000000 0 0 0 0.040000 0 0 0 0 1 0 0 0 0 0 0 0 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateName 2 nPSTEM Hi Mag
+StateParameters 0 1 8 9 0.930403 0 0.000000 10.000000 0 2 2048 2048 1.000000 0.000000 0 0 1 0.040000 0 0 2 0 1 0 0 0 0 0 0 0 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateName 3 LM TEM Grid map
+StateParameters 0 1 20 4 0.636999 0 0.000000 10.000000 0 2 2048 2048 1.000000 0.000000 0 0 1 0.040000 0 0 2 0 1 0 0 0 0 0 0 0 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateParameters 0 0 2 9 0.446719 0 0.000000 10.000000 0 1 2048 2048 1.000000 0.000000 0 0 0 0.040000 0 0 0 0 1 0 0 0 0 0 0 0 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateName 5 LM STEM Grid map
+StateParameters 0 4 36 8 0.388257 0 0.000000 10.000000 0 1 2048 2048 10.000000 0.000000 0 0 0 0.040000 0 0 0 0 1 0 0 0 0 0 0 0 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateName 6 nP STEM 2A/pix
+StateParameters 1 1 0 0 0.000000 0 0.000000 0.000000 0 1 4096 4096 0.200000 0.000000 0 0 1 0.040000 0 0 2 0 1 0 -1 -1 -1 -1 -1 -1 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateParameters 1 4 0 0 0.000000 0 0.000000 0.000000 0 1 2048 2048 10.000000 0.000000 0 0 0 0.040000 0 0 0 0 1 0 -1 -1 -1 -1 -1 -1 -999 -9999.000000 -9999.000000 -9999.000000 0.000000 0
+StateName 8 SS nP STEM
+LowDoseParameters 0 21 8 0.572399 0.000000 0 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters 1 29 8 0.496999 -5.037251 0 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters 2 29 8 0.496999 -5.037251 0 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters 3 29 8 0.496999 0.000000 0 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters 4 0 0 0.000000 0.000000 0 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 -1 0 0.000000 0.000000
+LowDoseParameters 0 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters 1 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters 2 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters 3 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters 4 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 -1 0 0.000000 0.000000
+LowDoseParameters 0 26 7 0.388257 0.000000 2 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 0 0 0.000000 0.000000
+LowDoseParameters 1 34 7 0.388257 -1.916712 2 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 0 0 0.000000 0.000000
+LowDoseParameters 2 26 7 0.388257 0.000000 2 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 0 0 0.000000 0.000000
+LowDoseParameters 3 32 7 0.388257 0.000000 2 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 0 0 0.000000 0.000000
+LowDoseParameters 4 26 7 0.388257 0.000000 2 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 0 0 0.000000 0.000000
+LowDoseParameters -8 28 8 0.503199 0.000000 0 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 1 0 0.000000 0.000000
+LowDoseParameters -9 36 8 0.496999 0.000000 0 0 0.000000 0.000000 0 0.000000 0.000000 -999.000000 -999.000000 0.000000 0.000000 0 0 0.000000 0.000000
+LowDoseViewShift 0.016321 0.020082
+LDSearchShift 0.000000 0.000000
+TiltSeriesLowMagIndex 23 26 77
+TiltSeriesExtraExposure	0.
+TiltSeriesExtraChannels	1 2
+TiltSeriesBidirParams	1 -0.000000 1 0 0
+TiltSeriesDoseSymParams	0 1 0 30.000000 1 1 0 45.000000 0 10 1.000000 0
+TiltSeriesBDAnchorMags 20 0 27 19 0 0
+TiltSeriesRunMacro	0 0 4
+TSTermOnHighExposure	0 3.000000
+TiltSeriesBidirDimPolicy	1 55 5
+CloseValvesDuringMessageBox 1 30.000000
+EmailAddress	ori.avinoam@weizmann.ac.il
+TSSetupPanelStates 1 1 1 1 1 1 1
+NonGIFMatchPixelIntensity 0 0
+GainReferenceTarget 0 2 4000 10 0 5 0 0
+ImageXrayCriteria 0 200.000000 15.000000 1
+ImageXrayCriteria 1 200.000000 15.000000 1
+ImageXrayCriteria 2 200.000000 15.000000 1
+ImageXrayCriteria 3 200.000000 15.000000 1
+ImageXrayCriteria 4 200.000000 15.000000 1
+ImageXrayCriteria 5 200.000000 15.000000 1
+GridMapLimits 0.000000 0.000000 0.000000 0.000000
+DErefNumRepeats 10 10 10 10 10 10 10 10 10 10
+DErefExposures 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+DElastRefParams 0 0 0 0
+FrameAlignParams1 0 0 4 7 0.060000 0.000000 0.000000 0.000000 0 0.142857 0.000000 0 5 0 2 0 15 20
+FrameAlignParams2 0 0 0.000000 4 0.100000 0 0 0 0 1 20 1 0 1 1000 0
+FrameAliSetName 0 4K default set
+FrameAlignParams1 1 0 6 7 0.050000 0.000000 0.000000 0.000000 0 0.142857 0.000000 0 5 0 2 0 15 20
+FrameAlignParams2 1 0 0.000000 4 0.100000 0 0 0 0 1 20 2 0 1 1000 0
+FrameAliSetName 1 8K default set
+FrameAliGlobals 0 0 0 0 0
+FalconAliUseGPU 0 0

@@ -1,0 +1,27 @@
+MaxMacros	60
+Macro	0
+#CallFunction send_command StopTiltSeries
+#CallFunction send_command StartTiltSeries: 7
+
+#CallFunction send_command StopTiltSeries
+CallFunction send_command ARINA: filename
+#CallFunction send_command E120V:ON
+#CallFunction send_command E120V:OFF
+#CallFunction send_command SetThTime:8
+#CallFunction send_command SetTrigerDelayus:1
+#Do not use space or quotation marks in your command
+#SetThTime specifies number of seconds of scan above which will activate ARINA if set (considered as high resolution acquisition)
+
+Function send_command 0  1 text
+AllowFileOverwrite 1
+OpenTextFile 1  W 0 C://Users//seifer//Desktop//Start_SerialEM//serialem_out.txt
+WriteLineToFile 1 $text
+CloseTextFile 1
+
+NextProcessArgs  C://Users//seifer//Desktop//Start_SerialEM//serialem_out.txt  root@rp-F0D28E.local:/root/serialem_in.txt
+RunProcess C://Windows//System32//OpenSSH//scp.exe
+
+Delay 1 s
+
+EndFunction
+EndMacro

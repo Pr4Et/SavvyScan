@@ -1,0 +1,1 @@
+These are design and source files for the FPGA overlay which after succesful compilation can replace the binary red_pitaya_top.bit.bin placed in the root folder of the Red Pitaya board file system.

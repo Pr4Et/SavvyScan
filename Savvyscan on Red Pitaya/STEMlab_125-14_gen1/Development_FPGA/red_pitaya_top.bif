@@ -1,0 +1,4 @@
+all:
+{
+    red_pitaya_top.bit
+}
