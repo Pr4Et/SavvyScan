@@ -259,12 +259,12 @@ static void apply_command_line(const std::string& line_in)
         std::printf("[monitor] StartTiltSeries -> max_tilts=%d, is_tilt_series=1\n", max_tilts);
         return;
     }
-    if (starts_with(line, "SetThTime:")) {
+    if (starts_with(line, "SetThTimeus:")) {
         std::string num = trim(line.substr(std::strlen("SetThTime:")));
         int n = 0; try { n = std::stoi(num); } catch (...) { n = 0; }
         if (n <= 0) n = 1;
         LowResTime_uS = n;
-        std::printf("[monitor] SetThTime -> %d \n", LowResTime_uS);
+        std::printf("[monitor] SetThTime us -> %d \n", LowResTime_uS);
         return;
     }
 	if (starts_with(line, "SetTrigerDelayus:")) {
@@ -1076,7 +1076,7 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 	
 	
 	//LowRes=((double)fsize/(double)samplerate < LowResTimeS);
-	LowRes=((double)1000000/(double)samplerate -((double) CameraTrigger_delay/125.0) < LowResTime_uS);
+	LowRes=((int)((double)1000000/(double)samplerate -((double) CameraTrigger_delay/125.0)) < LowResTime_uS);
 	
 	//pvBufferREP will contain the x-scan (line) and y-scan (frame) data as two channels
 	// scXsize, scYsize are the total number of pixels in a scan, scXsize includes also the margins that will be ignored in the image transfered to SerialEM

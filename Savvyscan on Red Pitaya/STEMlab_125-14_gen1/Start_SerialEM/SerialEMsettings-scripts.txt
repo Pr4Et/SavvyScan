@@ -7,7 +7,7 @@ Macro	0
 CallFunction send_command ARINA: filename
 #CallFunction send_command E120V:ON
 #CallFunction send_command E120V:OFF
-#CallFunction send_command SetThTime:8
+#CallFunction send_command SetThTimeus:13
 #CallFunction send_command SetTrigerDelayus:1
 #Do not use space or quotation marks in your command
 #SetThTime specifies number of seconds of scan above which will activate ARINA if set (considered as high resolution acquisition)
