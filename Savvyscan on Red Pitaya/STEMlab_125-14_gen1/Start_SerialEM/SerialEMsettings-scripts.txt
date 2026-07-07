@@ -1,16 +1,14 @@
 MaxMacros	60
 Macro	0
 #CallFunction send_command StopTiltSeries
-#CallFunction send_command StartTiltSeries: 7
+#CallFunction send_command StartTiltSeries: 41
 
 #CallFunction send_command StopTiltSeries
-CallFunction send_command ARINA: filename
-#CallFunction send_command E120V:ON
-#CallFunction send_command E120V:OFF
+#CallFunction send_command ARINA: filename
+#CallFunction send_command EnergyKV:200
 #CallFunction send_command SetThTimeus:13
 #CallFunction send_command SetTrigerDelayus:1
 #Do not use space or quotation marks in your command
-#SetThTime specifies number of seconds of scan above which will activate ARINA if set (considered as high resolution acquisition)
 
 Function send_command 0  1 text
 AllowFileOverwrite 1

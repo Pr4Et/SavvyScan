@@ -77,19 +77,13 @@ static uint32_t dmm_size = 0;
 static uint32_t pattern_number_of_active_entries=0; //number of 16-bit words we actuallt send, must be smaller than 32K
 
 static int GUI_OutputAmpmV = 2000;
-static int GUI_BiasOutputP = -16;
-static float output_amplifiers_gain_divider= 6.56;//F20
-//static float output_amplifiers_gain_divider= 4.4; //Krios
+//static int GUI_BiasOutputP = -16; //F20
+//static float output_amplifiers_gain_divider= 6.56;//F20
+static int GUI_BiasOutputP = 0; //Krios
+static float output_amplifiers_gain_divider= 4.4; //Krios
 static float parking_voltage= 0.7;
 
 
-static int prev_binning = -1, prev_scXsize = -1, prev_scYsize = -1;
-static int prev_oversampling = -1, prev_height = -1, prev_width = -1;
-static double prev_pixeltime_us = -1.0;
-static int prev_ScanMode = -1;
-static int prev_GUI_OutputAmpmV = -1;
-
-static bool repeat_parameters = false;
 static bool LowRes = false;
 static int  LowResTime_uS = 13; //minimum duration between camera triggers, with zero delay, for which we treat the scan as 4d-stem
 static bool use_ARINA = false;
@@ -107,6 +101,7 @@ static byte Gate_pattern[MAX_PATERN_DATA_SIZE];
 static int  Gate_pattern_count = (int)(MAX_PATERN_DATA_SIZE);
 
 static int  packet_id_last = 0;
+static int EnergyKV=200;
 
 static void* pvBufferREC;         // output image buffer
 static void* pvBufferREC_buffer;  // per-line ADC buffer
@@ -281,11 +276,11 @@ static void apply_command_line(const std::string& line_in)
         std::printf("[monitor] StopTiltSeries -> is_tilt_series=0\n");
         return;
     }
-    if (starts_with(line, "E120V:")) {
-        std::string val = trim(line.substr(6));
-        if (val == "ON") use_120kv = true;
-        if (val == "OFF") use_120kv = false;
-        std::printf("[monitor] E120V -> %s, use_120kv=%d\n", val.c_str(), use_120kv);
+    if (starts_with(line, "EnergyKV:")) {
+        std::string num = trim(line.substr(std::strlen("EnergyKV:")));
+        int n = 0; try { n = std::stoi(num); } catch (...) { n = 0; } 
+        if (n>0) EnergyKV=n;
+        std::printf("[monitor] EnergyKV -> %d \n", EnergyKV);
         return;
     }
 }
@@ -935,8 +930,7 @@ void run_Arina_acquire(double integration_time_us, int number_of_triggers)
 {
     double t_sec = (integration_time_us - 3.0-(double)CameraTrigger_delay/125.0) * 1e-6;
     if (t_sec < 0.0) t_sec = 0.0;
-    int energy = use_120kv ? 120 : 200;
-
+ 
     const char* python_exec = "/usr/bin/python3";
 	if (!dectris_ip) {
 		dectris_ip = "192.168.100.70"; // fallback if not set
@@ -948,7 +942,7 @@ void run_Arina_acquire(double integration_time_us, int number_of_triggers)
     std::snprintf(
         cmd, sizeof(cmd),
         "%s -u -m acquireimages -i %s -x -t %.6f -n %d -e %d -o %s_s%d",
-        python_exec, dectris_ip, t_sec, number_of_triggers, energy,
+        python_exec, dectris_ip, t_sec, number_of_triggers, EnergyKV,
         arinaFileName.c_str(), TiltIndex
     );
 
@@ -1078,31 +1072,7 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 	//LowRes=((double)fsize/(double)samplerate < LowResTimeS);
 	LowRes=((int)((double)1000000/(double)samplerate -((double) CameraTrigger_delay/125.0)) < LowResTime_uS);
 	
-	//pvBufferREP will contain the x-scan (line) and y-scan (frame) data as two channels
-	// scXsize, scYsize are the total number of pixels in a scan, scXsize includes also the margins that will be ignored in the image transfered to SerialEM
-	//pixeltime_us=exposure, the GUI entered overall time divided by number of pixels in the camera
-	if (prev_binning == binning && prev_scXsize == scXsize && prev_scYsize == scYsize && prev_oversampling == oversampling && prev_pixeltime_us == pixeltime_us && prev_ScanMode == ScanMode && prev_height == height && prev_width == width && prev_GUI_OutputAmpmV== GUI_OutputAmpmV)
-	{
-		repeat_parameters = true;
-		//continue anyhow since the key is determined here and erased each time.  
-	}
-	else
-	{
-		repeat_parameters = false;
-		prev_binning = binning;
-		prev_scXsize = scXsize;
-		prev_scYsize = scYsize;
-		prev_oversampling = oversampling;
-		prev_pixeltime_us = pixeltime_us;
-		prev_ScanMode = ScanMode;
-		prev_height = height;
-		prev_width = width;
-		prev_GUI_OutputAmpmV = GUI_OutputAmpmV;
-	}
-	
-	
 
-	
 	double standard_amplitude=GUI_OutputAmpmV;
 	int xscan_millivolts_amp=int(standard_amplitude*(scXsize*binning)/8192.0);
 	int yscan_millivolts_amp=int(standard_amplitude* AspectRatio * (scYsize*binning)/8192.0);
