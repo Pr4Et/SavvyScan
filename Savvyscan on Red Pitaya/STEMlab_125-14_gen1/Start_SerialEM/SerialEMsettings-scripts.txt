@@ -1,25 +1,76 @@
 MaxMacros	60
 Macro	0
+ScriptName InitArina
+#=============================
 #CallFunction send_command StopTiltSeries
 #CallFunction send_command StartTiltSeries: 41
-
-#CallFunction send_command StopTiltSeries
 #CallFunction send_command ARINA: filename
 #CallFunction send_command EnergyKV:200
 #CallFunction send_command SetThTimeus:13
 #CallFunction send_command SetTrigerDelayus:1
 #Do not use space or quotation marks in your command
-
+#=============================
 Function send_command 0  1 text
 AllowFileOverwrite 1
 OpenTextFile 1  W 0 C://Users//seifer//Desktop//Start_SerialEM//serialem_out.txt
 WriteLineToFile 1 $text
 CloseTextFile 1
-
 NextProcessArgs  C://Users//seifer//Desktop//Start_SerialEM//serialem_out.txt  root@rp-F0D28E.local:/root/serialem_in.txt
 RunProcess C://Windows//System32//OpenSSH//scp.exe
-
-Delay 1 s
-
+Delay 2 s
 EndFunction
 EndMacro
+
+
+Macro	5
+#!Python
+#=============================
+#ScriptName DownloadDectris
+#=============================
+#
+import serialem as sem
+import subprocess
+import sys
+import requests
+import time
+time.sleep(2)
+try:
+    subprocess.run(
+    [sys.executable, "-m", "downloadallimages", "-i", "10.42.41.10", "-d", "d:/ArinaData", "-x"],
+    cwd=r"C:\Users\seifer\Desktop\Start_SerialEM\velan\Lib",
+    check=True, )
+except Exception as e:
+    print("Download failed, check hardware:", e)
+    try:
+        r = requests.put("http://10.42.41.10/detector/api/1.8.0/command/initialize", json={}  )
+        print("Reset status:", r.status_code)
+        r = requests.put("http://10.42.41.10/detector/api/1.8.0/command/insert_sensor", json={}  )
+        print("Reset status:", r.status_code)
+    except Exception as abort_err:
+        print("Failed to send abort command:", abort_err)
+EndMacro
+
+Macro	9
+ScriptName Nav2Arina
+#=============================
+CallFunction send_commandB StartTiltSeries: 41
+ReportNavItem
+suffix = $navLabel
+ReportNavFile 1
+prefix = $reportedValue4
+middle = _tomo
+fullname = $prefix$middle$suffix
+echo $fullname
+CallFunction send_commandB ARINA: $fullname
+
+Function send_commandB 0  1 text
+AllowFileOverwrite 1
+OpenTextFile 1  W 0 C://Users//seifer//Desktop//Start_SerialEM//serialem_out.txt
+WriteLineToFile 1 $text
+CloseTextFile 1
+NextProcessArgs  C://Users//seifer//Desktop//Start_SerialEM//serialem_out.txt  root@rp-F0D28E.local:/root/serialem_in.txt
+RunProcess C://Windows//System32//OpenSSH//scp.exe
+Delay 2 s
+EndFunction
+EndMacro
+
