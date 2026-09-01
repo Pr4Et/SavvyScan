@@ -7,7 +7,8 @@ ScriptName InitArina
 #CallFunction send_command ARINA: filename
 #CallFunction send_command EnergyKV:200
 #CallFunction send_command SetThTimeus:13
-#CallFunction send_command SetTrigerDelayus:1
+#CallFunction send_command SetTriggerDelayus:1
+#CallFunction send_command ScanPattern:1
 #Do not use space or quotation marks in your command
 #=============================
 Function send_command 0  1 text

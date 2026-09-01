@@ -1,5 +1,7 @@
-// feeder.cpp — C++20 feeder for Red Pitaya, internal sync start via rp_GenSynchronise()
-// Final module with AWG frequency read-back and updated rp_gate integration.
+// feeder.cpp — C++20 feeder for Red Pitaya
+// Designed by Shahar Seifer, Elbaum lab, Weizmann Institute of Science
+// Based on original SavvyScan system
+// Programming assisted by M365-Copilot
 
 #include "feeder.h"
 #include <cstdio>
@@ -82,6 +84,7 @@ static int GUI_OutputAmpmV = 2000;
 static int GUI_BiasOutputP = 0; //Krios
 static float output_amplifiers_gain_divider= 4.4; //Krios
 static float parking_voltage= 0.7;
+static int ScanPattern =1;
 
 
 static bool LowRes = false;
@@ -105,15 +108,11 @@ static int EnergyKV=200;
 
 static void* pvBufferREC;         // output image buffer
 static void* pvBufferREC_buffer;  // per-line ADC buffer
-//static void* pvBufferREPx;        // scanx table (DAC)
-//static void* pvBufferREPy;        // scany table (DAC)
 static void* pvBufferREPxy;        // scan x,y table interveaved (DAC)
 static void* pvBufferKey;         // (x,y) mapping table
 static void* remote_data;
 
 uint64 qwMemInBytesREC, qwMemInBytesREC_buffer;
-//uint64 qwMemInBytesREPx;
-//uint64 qwMemInBytesREPy;
 uint64 qwMemInBytesREPxy;
 
 static int samplerate, DACsamplerate_x,DACsamplerate_y;
@@ -262,12 +261,12 @@ static void apply_command_line(const std::string& line_in)
         std::printf("[monitor] SetThTime us -> %d \n", LowResTime_uS);
         return;
     }
-	if (starts_with(line, "SetTrigerDelayus:")) {
-        std::string num = trim(line.substr(std::strlen("SetTrigerDelayus:")));
+	if (starts_with(line, "SetTriggerDelayus:")) {
+        std::string num = trim(line.substr(std::strlen("SetTriggerDelayus:")));
         int n = 0; try { n = std::stoi(num); } catch (...) { n = 0; }
         if (n <= 0) n = 1;
         CameraTrigger_delay = n*125;
-        std::printf("[monitor] SetTrigerDelayus -> %d \n", CameraTrigger_delay/125);
+        std::printf("[monitor] SetTriggerDelayus -> %d \n", CameraTrigger_delay/125);
         return;
     }
 
@@ -283,6 +282,15 @@ static void apply_command_line(const std::string& line_in)
         std::printf("[monitor] EnergyKV -> %d \n", EnergyKV);
         return;
     }
+    if (starts_with(line, "ScanPattern:")) {
+        std::string num = trim(line.substr(std::strlen("ScanPattern:")));
+        int n = 0; try { n = std::stoi(num); } catch (...) { n = 0; }
+        if (n <= 0) n = 1;
+        ScanPattern = n;
+        std::printf("[monitor] ScanPattern -> %d \n", ScanPattern);
+        return;
+    }
+	
 }
 
 static void read_and_apply_all_lines() {
@@ -597,22 +605,14 @@ int set_rp_gate_and_acqstart(uint32_t div,bool send_camera_trigger,uint32_t dmm_
     const int16_t* Gate_pattern_words = reinterpret_cast<const int16_t*>(Gate_pattern);
     const int16_t* AWGtablexy = static_cast<const int16_t*>(pvBufferREPxy);
 	
-
-	//request acquisition triggered by a pulse, which RTL generates with the first ARM command
-	//rp_AcqStart();  
-
-
     // Map CTRL and MEM
- 
     map_ctrl_mmap = map_region32(fd_mem, BASE_CTRL, SPAN_CTRL, &ctrl4mapctrl);
     if (!map_ctrl_mmap) { return 2; }
 	
-    
     bram_mmap = map_region32(fd_mem, BASE_MEM,  SPAN_MEM,  &bram_mem32);  //returned address: bram_mem32
     if (!bram_mmap)  { return 3; }
 
     // --------- Configure control registers ----------
-    // Choose realistic values or pass them as arguments
     const uint32_t TICKDIV = div;   // dividing 125MHz clock to ADC clock
     const uint32_t PWIDTH  = 375;    //3 us @ 125 MHz
     const uint16_t MASK_ST = 0x8000;   // MSB = state
@@ -660,9 +660,6 @@ int set_rp_gate_and_acqstart(uint32_t div,bool send_camera_trigger,uint32_t dmm_
 
     std::fprintf(stderr, "Pattern loaded: %u entries (16-bit). LowRes=%d\n", pattern_number_of_active_entries,LowRes);
 
-    // Optional: STOP later if you implemented a STOP behavior in RTL
-    // reg_wr32(ctrl, OFF_CTRL, CTRL_STOP_BIT);
-
  
 	return 0;
 }
@@ -696,36 +693,6 @@ bool run_scan_with_gate_and_adc()
     if (rp_Init() != RP_OK) return false;
 
 	
-
-	// For whatever bits you configured in rp_gate_cfg
-	//rp_DpinSetDirection(RP_DIO0_P, RP_OUT);  // adcstart_bit=0
-	//rp_DpinSetDirection(RP_DIO3_P, RP_OUT);  // camera_bit=3 (if enabled)
-	//rp_DpinSetDirection(RP_DIO4_P, RP_OUT);  // start_bit=4 (debug cue)
-
-
-	//drive to parking position if not yet so
-	/*if (!has_output_reset)
-	{
-		rp_GenReset();
-		rp_GenSetInitGenValue(RP_CH_1, parking_voltage);
-		rp_GenSetInitGenValue(RP_CH_2, parking_voltage);
-		rp_GenBurstLastValue(RP_CH_1, parking_voltage);     // hold 0.5 V after burst
-		rp_GenBurstLastValue(RP_CH_2, parking_voltage);     // hold 0.5 V after burst
-		//rp_GenOutEnableSync(false);
-		rp_GenOutEnable(RP_CH_1);
-		rp_GenOutEnable(RP_CH_2);
-		has_output_reset=true;
-	}
-
-    rp_GenWaveform(RP_CH_1, RP_WAVEFORM_ARBITRARY);
-    rp_GenWaveform(RP_CH_2, RP_WAVEFORM_ARBITRARY);
-	// Set amplitude (Volts) and offset (Volts) for each channel
-	rp_GenAmp(RP_CH_1, 1.0f);          // equivalent to SCPI: SOUR1:VOLT 1
-	rp_GenOffset(RP_CH_1, 0.0f);       // equivalent to SCPI: SOUR1:VOLT:OFFS 0
-	rp_GenAmp(RP_CH_2, 1.0f);
-	rp_GenOffset(RP_CH_2, 0.0f);
-	*/
-
     // ---- 2) Configure acquisition (ADC) ----
     uint32_t dec    = pick_decimation(samplerate);
     double   Fs_ADC = 125e6 / (double)dec;   // exact in FPGA decimator
@@ -733,23 +700,6 @@ bool run_scan_with_gate_and_adc()
 	const double F_frame_phys = Fs_ADC  / (double)NumDACy_samples;       // physcial frames per second
 
     rp_AcqReset();
-	//#ifdef HAVE_NEW_DEC_API
-	//	rp_AcqSetDecimationFactor(dec);       // arbitrary 1..65536
-	//#else
-	//	// Legacy API: map to enum values {RP_DEC_1, RP_DEC_8, RP_DEC_64, RP_DEC_1024, RP_DEC_8192, RP_DEC_65536}
-	//	rp_acq_decimation_t d;
-	//	if      (dec <= 1)       d = RP_DEC_1;
-	//	else if (dec <= 8)       d = RP_DEC_8;
-	//	else if (dec <= 64)      d = RP_DEC_64;
-	//	else if (dec <= 1024)    d = RP_DEC_1024;
-	//	else if (dec <= 8192)    d = RP_DEC_8192;
-	//	else                     d = RP_DEC_65536;
-	//	rp_AcqSetDecimation(d);               // legacy discrete set
-	//#endif
-    //rp_AcqSetTriggerDelay(0);
-    //rp_AcqSetTriggerSrc(RP_TRIG_SRC_EXT_PE); // external trigger on DIO0_P
-    // Setup Deep Memory ADC Capture, DMM
-
 	uint32_t number_of_32bit_words = qwMemInBytesREC / 4;
 	uint32_t qwMemInPointsREC = number_of_32bit_words * 2;	
 
@@ -801,46 +751,9 @@ bool run_scan_with_gate_and_adc()
 	// Enable and run acquisition
 	rp_AcqAxiEnable(RP_CH_1, true);
 	
-    // ---- 3) Configure generator (AWG) ----
-    // Arbitrary tables prepared by prepare_AWG(): lengths are NumDACx_samples (Nx) and NumDACy_samples (Ny)
-	//std::vector<float> ch1(NumDACx_samples);
-	//for (int i = 0; i < NumDACx_samples; ++i) ch1[i] = to_norm(AWGtablex[i]);
-	//for (int i = 0; i < NumDACy_samples; ++i) ch2[i] = to_norm(AWGtabley[i]);
-	//std::vector<float> ch2;
-	//ch2.reserve(Ny_eff);
-	//uint32_t scale_Ny = Ny_eff / NumDACy_samples;         
-	//for (uint32_t i = 0; i < NumDACy_samples && ch2.size() < Ny_eff; ++i) {
-	//	float y = to_norm(AWGtabley[i]);     // your normalization
-	//	for (uint32_t k = 0; k < scale_Ny && ch2.size() < Ny_eff; ++k) {
-	//		ch2.push_back(y);
-	//	}
-	//}
-	
-    //rp_GenArbWaveform(RP_CH_1, ch1.data(), (int)ch1.size());
-    //rp_GenArbWaveform(RP_CH_2, ch2.data(), (int)ch2.size());
-
-
-	//rp_GenMode(RP_CH_2, RP_GEN_MODE_BURST);
-	//rp_GenBurstCount(RP_CH_2, 1);       // NCYC = 1
-	//rp_GenBurstRepetitions(RP_CH_2, 1); // NOR  = 1
-	//rp_GenTriggerSource(RP_CH_2, RP_GEN_TRIG_SRC_EXT_PE); // External trigger from DIO0_P 
-	//rp_GenMode(RP_CH_1, RP_GEN_MODE_BURST);
-	//rp_GenBurstCount(RP_CH_1, NumDACy_samples);       // NCYC = NumDACy_samples
-	//rp_GenBurstRepetitions(RP_CH_1, 1); // NOR  = 1
-	//rp_GenTriggerSource(RP_CH_1, RP_GEN_TRIG_SRC_EXT_PE); // External trigger from DIO0_P 
-    //rp_GenOutEnable(RP_CH_1);
-    //rp_GenOutEnable(RP_CH_2);
- 
-
-    // Set frequencies and read back actual DDS frequencies
-    //AwgFreqs freqs = set_awg_freqs_with_readback((uint32_t)NumDACx_samples,(uint32_t)NumDACy_samples,(uint32_t)Ny_eff, Fs_ADC);
-	//double line_time_s= 1.0/freqs.F1_act;
 	fprintf(stderr,
 			"dec=%u  Fs_ADC=%.3f kS/s  N_positions=%d, ADCfetch_start=%d\n",
 			dec, Fs_ADC/1e3, NumDACx_samples, ADCfetch_start);
-
-    // Use the actual implemented frequencies going forward (no printing/logging).
-    // If you need derived values (e.g., frame time), compute from freqs.F1_act and freqs.F2_act.
 
     bool send_camera_trigger =!LowRes; //(!LowRes && use_ARINA);
 	
@@ -853,17 +766,9 @@ bool run_scan_with_gate_and_adc()
 		return false;
 	}
 	
-	//rp_GenSynchronise();   // same as SCPI: "SOUR:TRIG:INT"
-
 	//RUN mass acquisition
 	usleep((uint32_t)(1000000.0/F_frame_phys+1000000.0/(double)samplerate)+1); //wait in microseconds
 	// ------------------- WAIT FOR FILL -----------------------------
-
-	//bool filled = false;
-	//while (!filled) {
-	//	rp_AcqAxiGetBufferFillState(RP_CH_1, &filled);
-	//	usleep(500);
-	//}
 
 
 	// ------------------- COPY DATA OUT OF DDR ----------------------
@@ -878,19 +783,6 @@ bool run_scan_with_gate_and_adc()
 
 	usleep(5000);    //starngely needs a delay, but do not exceed becuase the ADC table could be overwritten 
 
-    // stop gate at end of frame
-    //int fd2 = ::open("/dev/" RP_GATE_DEV, O_RDWR); //was O_WRONLY
-    //if (fd2 >= 0) { ioctl(fd2, RP_GATE_STOP); ::close(fd2); }
-
-	//stop cycles and drive the parking position to protect the sample
-	// 1) Stop the channel immediately (no reset of settings)
-	//rp_GenOutDisable(RP_CH_1);          // and/or RP_CH_2
-
-	//rp_GenReset();
-	//rp_GenSetInitGenValue(RP_CH_1, 1.0f);
-	//rp_GenSetInitGenValue(RP_CH_2, 1.0f);
-	//rp_GenOutEnable(RP_CH_1);
-	//rp_GenOutEnable(RP_CH_2);
 
     rp_Release();
 	usleep(5000);
@@ -1021,14 +913,7 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 	
 	DACsamplerate_x = (int)(1000000.0 / sampling_pixeltime_us); //For scanning pattern we only ask one point per pixel
 	samplerate = DACsamplerate_x * oversampling;//ADC clock
-    // REC: calculate the amount of data we need and allocate memory buffer
     qwMemInBytesREC = NumSamplesPerCh * BytesPerSample * RECnumchannels *oversampling;
-    ///pvBufferREC =(void *) new char[qwMemInBytesREC ];
-	///pvBufferKey = (void*) new char[NumSamplesPerCh * sizeof(int16_t) * REPnumchannels];//will contain the expected locations of the beam in x,y
-	//previously:  qwMemInBytesREPx = locs_per_line * sizeof(float); 
-    //pvBufferREPx = (void *) new char[qwMemInBytesREPx];
-    //previously: qwMemInBytesREPy = scYsize * sizeof(float); 
-	///pvBufferREPy = (void *) new char[qwMemInBytesREPy];
 	qwMemInBytesREPxy = scYsize * locs_per_line * sizeof(int16_t)*2; 
 	
 	
@@ -1036,12 +921,8 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 	const size_t need_rec  = qwMemInBytesREC;                      // int16 samples buffer
 	const size_t need_key  = size_t(NumSamplesPerCh) * 2 * sizeof(int16_t);  // locx,locy as int16_t
 	const size_t need_repxy = qwMemInBytesREPxy;                     // size of int16 full table, interleaved x,y values
-	//if (need_rep != g_rep_bytes) {
-	//	if (pvBufferREP) delete[] reinterpret_cast<char*>(pvBufferREP);
-	//	pvBufferREP  = static_cast<void*>(new char[need_rep]);
-	//	g_rep_bytes  = need_rep;
-	//}
-		if (need_rec != g_rec_bytes) {
+
+	if (need_rec != g_rec_bytes) {
 		if (pvBufferREC) delete[] reinterpret_cast<char*>(pvBufferREC);
 		pvBufferREC  = static_cast<void*>(new char[need_rec]);
 		g_rec_bytes  = need_rec;
@@ -1064,15 +945,10 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 	NumADC_samples=scYsize*width; //not used, just informative 
 	
 	
-	
 	//fprintf(stderr, "Requested pixeltime_us=%.6f s, sampling_pixeltime_us=%.3f, fsize=%d \n",  pixeltime_us, sampling_pixeltime_us, fsize);
 
-	
-	
-	//LowRes=((double)fsize/(double)samplerate < LowResTimeS);
 	LowRes=((int)((double)1000000/(double)samplerate -((double) CameraTrigger_delay/125.0)) < LowResTime_uS);
 	
-
 	double standard_amplitude=GUI_OutputAmpmV;
 	int xscan_millivolts_amp=int(standard_amplitude*(scXsize*binning)/8192.0);
 	int yscan_millivolts_amp=int(standard_amplitude* AspectRatio * (scYsize*binning)/8192.0);
@@ -1121,31 +997,23 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 	
 	//here is scan mode 1. Doing: scanx(line) sweeps from left (2^15-1) to right (-2^15) and then flyback over a period flyback_us back to most left
 	ADCfetch_start=0;
-	ScanMode=1;
 	float BiasOutput_mv = 0; 
-	if (ScanMode == 1) BiasOutput_mv = ((float)standard_amplitude * 0.414*(1.0+ (float)GUI_BiasOutputP/100.0) );
+	if (ScanPattern == 1) BiasOutput_mv = ((float)standard_amplitude * 0.414*(1.0+ (float)GUI_BiasOutputP/100.0) );
 
-	switch (ScanMode)
+	switch (ScanPattern)
 	{
-	case 1: //### standard scan: Doing: scanx(line) sweeps from left (2^15-1) to right (-2^15) and then flyback over a period flyback_us back to most left
+	case 1: //### standard raster scan: Doing: scanx(line) sweeps from left (2^15-1) to right (-2^15) and then flyback over a period flyback_us back to most left
 		for (int scanyvar = scYsize-1; scanyvar >=0; scanyvar--) //order reversed 8May2022
 		{
 			//scan from left to right
 			scany = (float)yscan_millivolts_amp * ((float)scanyvar - (float)scYsize / 2.0) / ((float)scYsize / 2.0);
 			DACy_tag = 0.001*scany/output_amplifiers_gain_divider; //(int)(scany * 32768.0 / (double)yscan_millivolts_amp_tag);
-			//if (DACy_tag < -32768) DACy_tag = -32768;
-			//if (DACy_tag > 32767) DACy_tag = 32767;
-			//previously here:  *AWGtabley++ = (float)DACy_tag;//store scany_tag value
 			for (int scanxvar = 0; scanxvar < scXsize * oversampling; scanxvar++)
 			{
 				scanx = (float)xscan_millivolts_amp * ((float)scanxvar - 0.5*(float)scXsize * (float)oversampling) / ((float)(scXsize * oversampling) / 2.0);
 				DACx_tag= 0.001*(-scanx+BiasOutput_mv)/output_amplifiers_gain_divider;
-				//DACx_tag = (int)(-(scanx ) * 32768.0 / (double)xscan_millivolts_amp_tag);
-				//if (DACx_tag > 32767) DACx_tag = 32767;
-				//if (DACx_tag < -32768) DACx_tag = -32768;
 				if (counter % oversampling == 0)
 				{
-					//previously: if (scanyvar==scYsize-1)
 					{
 						*AWGtablexy++ = to_dac(DACx_tag);//store scanx_tag value
 						*AWGtablexy++ = to_dac(DACy_tag);//store scany_tag value
@@ -1161,7 +1029,7 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 				}
 
 				
-				//cor_locx=correctedLOCxy(locx, delay, samplerate, counter, & prevLOCx);  before 24Feb22
+				//cor_locx=correctedLOCxy(locx, delay, samplerate, counter, & prevLOCx);  
 				//cor_locy=correctedLOCxy(locy, delay, samplerate, counter, & prevLOCy);
 				//cor_locx = checkLOCxy(locx);
 				//cor_locy = checkLOCxy(locy);
@@ -1173,15 +1041,10 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 			//int flypix =(int)(flyback_us / pixeltime_us);
 			for (int scanxvar = flypix * oversampling - 1; scanxvar >= 0; scanxvar--)
 			{
-				//scanx = xscan_millivolts_amp * (scanxvar - (int)(flyback_us / pixeltime_us) * oversampling / 2) / ((int)(flyback_us / pixeltime_us) * oversampling / 2);
 				scanx = xscan_millivolts_amp* (float(width + 2 * marginx) * (float)scanxvar / (float)flypix + ((-0.5 * (float)width - (float)marginx) * (float)oversampling)) / ((float)(scXsize * oversampling) / 2.0);
 				DACx_tag=0.001*(-scanx+BiasOutput_mv)/output_amplifiers_gain_divider;
-				//DACx_tag = (int)(-(scanx) * 32768.0 / (double)xscan_millivolts_amp_tag);
-				//if (DACx_tag > 32767) DACx_tag = 32767;
-				//if (DACx_tag < -32768) DACx_tag = -32768;
 				if (counter % oversampling == 0)
 				{
-					//previously: if (scanyvar==scYsize-1)
 					{
 						*AWGtablexy++ = to_dac(DACx_tag);//store scanx_tag value
 						*AWGtablexy++ = to_dac(DACy_tag);//store scany_tag value
@@ -1193,11 +1056,10 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 				*Keytable++ = -1.0;
 			}
 		}
-		// = NumSamplesPerCh - scYsize * (scXsize * oversampling + (int)(flyback_us / pixeltime_us) * oversampling);
 		break;
 
 	default:
-		printf("Error:  No such ScanMode");
+		printf("Error:  No such ScanPattern");
 
 	}
 	
@@ -1237,7 +1099,6 @@ void prepare_AWG(int binning, int scXsize, int scYsize, double AspectRatio, doub
 				{
 					if (record_position <= Gate_pattern_count - 4)
 					{
-						//cancelled:state_counter = (int)(state_counter / recent_oversampling); //waiting in terms of AWG clock ticks
 						Gate_pattern[record_position] = (byte)(state_counter & 0b11111111);
 						record_position++;
 						if (previous_record_state)
