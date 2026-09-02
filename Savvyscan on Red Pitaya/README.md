@@ -6,4 +6,5 @@ GPL-3.0 license
 #Shahar Seifer, Michael Elbaum, FPGA based scanner and SerialEM server for 4D STEM Electron Tomography (2026).
 #Shahar Seifer, Michael Elbaum, Synchronization of scanning probe and pixelated sensor for image-guided diffraction microscopy, HardwareX 14 (2023).
 #Shahar Seifer, Lothar Houben, Michael Elbaum, "Flexible STEM with Simultaneous Phase and Depth Contrast", Microscopy and Microanalysis (2021).
-
+<br>
+To keep records of metadata see: https://github.com/elbaum-lab/Session-JSON <br>
