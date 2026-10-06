@@ -1,0 +1,1635 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Oct  5 23:25:24 2026
+# Process ID         : 25404
+# Current directory  : c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1
+# Command line       : vivado.exe -log red_pitaya_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source red_pitaya_top.tcl -notrace
+# Log file           : c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top.vdi
+# Journal file       : c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-V1CT7H9
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Xeon(R) Silver 4310 CPU @ 2.10GHz
+# CPU Frequency      : 2100 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 24
+# Host memory        : 274470 MB
+# Swap memory        : 40802 MB
+# Total Virtual      : 315272 MB
+# Available Virtual  : 267394 MB
+#-----------------------------------------------------------
+source red_pitaya_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 483.750 ; gain = 211.211
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 588.871 ; gain = 90.980
+Command: link_design -top red_pitaya_top -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 897.488 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1394 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/asg_dat_fifo/asg_dat_fifo.xdc] for cell 'i_asg/chA/inst_axi_dac/inst_asg_dat_fifo/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/asg_dat_fifo/asg_dat_fifo.xdc] for cell 'i_asg/chA/inst_axi_dac/inst_asg_dat_fifo/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/asg_dat_fifo/asg_dat_fifo.xdc] for cell 'i_asg/chB/inst_axi_dac/inst_asg_dat_fifo/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/asg_dat_fifo/asg_dat_fifo.xdc] for cell 'i_asg/chB/inst_axi_dac/inst_asg_dat_fifo/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/sync_fifo/sync_fifo.xdc] for cell 'i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/inst_sync_fifo/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/sync_fifo/sync_fifo.xdc] for cell 'i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/inst_sync_fifo/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/sync_fifo/sync_fifo.xdc] for cell 'i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/inst_sync_fifo/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/sync_fifo/sync_fifo.xdc] for cell 'i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/inst_sync_fifo/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_proc_sys_reset_3_0/system_proc_sys_reset_3_0_board.xdc] for cell 'ps/system_i/system_i/proc_sys_reset_3/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_proc_sys_reset_3_0/system_proc_sys_reset_3_0_board.xdc] for cell 'ps/system_i/system_i/proc_sys_reset_3/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0_board.xdc] for cell 'ps/system_i/system_i/proc_sys_reset_0/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0_board.xdc] for cell 'ps/system_i/system_i/proc_sys_reset_0/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_proc_sys_reset_1_0/system_proc_sys_reset_1_0_board.xdc] for cell 'ps/system_i/system_i/proc_sys_reset_1/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_proc_sys_reset_1_0/system_proc_sys_reset_1_0_board.xdc] for cell 'ps/system_i/system_i/proc_sys_reset_1/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_proc_sys_reset_2_0/system_proc_sys_reset_2_0_board.xdc] for cell 'ps/system_i/system_i/proc_sys_reset_2/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_proc_sys_reset_2_0/system_proc_sys_reset_2_0_board.xdc] for cell 'ps/system_i/system_i/proc_sys_reset_2/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_processing_system7_0/system_processing_system7_0.xdc] for cell 'ps/system_i/system_i/processing_system7/inst'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_processing_system7_0/system_processing_system7_0.xdc] for cell 'ps/system_i/system_i/processing_system7/inst'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_xadc_0/system_xadc_0.xdc] for cell 'ps/system_i/system_i/xadc/inst'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_xadc_0/system_xadc_0.xdc] for cell 'ps/system_i/system_i/xadc/inst'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_smartconnect_0_0/bd_0/ip/ip_1/bd_919a_psr_aclk_0_board.xdc] for cell 'ps/system_i/system_i/smartconnect_0/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_smartconnect_0_0/bd_0/ip/ip_1/bd_919a_psr_aclk_0_board.xdc] for cell 'ps/system_i/system_i/smartconnect_0/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_smartconnect_0_0/smartconnect.xdc] for cell 'ps/system_i/system_i/smartconnect_0/inst'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_smartconnect_0_0/smartconnect.xdc] for cell 'ps/system_i/system_i/smartconnect_0/inst'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_axi_dma_0_0/system_axi_dma_0_0.xdc] for cell 'ps/system_i/system_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_axi_dma_0_0/system_axi_dma_0_0.xdc] for cell 'ps/system_i/system_i/axi_dma_0/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_smartconnect_1_0/bd_0/ip/ip_1/bd_51cb_psr_aclk_0_board.xdc] for cell 'ps/system_i/system_i/smartconnect_1/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_smartconnect_1_0/bd_0/ip/ip_1/bd_51cb_psr_aclk_0_board.xdc] for cell 'ps/system_i/system_i/smartconnect_1/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_smartconnect_1_0/smartconnect.xdc] for cell 'ps/system_i/system_i/smartconnect_1/inst'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_smartconnect_1_0/smartconnect.xdc] for cell 'ps/system_i/system_i/smartconnect_1/inst'
+Parsing XDC File [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc]
+WARNING: [Vivado 12-584] No ports matched 'dac_clk_1x'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:206]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports dac_clk_1x]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:206]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'dac_clk_2x'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:207]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports dac_clk_2x]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:207]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'dac_clk_2p'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:208]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports dac_clk_2p]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:208]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:211]
+INFO: [Timing 38-2] Deriving generated clocks [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:211]
+WARNING: [Vivado 12-627] No clocks matched 'dac_clk_2x'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:211]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:211]
+get_clocks: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1700.625 ; gain = 583.082
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks dac_clk_2x]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:211]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'dac_clk_2p'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:212]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:212]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks dac_clk_2p]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:212]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'dac_clk_1x'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:218]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:218]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks dac_clk_1x]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:218]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'dac_clk_2x'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:219]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:219]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks dac_clk_2x]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:219]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'dac_clk_2p'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:220]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:220]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks dac_clk_2p]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:220]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'ser_clk'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:221]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:221]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks ser_clk]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:221]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'pdm_clk'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:222]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:222]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks pdm_clk]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:222]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'dac_clk_2x'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:223]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:223]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks dac_clk_2x]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:223]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'dac_clk_2p'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:224]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:224]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks dac_clk_2p]'. [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc:224]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [C:/AMDDesignTools/RedPitaya-FPGA/sdc/red_pitaya_G2.xdc]
+Parsing XDC File [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc]
+WARNING: [Vivado 12-180] No cells matched 'i_ams/XADC_inst'. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-508] No pins matched 'i_asg/ch*/inst_axi_dac/dac_rd_clr_r*/D'. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:96]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_pins i_asg/ch*/inst_axi_dac/dac_rd_clr_r*/D]'. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:96]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'spi_done_csff*/D'. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:97]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_pins spi_done_csff*/D]'. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:97]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'sys_bus_interconnect/for_bus[*].inst_sys_bus_cdc/reg_rdata*[*]*/C'. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:102]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_pins {sys_bus_interconnect/for_bus[*].inst_sys_bus_cdc/reg_rdata*[*]*/C}]'. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:102]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Constraints 18-633] Creating clock e3_3i with 2 sources. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:107]
+Finished Parsing XDC File [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc]
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/asg_dat_fifo/asg_dat_fifo_clocks.xdc] for cell 'i_asg/chA/inst_axi_dac/inst_asg_dat_fifo/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/asg_dat_fifo/asg_dat_fifo_clocks.xdc] for cell 'i_asg/chA/inst_axi_dac/inst_asg_dat_fifo/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/asg_dat_fifo/asg_dat_fifo_clocks.xdc] for cell 'i_asg/chB/inst_axi_dac/inst_asg_dat_fifo/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/asg_dat_fifo/asg_dat_fifo_clocks.xdc] for cell 'i_asg/chB/inst_axi_dac/inst_asg_dat_fifo/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/sync_fifo/sync_fifo_clocks.xdc] for cell 'i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/inst_sync_fifo/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/sync_fifo/sync_fifo_clocks.xdc] for cell 'i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/inst_sync_fifo/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/sync_fifo/sync_fifo_clocks.xdc] for cell 'i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/inst_sync_fifo/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/ip/sync_fifo/sync_fifo_clocks.xdc] for cell 'i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/inst_sync_fifo/U0'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_axi_register_slice_0_0/system_axi_register_slice_0_0_clocks.xdc] for cell 'ps/system_i/system_i/axi_register_slice_0/inst'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_axi_register_slice_0_0/system_axi_register_slice_0_0_clocks.xdc] for cell 'ps/system_i/system_i/axi_register_slice_0/inst'
+Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_axi_dma_0_0/system_axi_dma_0_0_clocks.xdc] for cell 'ps/system_i/system_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.gen/sources_1/bd/system/ip/system_axi_dma_0_0/system_axi_dma_0_0_clocks.xdc] for cell 'ps/system_i/system_i/axi_dma_0/U0'
+INFO: [Project 1-1714] 126 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'red_pitaya_top'...
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1707.621 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 201 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 22 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 2 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 172 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 5 instances
+
+19 Infos, 17 Warnings, 16 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1707.621 ; gain = 1118.750
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1707.621 ; gain = 0.000
+
+Starting Cache Timing Information Task
+WARNING: [Constraints 18-633] Creating clock e3_3i with 2 sources. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:107]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 17945a71d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1707.621 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 17945a71d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 2127.352 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 17945a71d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Phase 1 Initialization | Checksum: 17945a71d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 2127.352 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 17945a71d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.970 . Memory (MB): peak = 2127.352 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 17945a71d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 17945a71d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2127.352 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 9 inverters resulting in an inversion of 97 pins
+INFO: [Opt 31-138] Pushed 35 inverter(s) to 167 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 81d2556d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Retarget | Checksum: 81d2556d
+INFO: [Opt 31-389] Phase Retarget created 6 cells and removed 106 cells
+INFO: [Opt 31-1021] In phase Retarget, 113 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: b8524c6d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Constant propagation | Checksum: b8524c6d
+INFO: [Opt 31-389] Phase Constant propagation created 77 cells and removed 204 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 112 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2127.352 ; gain = 0.000
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Phase 5 Sweep | Checksum: f7badc73
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Sweep | Checksum: f7badc73
+INFO: [Opt 31-389] Phase Sweep created 8 cells and removed 459 cells
+INFO: [Opt 31-1021] In phase Sweep, 375 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-194] Inserted BUFG i_serlines_add/genblk4[0].txp_dv_reg[0]_i_2__0_n_0_BUFG_inst to drive 51 load(s) on clock net i_serlines_add/genblk4[0].txp_dv_reg[0]_i_2__0_n_0_BUFG
+INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
+INFO: [Opt 31-274] Optimized connectivity to 1 cascaded buffer cells
+Phase 6 BUFG optimization | Checksum: af84502a
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2127.352 ; gain = 0.000
+BUFG optimization | Checksum: af84502a
+INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 1 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: af84502a
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Shift Register Optimization | Checksum: af84502a
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: f81fb443
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Post Processing Netlist | Checksum: f81fb443
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 184 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 19203a243
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2127.352 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 19203a243
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Phase 9 Finalization | Checksum: 19203a243
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2127.352 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               6  |             106  |                                            113  |
+|  Constant propagation         |              77  |             204  |                                            112  |
+|  Sweep                        |               8  |             459  |                                            375  |
+|  BUFG optimization            |               1  |               1  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                            184  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 19203a243
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2127.352 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Power 33-23] Power model is not available for i_DNA
+WARNING: [Constraints 18-633] Creating clock e3_3i with 2 sources. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:107]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 55 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 14 WE to EN ports
+Number of BRAM Ports augmented: 20 newly gated: 30 Total Ports: 110
+Ending PowerOpt Patch Enables Task | Checksum: 12e2d0e41
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.476 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 12e2d0e41
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 2465.629 ; gain = 338.277
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+WARNING: [Constraints 18-633] Creating clock e3_3i with 2 sources. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:107]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 15fcd6418
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Ending Final Cleanup Task | Checksum: 15fcd6418
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 15fcd6418
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+55 Infos, 20 Warnings, 16 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:35 . Memory (MB): peak = 2465.629 ; gain = 758.008
+INFO: [Vivado 12-24828] Executing command : report_drc -file red_pitaya_top_drc_opted.rpt -pb red_pitaya_top_drc_opted.pb -rpx red_pitaya_top_drc_opted.rpx
+Command: report_drc -file red_pitaya_top_drc_opted.rpt -pb red_pitaya_top_drc_opted.pb -rpx red_pitaya_top_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.133 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1178be96a
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.037 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+WARNING: [Constraints 18-633] Creating clock e3_3i with 2 sources. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:107]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][10]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][11]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][12]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][13]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][14]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][15]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][2]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][3]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][4]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][5]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][6]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][7]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][8]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[0][9]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][10]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][11]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][12]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][13]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][14]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][15]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][2]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][3]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][4]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][5]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][6]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][7]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][8]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+CRITICAL WARNING: [Place 30-722] Terminal 'adc_dat_i[1][9]' has IOB constraint set to TRUE, but it is either not connected to a FLOP element or the connected FLOP element could not be brought into the I/O
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 14417f521
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1f54e9086
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:12 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1f54e9086
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:12 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1f54e9086
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:12 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 15c7c033b
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1e6cbda51
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 232304dba
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 13bf0584d
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:34 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 189b07bc2
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:36 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 95 LUTNM shape to break, 869 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 45, two critical 50, total 95, new lutff created 4
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 446 nets or LUTs. Breaked 95 LUTs, combined 351 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |           95  |            351  |                   446  |           0  |           1  |  00:00:01  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |           95  |            351  |                   446  |           0  |           9  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 7a037edc
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:40 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 2.5 Global Place Phase2 | Checksum: 135f33a75
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:41 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 135f33a75
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:41 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: a619393d
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:43 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 11fd39c8e
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:48 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 129612885
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:48 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 12883f575
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:48 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 1b4d97d66
+
+Time (s): cpu = 00:01:28 ; elapsed = 00:00:54 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1862efd7e
+
+Time (s): cpu = 00:01:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 10bb05df5
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:07 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 5f5190dd
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:07 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 12c3ec33c
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:01:16 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 12c3ec33c
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:01:16 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+WARNING: [Constraints 18-633] Creating clock e3_3i with 2 sources. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:107]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: e254b4ed
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.845 | TNS=-2171.953 |
+Phase 1 Physical Synthesis Initialization | Checksum: e69b7a42
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.819 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Place 46-33] Processed net i_scope/i_cfg/SR[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 1, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 1215dd889
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: e254b4ed
+
+Time (s): cpu = 00:02:08 ; elapsed = 00:01:25 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-5.423. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 235e82c99
+
+Time (s): cpu = 00:02:48 ; elapsed = 00:02:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Time (s): cpu = 00:02:48 ; elapsed = 00:02:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 235e82c99
+
+Time (s): cpu = 00:02:48 ; elapsed = 00:02:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 235e82c99
+
+Time (s): cpu = 00:02:48 ; elapsed = 00:02:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                1x1|                2x2|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 235e82c99
+
+Time (s): cpu = 00:02:49 ; elapsed = 00:02:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 235e82c99
+
+Time (s): cpu = 00:02:49 ; elapsed = 00:02:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Time (s): cpu = 00:02:49 ; elapsed = 00:02:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 22d6d144c
+
+Time (s): cpu = 00:02:49 ; elapsed = 00:02:01 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Ending Placer Task | Checksum: 18dacb5cd
+
+Time (s): cpu = 00:02:49 ; elapsed = 00:02:01 . Memory (MB): peak = 2465.629 ; gain = 0.000
+99 Infos, 22 Warnings, 44 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:56 ; elapsed = 00:02:05 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_io -file red_pitaya_top_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.127 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file red_pitaya_top_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.129 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_utilization -file red_pitaya_top_utilization_placed.rpt -pb red_pitaya_top_utilization_placed.pb
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.146 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 8.00s |  WALL: 4.50s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.423 | TNS=-1938.051 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1ba9dc7be
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.423 | TNS=-1938.051 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 1ba9dc7be
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.423 | TNS=-1938.051 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg_n_0_[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net pll/pll_dac_clk_2x. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/issue_addr_next_c0[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[29]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[25]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[21]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[17]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[13]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[9]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[5]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_5_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_5_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.407 | TNS=-1938.447 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0_repN.  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_comp
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.310 | TNS=-1935.040 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_3_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_3_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.300 | TNS=-1935.289 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_4_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_4_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.287 | TNS=-1935.379 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_3_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_3_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.280 | TNS=-1935.292 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_4_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[5]_i_4_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.275 | TNS=-1935.345 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0_repN_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-134] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_4_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_12_n_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/issue_words_left_c21_out[25]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_19_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_46_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.258 | TNS=-1932.700 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg_n_0_[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_next_c0[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[29]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[25]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[21]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[17]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[13]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[9]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_3_n_0. Critical path length was reduced through logic transformation on cell i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_3_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.252 | TNS=-1933.476 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[3]_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_30_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.251 | TNS=-1931.636 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_14_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[3]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_words_left_c21_out[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[3]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 13 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_10_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.236 | TNS=-1918.560 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_29_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[5].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg[5]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.189 | TNS=-1913.298 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/stop_addr_q[3].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/stop_addr_q_reg[3]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/stop_addr_q[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.175 | TNS=-1911.688 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_27_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.157 | TNS=-1910.835 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_38_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.157 | TNS=-1910.835 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_45_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.147 | TNS=-1910.555 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_44_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.147 | TNS=-1910.555 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_45_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.137 | TNS=-1910.107 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_words_left_c21_out[20]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_19_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_46_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.131 | TNS=-1908.957 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[4].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg[4]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.127 | TNS=-1908.896 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[3].  Re-placed instance i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg[3]
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.127 | TNS=-1908.922 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[3]_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_29_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[4]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.124 | TNS=-1903.587 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[3]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 15 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_10_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.121 | TNS=-1899.154 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_46_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/stop_addr_q[7].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/stop_addr_q_reg[7]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_writer/stop_addr_q[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.117 | TNS=-1897.659 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_28_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1897.429 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[4]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/dly_cnt_reg[29]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net pll/pll_adc_clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[24]_i_1__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[20]_i_1__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[16]_i_1__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[12]_i_1__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[8]_i_1__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[4]_i_1__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[0]_i_3__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_9__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_9__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_9__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1897.856 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_10__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_10__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_10__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1893.960 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_4__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_4__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1894.253 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_5__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_5__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_5__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1894.336 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_4__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_4__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1894.689 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_5__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_5__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_5__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1895.073 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_7__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_7__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_7__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1895.504 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_8__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_8__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_8__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1891.522 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/dac_pnt_reg_n_0_[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_trig was not replicated.
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_trig.  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[61]_i_3__0
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_trig. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1886.728 |
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_trig was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/SR[0]. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[31]_i_1__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_trig. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1872.619 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_2__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_2__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_2__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1872.585 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_3__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_3__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[4]_i_3__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1870.101 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_2__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_2__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_2__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1870.105 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[55].  Re-placed instance i_asg/chB/dac_pnt_reg[55]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[55]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1870.398 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[56].  Re-placed instance i_asg/chB/dac_pnt_reg[56]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[56]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1870.592 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[57].  Re-placed instance i_asg/chB/dac_pnt_reg[57]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[57]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1870.648 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[61].  Re-placed instance i_asg/chB/dac_pnt_reg[61]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[61]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1870.701 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_3__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_3__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[8]_i_3__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1869.696 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/rep_cnt[15].  Re-placed instance i_asg/chB/rep_cnt_reg[15]
+INFO: [Physopt 32-735] Processed net i_asg/chB/rep_cnt[15]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1869.910 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[0].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[0]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1869.480 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[1].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[1]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1869.456 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[2].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[2]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1869.432 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[3].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[3]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1869.408 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_4__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_4__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1869.279 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_5__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_5__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_5__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1868.898 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/cycle_cnt_q[15]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/cycle_cnt_q[15]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/cycle_cnt_q[15]_i_4__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/cycle_cnt_q[15]_i_4__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/trig_r_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1851.419 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dly_cnt_reg[4].  Re-placed instance i_asg/chB/dly_cnt_reg[4]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dly_cnt_reg[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1852.267 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/dly_cnt_reg[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/set_b_rdly_reg[19]. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_1__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1841.177 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/dly_cnt_reg[29]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[24]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[20]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[16]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[12]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[8]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[4]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[0]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_9_n_0. Critical path length was reduced through logic transformation on cell i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_9_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1841.438 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_10_n_0. Critical path length was reduced through logic transformation on cell i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_10_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1838.429 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_2__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_2__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_2__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1838.460 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_3__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_3__0_n_0. Critical path length was reduced through logic transformation on cell i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[12]_i_3__0_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1837.559 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dly_cnt_reg[4].  Re-placed instance i_asg/chB/dly_cnt_reg[4]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dly_cnt_reg[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1836.711 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/rep_cnt[5].  Re-placed instance i_asg/chB/rep_cnt_reg[5]
+INFO: [Physopt 32-735] Processed net i_asg/chB/rep_cnt[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1837.179 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/rep_cnt[6].  Re-placed instance i_asg/chB/rep_cnt_reg[6]
+INFO: [Physopt 32-735] Processed net i_asg/chB/rep_cnt[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1837.632 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt_reg_n_0_[0].  Re-placed instance i_asg/chB/dac_pnt_reg[0]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt_reg_n_0_[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1837.999 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt_reg_n_0_[5].  Re-placed instance i_asg/chB/dac_pnt_reg[5]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt_reg_n_0_[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1838.395 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/rep_cnt[0].  Re-placed instance i_asg/chB/rep_cnt_reg[0]
+INFO: [Physopt 32-735] Processed net i_asg/chB/rep_cnt[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1838.943 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/rep_cnt[11].  Re-placed instance i_asg/chB/rep_cnt_reg[11]
+INFO: [Physopt 32-735] Processed net i_asg/chB/rep_cnt[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1839.486 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/rep_cnt[9].  Re-placed instance i_asg/chB/rep_cnt_reg[9]
+INFO: [Physopt 32-735] Processed net i_asg/chB/rep_cnt[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1839.838 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt_reg_n_0_[43].  Re-placed instance i_asg/chB/dac_pnt_reg[43]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt_reg_n_0_[43]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1840.098 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[58].  Re-placed instance i_asg/chB/dac_pnt_reg[58]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[58]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1840.356 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[59].  Re-placed instance i_asg/chB/dac_pnt_reg[59]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[59]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1840.785 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg_n_0_[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net pll/pll_dac_clk_2x. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_next_c0[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_14_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_words_left_c21_out[20]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_29_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[4]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[60].  Re-placed instance i_asg/chB/dac_pnt_reg[60]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[60]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1841.140 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt_reg_n_0_[42].  Re-placed instance i_asg/chB/dac_pnt_reg[42]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt_reg_n_0_[42]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1841.447 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt_reg_n_0_[44].  Re-placed instance i_asg/chB/dac_pnt_reg[44]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt_reg_n_0_[44]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1841.757 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[49].  Re-placed instance i_asg/chB/dac_pnt_reg[49]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[49]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1842.215 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/dac_pnt[50].  Re-placed instance i_asg/chB/dac_pnt_reg[50]
+INFO: [Physopt 32-735] Processed net i_asg/chB/dac_pnt[50]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1842.683 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/dly_cnt_reg[29]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net pll/pll_adc_clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[16]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[61]_i_7__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_npnt_sub_neg. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[60]_i_6__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_npnt[57]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[3]_i_5__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1820.087 |
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/words_left_q[31]_i_3_n_0.  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/words_left_q[31]_i_3
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/words_left_q[31]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1816.835 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/dly_cnt_reg[29]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[61]_i_7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dac_npnt_sub_neg. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[60]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dac_npnt[57]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[3]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[31][1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/dac_pnt_reg_n_0_[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1816.835 |
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.073 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 3 Critical Path Optimization | Checksum: e260336b
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:14 . Memory (MB): peak = 2465.629 ; gain = 0.000
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1816.835 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg_n_0_[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net pll/pll_dac_clk_2x. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_next_c0[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[29]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[25]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[21]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[17]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[13]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg[9]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_14_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_words_left_c21_out[20]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_19_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[3]_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_29_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[4]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/dly_cnt_reg[29]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net pll/pll_adc_clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[24]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[20]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[16]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[12]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[8]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[4]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[0]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_7_n_0. Critical path length was reduced through logic transformation on cell i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_7_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1817.200 |
+INFO: [Physopt 32-663] Processed net i_asg/chA/dac_pnt_reg_n_0_[5].  Re-placed instance i_asg/chA/dac_pnt_reg[5]
+INFO: [Physopt 32-735] Processed net i_asg/chA/dac_pnt_reg_n_0_[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1817.102 |
+INFO: [Physopt 32-663] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[24].  Re-placed instance i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[24]
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[24]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1816.897 |
+INFO: [Physopt 32-663] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[25].  Re-placed instance i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[25]
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[25]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1816.692 |
+INFO: [Physopt 32-663] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[26].  Re-placed instance i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[26]
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[26]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1816.487 |
+INFO: [Physopt 32-663] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[27].  Re-placed instance i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[27]
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[27]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1816.282 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0 was not replicated.
+INFO: [Physopt 32-710] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_8_n_0. Critical path length was reduced through logic transformation on cell i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_8_comp.
+INFO: [Physopt 32-735] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1813.857 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[1].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[1]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1813.322 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[2].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[2]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1812.787 |
+INFO: [Physopt 32-663] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[3].  Re-placed instance i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[3]
+INFO: [Physopt 32-735] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dec_cnt_q_reg[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1812.252 |
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q_reg_n_0_[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net pll/pll_dac_clk_2x. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_next_c0[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[9]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[0]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen_reg[0]_i_14_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_words_left_c21_out[20]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/axi_sys\\.rlen[3]_i_29_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/req_next_addr_q[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chA/inst_axi_dac/inst_axi_fifo_writer/issue_addr_q_reg_n_0_[4]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/dly_cnt_reg[29]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net pll/pll_adc_clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[16]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt[0]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[61]_i_7__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_npnt_sub_neg. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[60]_i_6__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_npnt[57]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dac_pnt[3]_i_6__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/inst_axi_dac/inst_axi_fifo_reader/dly_cnt_reg[31][1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_asg/chB/dac_pnt_reg_n_0_[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.115 | TNS=-1812.252 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Phase 4 Critical Path Optimization | Checksum: e260336b
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:16 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-5.115 | TNS=-1812.252 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.308  |        125.799  |            2  |              0  |                    84  |           0  |           2  |  00:00:13  |
+|  Total          |          0.308  |        125.799  |            2  |              0  |                    84  |           0  |           3  |  00:00:13  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 22f4266f9
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:16 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+579 Infos, 22 Warnings, 44 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:21 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.109 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2465.629 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2465.629 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: bc04c788 ConstDB: 0 ShapeSum: da04d23f RouteDB: 15f972f0
+Post Restoration Checksum: NetGraph: db74624a | NumContArr: 3222652c | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 292e8bcb0
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:40 . Memory (MB): peak = 2511.641 ; gain = 46.012
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 292e8bcb0
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:40 . Memory (MB): peak = 2511.641 ; gain = 46.012
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 292e8bcb0
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:41 . Memory (MB): peak = 2511.641 ; gain = 46.012
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 1c5ea9058
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2569.008 ; gain = 103.379
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.155 | TNS=-1651.770| WHS=-0.800 | THS=-781.711|
+
+
+Phase 2.4 Update Timing for Bus Skew
+
+Phase 2.4.1 Update Timing
+Phase 2.4.1 Update Timing | Checksum: 2228d3da0
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:55 . Memory (MB): peak = 2663.172 ; gain = 197.543
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.155 | TNS=-1813.159| WHS=-1.675 | THS=-152.868|
+
+Phase 2.4 Update Timing for Bus Skew | Checksum: 24ad7eb51
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:56 . Memory (MB): peak = 2663.172 ; gain = 197.543
+
+Phase 2.5 Soft Constraint Pins - Fast Budgeting
+Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: 24ad7eb51
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:56 . Memory (MB): peak = 2684.371 ; gain = 218.742
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00248524 %
+  Global Horizontal Routing Utilization  = 0.00684584 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 29372
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 29368
+  Number of Partially Routed Nets     = 4
+  Number of Node Overlaps             = 2
+
+Phase 2 Router Initialization | Checksum: 1567a1728
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:56 . Memory (MB): peak = 2684.371 ; gain = 218.742
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 1567a1728
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:56 . Memory (MB): peak = 2684.371 ; gain = 218.742
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 1cada5164
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:01:02 . Memory (MB): peak = 2684.371 ; gain = 218.742
+Phase 4 Initial Routing | Checksum: 1cada5164
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:01:02 . Memory (MB): peak = 2684.371 ; gain = 218.742
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 4198
+ Number of Nodes with overlaps = 775
+ Number of Nodes with overlaps = 239
+ Number of Nodes with overlaps = 85
+ Number of Nodes with overlaps = 28
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.389 | TNS=-3018.126| WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 1be739d39
+
+Time (s): cpu = 00:02:04 ; elapsed = 00:01:30 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 312
+ Number of Nodes with overlaps = 134
+ Number of Nodes with overlaps = 43
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.494 | TNS=-3079.253| WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 24540440c
+
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:34 . Memory (MB): peak = 2695.301 ; gain = 229.672
+Phase 5 Rip-up And Reroute | Checksum: 24540440c
+
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:34 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 284cf388c
+
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:36 . Memory (MB): peak = 2695.301 ; gain = 229.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.298 | TNS=-2858.937| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 6.1 Delay CleanUp | Checksum: 1a2abb7e5
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:01:36 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 1a2abb7e5
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:01:36 . Memory (MB): peak = 2695.301 ; gain = 229.672
+Phase 6 Delay and Skew Optimization | Checksum: 1a2abb7e5
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:01:36 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.298 | TNS=-2514.848| WHS=-0.073 | THS=-0.199 |
+
+Phase 7.1 Hold Fix Iter | Checksum: 290014ef6
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:38 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 7.2 Non Free Resource Hold Fix Iter
+Phase 7.2 Non Free Resource Hold Fix Iter | Checksum: 3181c8b59
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:38 . Memory (MB): peak = 2695.301 ; gain = 229.672
+Phase 7 Post Hold Fix | Checksum: 3181c8b59
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:38 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 7.30993 %
+  Global Horizontal Routing Utilization  = 8.88007 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 71.1712%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 81.0811%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 72.0588%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 83.8235%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 3181c8b59
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:38 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 3181c8b59
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:38 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 297c43291
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:40 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 297c43291
+
+Time (s): cpu = 00:02:21 ; elapsed = 00:01:41 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Phase 12 Post Router Timing
+
+Phase 12.1 Update Timing
+Phase 12.1 Update Timing | Checksum: 297c43291
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:42 . Memory (MB): peak = 2695.301 ; gain = 229.672
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-5.298 | TNS=-2514.848| WHS=0.050  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 12 Post Router Timing | Checksum: 297c43291
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:42 . Memory (MB): peak = 2695.301 ; gain = 229.672
+Total Elapsed time in route_design: 101.727 secs
+
+Phase 13 Post-Route Event Processing
+Phase 13 Post-Route Event Processing | Checksum: 14634a388
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:42 . Memory (MB): peak = 2695.301 ; gain = 229.672
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 14634a388
+
+Time (s): cpu = 00:02:24 ; elapsed = 00:01:42 . Memory (MB): peak = 2695.301 ; gain = 229.672
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+595 Infos, 23 Warnings, 44 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:02:26 ; elapsed = 00:01:44 . Memory (MB): peak = 2695.301 ; gain = 229.672
+INFO: [Vivado 12-24828] Executing command : report_drc -file red_pitaya_top_drc_routed.rpt -pb red_pitaya_top_drc_routed.pb -rpx red_pitaya_top_drc_routed.rpx
+Command: report_drc -file red_pitaya_top_drc_routed.rpt -pb red_pitaya_top_drc_routed.pb -rpx red_pitaya_top_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 2695.301 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_methodology -file red_pitaya_top_methodology_drc_routed.rpt -pb red_pitaya_top_methodology_drc_routed.pb -rpx red_pitaya_top_methodology_drc_routed.rpx
+Command: report_methodology -file red_pitaya_top_methodology_drc_routed.rpt -pb red_pitaya_top_methodology_drc_routed.pb -rpx red_pitaya_top_methodology_drc_routed.rpx
+WARNING: [Constraints 18-633] Creating clock e3_3i with 2 sources. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:107]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_drc: Time (s): cpu = 00:00:26 ; elapsed = 00:00:14 . Memory (MB): peak = 2717.727 ; gain = 22.426
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file red_pitaya_top_timing_summary_routed.rpt -pb red_pitaya_top_timing_summary_routed.pb -rpx red_pitaya_top_timing_summary_routed.rpx -warn_on_violation 
+WARNING: [Constraints 18-633] Creating clock e3_3i with 2 sources. [C:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/sdc/red_pitaya_G2.xdc:107]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [Vivado 12-24838] Running report commands "report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file red_pitaya_top_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file red_pitaya_top_route_status.rpt -pb red_pitaya_top_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_power -file red_pitaya_top_power_routed.rpt -pb red_pitaya_top_power_summary_routed.pb -rpx red_pitaya_top_power_routed.rpx
+Command: report_power -file red_pitaya_top_power_routed.rpt -pb red_pitaya_top_power_summary_routed.pb -rpx red_pitaya_top_power_routed.rpx
+INFO: [Power 33-23] Power model is not available for i_DNA
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+613 Infos, 27 Warnings, 45 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 2727.281 ; gain = 9.555
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file red_pitaya_top_clock_utilization_routed.rpt
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file red_pitaya_top_bus_skew_routed.rpt -pb red_pitaya_top_bus_skew_routed.pb -rpx red_pitaya_top_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+generate_parallel_reports: Time (s): cpu = 00:00:59 ; elapsed = 00:00:34 . Memory (MB): peak = 2729.176 ; gain = 33.875
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.110 . Memory (MB): peak = 2764.016 ; gain = 17.844
+Wrote PlaceDB: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2773.387 ; gain = 27.113
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2773.387 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.352 . Memory (MB): peak = 2773.387 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.064 . Memory (MB): peak = 2773.387 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2773.387 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 2773.387 ; gain = 27.113
+INFO: [Common 17-1381] The checkpoint 'c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2773.387 ; gain = 44.211
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  5 23:31:50 2026...
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Tue Oct  6 07:29:56 2026
+# Process ID         : 30656
+# Current directory  : c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1
+# Command line       : vivado.exe -log red_pitaya_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source red_pitaya_top.tcl -notrace
+# Log file           : c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1/red_pitaya_top.vdi
+# Journal file       : c:/AMDDesignTools/RedPitaya-FPGA/prj/v0.94/build/redpitaya.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-V1CT7H9
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Xeon(R) Silver 4310 CPU @ 2.10GHz
+# CPU Frequency      : 2100 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 24
+# Host memory        : 274470 MB
+# Swap memory        : 40802 MB
+# Total Virtual      : 315272 MB
+# Available Virtual  : 266276 MB
+#-----------------------------------------------------------
+source red_pitaya_top.tcl -notrace
+Command: open_checkpoint red_pitaya_top_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 289.586 ; gain = 7.996
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 800.441 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1388 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.129 . Memory (MB): peak = 1005.004 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1626.527 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1626.527 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1636.324 ; gain = 9.797
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1636.324 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.429 . Memory (MB): peak = 1653.992 ; gain = 17.668
+Read Physdb Files: Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1653.992 ; gain = 27.465
+Restored from archive | CPU: 3.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1653.992 ; gain = 27.465
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1653.992 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 201 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 22 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 2 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 172 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 5 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1 (64-bit) build 6140274
+WARNING: [Vivado 12-23575] Critical violations of the methodology design rules detected. Critical violations may contribute to timing failures or cause functional issues in hardware. Run report_methodology for more information.
+open_checkpoint: Time (s): cpu = 00:00:33 ; elapsed = 00:00:42 . Memory (MB): peak = 1653.992 ; gain = 1381.898
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_1/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_1/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_1/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_1/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m02_nodes/m02_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m01_nodes/m01_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ps/system_i/system_i/smartconnect_0/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-208] The XPM instance: <ps/system_i/system_i/axis_data_fifo_0/inst/gen_fifo.xpm_fifo_axis_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <ps/system_i/system_i/axis_data_fifo_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-208] The XPM instance: <ps/system_i/system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <ps/system_i/system_i/axi_dma_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+Command: write_bitstream -force red_pitaya_top.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./red_pitaya_top.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+50 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:58 ; elapsed = 00:00:37 . Memory (MB): peak = 2307.594 ; gain = 637.492
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  6 07:31:23 2026...

@@ -1,0 +1,90 @@
+SerialEMSettings
+SystemPath	C:\Program Files\SerialEM\
+AreaFractionForScaling	0.750000
+PercentDisplayTruncationLo	0.200000
+PercentDisplayTruncationHi	0.200000
+BuffersToRollOnAcquire	2
+BufferToReadInto	4
+ProtectRecordImages	0
+CopyToBufferOnSave	3
+AlignOnSave	1
+AutoZoom	1
+FixedZoomSteps	1
+MontageCorrectDrift	1
+MontageAdjustFocus	0
+MontageShowOverview	1
+MontageAlignPieces	1
+ShootAfterAutofocus	-1
+SelectedCameraParameterSet	4
+TargetDefocus	0.000000
+DriftProtection	1
+TiltIncrement	2.000000
+CosineTilting	0
+TiltDelay	2.000000
+AutofocusBeamTilt	1.600000
+AssessMultiplePeaksInAlign	0
+MacroLimitRuns	0
+MacroRunLimit	30
+MacroLimitScaleMax	0
+MacroScaleMaxLimit	200
+MacroLimitTiltUp	0
+MacroTiltUpLimit	76.000000
+MacroLimitTiltDown	0
+MacroTiltDownLimit	-76.000000
+MacroLimitMontError	0
+MacroMontErrorLimit	7.000000
+MacroLimitIS	0
+MacroISLimit	4.000000
+ToolDialogStates 3 1 1 1 1 1 1 0 0
+MacroButtonNumbers 0 1 2
+WindowPlacement	1
+-1 -1 -1 -1 113 7 1272 926
+LowDoseParameters 0 0 0 0.000000 0.000000 0 0 0.000000 0.000000 0
+LowDoseParameters 1 0 0 0.000000 0.000000 0 0 0.000000 0.000000 0
+LowDoseParameters 2 0 0 0.000000 0.000000 0 0 0.000000 0.000000 0
+LowDoseParameters 3 0 0 0.000000 0.000000 0 0 0.000000 0.000000 0
+LowDoseParameters 0 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0
+LowDoseParameters 1 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0
+LowDoseParameters 2 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0
+LowDoseParameters 3 0 0 0.000000 0.000000 1 0 0.000000 0.000000 0
+LowDoseBlankWhenDown	0
+LowDoseAreaToShow	2
+LowDoseTieFocusTrial	1
+TiltSeriesLowMagIndex	23
+TiltSeriesTrackLowMag	0
+TiltSeriesBeamControl	1
+TiltSeriesTaperCounts	0
+TiltSeriesTaperAngle	50.000000
+TiltSeriesRefineEucentricity	1
+TiltSeriesWalkLeaveAnchor	1
+TiltSeriesWalkAnchorTilt	40.000000
+TiltSeriesImageShiftLimit	3.000000
+TiltSeriesFocusCheckInterval	6.000000
+TiltSeriesRepeatRecord	1
+TiltSeriesMaxRecordLoss	0.050000
+TiltSeriesRepeatAutofocus	1
+TiltSeriesMaxFocusDiff	0.250000
+TiltSeriesAlwaysFocusAtHigh	0
+TiltSeriesAlwaysFocusAngle	50.000000
+TiltSeriesCheckAutofocus	1
+TiltSeriesMinFocusAccuracy	0.250000
+TiltSeriesXFitInterval	8.000000
+TiltSeriesYFitInterval	12.000000
+TiltSeriesZFitInterval	12.000000
+TiltSeriesXMinForQuadratic	4
+TiltSeriesYMinForQuadratic	4
+TiltSeriesAlignTrackOnly	0
+TiltSeriesMaxRefDisagreement	0.020000
+TiltSeriesMaxPredictErrorXY	0.015000
+TiltSeriesMaxPredictErrorZ	0.200000
+FilterSlitWidth	20.000000
+FilterEnergyLoss	0.000000
+FilterZeroLoss	0
+FilterChangeMagWithScreen	0
+FilterMatchPixel	1
+FilterMatchIntensity	1
+FilterDoMagShifts	1
+GainReferenceTarget 0 2 4000 10
+TiltSeriesStackRecords	1
+CtffindParams 		0 1 0 0 2.500000
+BacklashMouseAndISR	1

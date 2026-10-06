@@ -1,4 +1,4 @@
-# SavvyScan on Red Pitaya FPGA Boards
+# SavvyScan on Red Pitaya FPGA Board STEMlab 125-14 gen1
 A flexible STEM scanner with pixelated detector synchronization and server interface for SerialEM 
 Editted/ written by Shahar Seifer, Elbaum lab, Weizmann Institute of Science, Israel.
 GPL-3.0 license

@@ -1,0 +1,28 @@
+#!/bin/sh
+#LOG=~/savvyscan_boot.log
+#echo "=== Boot $(date) ===" >> "$LOG"
+# 1) Load overlay
+echo "Running overlay.sh..." #>> "$LOG"
+/opt/redpitaya/sbin/overlay.sh red_pitaya_top x y Full #>> "$LOG" 2>&1
+cp /opt/red_pitaya_top/fpga.bit.bin /lib/firmware/fpga.bit.bin
+sync
+# 2) Load FPGA bitstream
+BIT=fpga.bit.bin
+echo "Loading FPGA: /opt/red_pitaya_top/fpga.bit.bin " #>> "$LOG"
+echo 0 > /sys/class/fpga_manager/fpga0/flags
+echo $BIT > /sys/class/fpga_manager/fpga0/firmware
+
+# 3) Tell Savvyscan server the IP address of the pixelated detector server
+export DECTRIS_SERVER_IP_ADDR="192.168.100.70"
+
+STATE_FILE=/sys/class/fpga_manager/fpga0/state
+STATE=$(cat $STATE_FILE)
+echo "FPGA state: $STATE" #>> "$LOG"
+#echo "export PYTHONPATH=/opt/velan/python:/opt/velan/Lib:$PYTHONPATH"
+#export PYTHONPATH=$PYTHONPATH:/opt/velan/python:/opt/velan/Lib
+
+# 4) Start the server
+sleep 5
+echo "Starting SavvyScan..." #>> "$LOG"
+/root/SavvyscanPitaya/build/savvyscan_server #>> "$LOG" 2>&1
+

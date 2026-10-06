@@ -1,0 +1,1 @@
+Should be placed in the SerialEM program folder (on a windows computer) next to serialem.exe

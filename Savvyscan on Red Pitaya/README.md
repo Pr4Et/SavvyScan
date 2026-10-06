@@ -3,7 +3,7 @@ A flexible STEM scanner with pixelated detector synchronization and server inter
 Editted/ written by Shahar Seifer, Elbaum lab, Weizmann Institute of Science, Israel.
 GPL-3.0 license
 
-Shahar Seifer, Michael Elbaum, FPGA based scanner and SerialEM server for 4D STEM Electron Tomography (2026).<br>
+Shahar Seifer, Michael Elbaum, FPGA based scanner and SerialEM server for 4D STEM Electron Tomography (2026). https://doi.org/10.1107/S2059798326009630 <br>
 Shahar Seifer, Michael Elbaum, Synchronization of scanning probe and pixelated sensor for image-guided diffraction microscopy, HardwareX 14 (2023).<br>
 Shahar Seifer, Lothar Houben, Michael Elbaum, "Flexible STEM with Simultaneous Phase and Depth Contrast", Microscopy and Microanalysis (2021).<br>
 <br>

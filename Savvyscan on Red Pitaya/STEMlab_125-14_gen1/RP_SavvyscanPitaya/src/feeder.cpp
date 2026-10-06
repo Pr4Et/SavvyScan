@@ -37,7 +37,6 @@
 
 // Hardware headers
 #include <rp.h>          // Red Pitaya C-API master header
-#include "rp_gate.h"     // kernel driver's IOCTLs
 
 using byte   = uint8_t; 
 using uint64 = uint64_t;
@@ -792,28 +791,6 @@ bool run_scan_with_gate_and_adc()
 static void msleep(unsigned ms) {
     timespec ts{ static_cast<time_t>(ms / 1000), static_cast<long>((ms % 1000) * 1000000) };
     nanosleep(&ts, nullptr);
-}
-
-// (Other functions below unchanged: send_pattern, run_Arina_acquire, prepare_AWG, correctedLOCxy, acquire_image, activate_scan, etc.)
-
-bool send_pattern(const uint8_t* buf, size_t bytes, int dio_p_bit = 2)
-{
-    int fd = ::open("/dev/rp_gate", O_WRONLY);
-    if (fd < 0) { perror("open"); return false; }
-    rp_gate_cfg cfg{};
-    cfg.mask_count          = 0x7FFF;
-    cfg.mask_state          = 0x8000;
-    cfg.dio_p_bit           = (uint8_t)dio_p_bit;
-    cfg.start_bit           = 0;
-    cfg.camera_bit          = 3;
-    cfg.adcstart_bit        = 1;
-    cfg.send_camera_trigger = 1;
-    if (ioctl(fd, RP_GATE_CONFIG, &cfg) < 0) { perror("ioctl CONFIG"); ::close(fd); return false; }
-    ssize_t wr = ::write(fd, buf, bytes);
-    if (wr != (ssize_t)bytes) { perror("write"); ::close(fd); return false; }
-    if (ioctl(fd, RP_GATE_ARM) < 0) { perror("ioctl ARM"); ::close(fd); return false; }
-    ::close(fd);
-    return true;
 }
 
 

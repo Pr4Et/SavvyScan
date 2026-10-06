@@ -1,0 +1,2 @@
+These are the source files for the FPGA overlay which after succesful compilation can replace the binary red_pitaya_top.bit.bin placed in the root folder of the Red Pitaya board file system.<br>
+The project is run in Vivado 2025.1 with free license for the Soc Zync-7000 family of AMD FPGA.
